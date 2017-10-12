@@ -1,0 +1,1 @@
+.photo{background-color:white;height:700px;width:375px;border:1px soild black;background-image:url("https://img.25pp.com/uploadfile/bizhi/iphone6p/20151203/1449105870448554_390x690.jpg");background-repeat:no-repeat;background-attachment:fixed}.bottom{position:fixed;bottom:0;width:100%;display:flex;align-items:center;justify-content:space-between;bottom:4px}
