@@ -1,10 +1,6 @@
 
   <view>
-    <view>
-      <text>首页</text>
-      <text>博客</text>
-      <text>我</text>
-    </view>  
-    <view class="photo">
+    <view class="box">
+      <image class="border" src="{{killer}}"/>
     </view>
   </view>

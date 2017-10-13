@@ -1,0 +1,29 @@
+<style lang="less">
+.all {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+}
+</style>
+
+
+<template>
+  <view class="all">
+    <text>javascript</text>
+    <text>client</text>
+    <text>server</text>
+  </view>
+</template>
+
+
+<script>
+import wepy from 'wepy'
+
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '博客'
+  }
+  onLoad() {}
+}
+</script>
