@@ -1,3 +1,14 @@
 
-<view>
-</view>
+  <view>
+    <view class="flex box">
+      <image class="circle" src="{{photo}}"/>  
+    </view>
+    <view class="flex1 box">
+      <text class="class">My Github</text>
+      <image class="github" src="{{cat}}"/> 
+    </view>
+    <view class="flex1 box">  
+      <text>My Email</text>
+      <image class="github" src="{{email}}"/>
+      </view>
+    </view>

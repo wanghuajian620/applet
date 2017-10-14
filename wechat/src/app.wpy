@@ -17,8 +17,8 @@ export default class extends wepy.app {
   config = {
     pages: [
       'pages/virgo',
-      'pages/index',
-      'pages/classify'
+      'pages/classify',
+      'pages/me'
     ],
     window: {
       backgroundTextStyle: 'light',

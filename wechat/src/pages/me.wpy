@@ -1,18 +1,64 @@
-<style>
+<style lang="less">
+  .box {
+    height: 150px;
+    width: 100%;
+    background-color: white;
+  }
+  .circle {
+    height: 100px;
+    width: 100px;
+    border: 1px solid green;
+    border-radius: 50%;
+  }
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .flex1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+  }
+  .github {
+    height: 50px;
+    width: 50px;
+    border: 1px solid green;
+    border-radius: 50%
+  }
 </style>
 
 <template>
-<view>
-</view>
+  <view>
+    <view class="flex box">
+      <image class="circle" src="{{photo}}"></image>  
+    </view>
+    <view class="flex1 box">
+      <text class>My Github</text>
+      <image class="github" src="{{cat}}"></image> 
+    </view>
+    <view class="flex1 box">  
+      <text>My Email</text>
+      <image class="github" src="{{email}}"></image>
+      </view>
+    </view>   
+  </view>
 </template>
 
 
 <script>
-import wepy from 'wepy'
+  import wepy from 'wepy'
 
-export default class Index extends wepy.page {
-  config = {
-    navigationBarTitleText: '博客'
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '博客'
+    }
+    data = {
+      photo: '../image/WechatIMG12.jpeg',
+      cat: '../image/github.png',
+      email: '../image/邮箱.png'
+    }
+    onLoad() {}
   }
-}
 </script>

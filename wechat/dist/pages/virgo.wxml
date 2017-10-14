@@ -3,4 +3,9 @@
     <view class="box">
       <image class="border" src="{{killer}}"/>
     </view>
+    <view>
+      <audio poster="{{shangwenjie}}" name="{{name}}" author="{{author}}" src="{{music}}" controls loop/>
+      <!-- <button type="primary" bindtap="audioPlay">播放</button>
+      <button type="primary" bindtap="audioPause">暂停</button> -->
+    </view> 
   </view>

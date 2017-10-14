@@ -1,9 +1,9 @@
 <style lang="less">
 .all {
   display: flex;
-  flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 </style>
 
@@ -13,6 +13,7 @@
     <text>javascript</text>
     <text>client</text>
     <text>server</text>
+    <text>jotting</text>
   </view>
 </template>
 
