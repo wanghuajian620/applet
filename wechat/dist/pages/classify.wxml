@@ -1,7 +1,12 @@
 
+<view>
   <view class="all">
-    <text>javascript</text>
-    <text>client</text>
-    <text>server</text>
-    <text>jotting</text>
+    <text bindtap="js">javascript</text>
+    <text bindtap="client">client</text>
+    <text bindtap="server">server</text>
+    <text bindtap="jotting">jotting</text>
   </view>
+  <text>{{text}}</text>
+  <view class="background">
+  </view>
+</view>

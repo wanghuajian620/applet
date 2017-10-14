@@ -1,0 +1,4 @@
+
+<view>
+  <text>{{email}}</text>
+</view>

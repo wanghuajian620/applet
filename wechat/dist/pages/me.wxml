@@ -1,14 +1,14 @@
 
-  <view>
+  <view class="photo">
     <view class="flex box">
       <image class="circle" src="{{photo}}"/>  
     </view>
     <view class="flex1 box">
-      <text class="class">My Github</text>
+      <text bindtap="github" style="color: {{color1}}">My Github</text>
       <image class="github" src="{{cat}}"/> 
     </view>
     <view class="flex1 box">  
-      <text>My Email</text>
+      <text bindtap="email" style="color: {{color2}}">My Email</text>
       <image class="github" src="{{email}}"/>
-      </view>
     </view>
+  </view>

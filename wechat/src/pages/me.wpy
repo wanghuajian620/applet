@@ -1,8 +1,15 @@
 <style lang="less">
+  .photo {
+    background-color: white;
+    height: 550px;
+    width: 375px;
+    background-image: url('http://im6.leaderhero.com/wallpaper/20150625/9a10dbb1f3.jpg.417_741.jpg');
+    background-repeat: no-repeat
+  }
   .box {
     height: 150px;
     width: 100%;
-    background-color: white;
+    // background-color: white;
   }
   .circle {
     height: 100px;
@@ -30,20 +37,19 @@
 </style>
 
 <template>
-  <view>
+  <view class="photo">
     <view class="flex box">
       <image class="circle" src="{{photo}}"></image>  
     </view>
     <view class="flex1 box">
-      <text class>My Github</text>
+      <text @tap="github" style="color: {{color1}}">My Github</text>
       <image class="github" src="{{cat}}"></image> 
     </view>
     <view class="flex1 box">  
-      <text>My Email</text>
+      <text @tap="email" style="color: {{color2}}">My Email</text>
       <image class="github" src="{{email}}"></image>
-      </view>
-    </view>   
-  </view>
+    </view>
+  </view>   
 </template>
 
 
@@ -57,7 +63,25 @@
     data = {
       photo: '../image/WechatIMG12.jpeg',
       cat: '../image/github.png',
-      email: '../image/邮箱.png'
+      email: '../image/邮箱-2.png',
+      color1: 'black',
+      color2: 'black'
+    }
+    methods = {
+      github() {
+        wepy.navigateTo({
+          url: './github'
+        })
+        let self = this
+        self.color1 = 'green'
+      },
+      email() {
+        wepy.navigateTo({
+          url: './email'
+        })
+        let self = this
+        self.color2 = 'green'
+      }
     }
     onLoad() {}
   }
