@@ -1,7 +1,7 @@
 <style lang="less">
   .photo {
     background-color: white;
-    height: 550px;
+    height: 555px;
     width: 375px;
     background-image: url('http://im6.leaderhero.com/wallpaper/20150625/9a10dbb1f3.jpg.417_741.jpg');
     background-repeat: no-repeat

@@ -33,7 +33,7 @@ export default class Index extends wepy.page {
     navigationBarTitleText: '博客'
   }
   data = {
-    killer: '../image/77f73bfe6dcaf0e1426c430200b3d24a.jpg',
+    killer: '../image/31bf63aec9678fbdced765f51bd0a1f5.jpg',
     music: '../audio/尚雯婕 - 最终信仰.mp3',
     name: '最终信仰',
     author: '尚雯婕',

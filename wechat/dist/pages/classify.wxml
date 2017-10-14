@@ -1,12 +1,13 @@
 
 <view>
-  <view class="all">
-    <text bindtap="js">javascript</text>
-    <text bindtap="client">client</text>
-    <text bindtap="server">server</text>
-    <text bindtap="jotting">jotting</text>
-  </view>
-  <text>{{text}}</text>
   <view class="background">
+    <view class="all">
+      <text class="line" bindtap="js">javascript</text>
+      <text class="line" bindtap="client">client</text>
+      <text class="line" bindtap="server">server</text>
+      <text class="line" bindtap="jotting">jotting</text>
+    </view>
+  <text>{{text}}</text>
+  <!-- <view class="background"> -->
   </view>
 </view>
