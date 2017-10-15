@@ -5,23 +5,31 @@
   height: 500px;
   width: 400px;
 }
+
 .border {
   height: 500px;
   width: 400px;
 }
+
 .width {
+  height: 1rem;
   width: 100%;
+  bottom: 0;
+}
+.essay {
+  font-size:15px;
+  margin-bottom: 80px;
 }
 </style>
 <template>
   <view>
     <view class="box">
-      <image  class="border" src="{{killer}}"></image>
-    </view>
-    <view>
-      <audio class="width" poster="{{shangwenjie}}" name="{{name}}" author="{{author}}" src="{{music}}"  controls loop></audio>
-    </view> 
-  </view>   
+      <image class="border" src="{{killer}}"></image>
+    </view>  
+    <!-- <view class="width"> -->
+      <audio class="width" poster="{{shangwenjie}}" name="{{name}}" author="{{author}}" src="{{music}}" controls loop></audio>
+    <!-- </view> -->
+  </view>
 </template>
 
 
@@ -39,7 +47,14 @@ export default class Index extends wepy.page {
     author: '尚雯婕',
     shangwenjie: '../image/19e8c807b18775ae8b35b61026d07420.jpg'
   }
-  onLoad() {}
+
+  onLoad() {
+    // wepy.playBackgroundAudio({
+    //   dataUrl: '../audio/尚雯婕 - 最终信仰.mp3',
+    //   title: '',
+    //   coverImgUrl: ''
+    // })
+  }
   onReady(e) {
     // 使用 wx.createAudioContext 获取 audio 上下文 context
     this.audioCtx = wepy.createAudioContext('myAudio')

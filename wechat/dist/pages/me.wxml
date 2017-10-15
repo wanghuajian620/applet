@@ -1,13 +1,14 @@
 
   <view class="photo">
     <view class="flex box">
-      <image class="circle" src="{{photo}}"/>  
+      <image class="circle" src="{{avatarUrl}}"/>
+      <!-- <text>{{nickName}}</text> -->
     </view>
     <view class="flex1 box">
       <text bindtap="github" style="color: {{color1}}">My Github</text>
-      <image class="github" src="{{cat}}"/> 
+      <image class="github" src="{{cat}}"/>
     </view>
-    <view class="flex1 box">  
+    <view class="flex1 box">
       <text bindtap="email" style="color: {{color2}}">My Email</text>
       <image class="github" src="{{email}}"/>
     </view>

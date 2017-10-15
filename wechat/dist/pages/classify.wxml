@@ -2,12 +2,16 @@
 <view>
   <view class="background">
     <view class="all">
-      <text class="line" bindtap="js">javascript</text>
-      <text class="line" bindtap="client">client</text>
-      <text class="line" bindtap="server">server</text>
-      <text class="line" bindtap="jotting">jotting</text>
+      <text style="color: {{color1}} " bindtap="js">javascript</text>
+      <view class="line"/>
+      <text style="color: {{color2}}" bindtap="client">client</text>
+      <view class="line"/>
+      <text style="color: {{color3}}" bindtap="server">server</text>
+      <view class="line"/>
+      <text style="color: {{color4}}" bindtap="jotting">jotting</text>
+      <view class="line"/>
     </view>
-  <text>{{text}}</text>
+  <text class="js">{{text}}</text>
   <!-- <view class="background"> -->
   </view>
 </view>

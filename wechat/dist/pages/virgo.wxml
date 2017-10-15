@@ -2,8 +2,8 @@
   <view>
     <view class="box">
       <image class="border" src="{{killer}}"/>
-    </view>
-    <view>
+    </view>  
+    <!-- <view class="width"> -->
       <audio class="width" poster="{{shangwenjie}}" name="{{name}}" author="{{author}}" src="{{music}}" controls loop/>
-    </view> 
+    <!-- </view> -->
   </view>
