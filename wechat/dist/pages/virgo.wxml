@@ -1,9 +1,9 @@
 
   <view>
-    <view class="box">
-      <image class="border" src="{{killer}}"/>
+    <image class="border" src="{{killer}}"/>
+    <text>{{current}}</text>
+    <!-- <text>{{text}}</text> -->
+    <view class="player">
+      <audio poster="{{shangwenjie}}" name="{{name}}" author="{{author}}" src="{{music}}" controls loop bindtimeupdate="update"/>
     </view>  
-    <!-- <view class="width"> -->
-      <audio class="width" poster="{{shangwenjie}}" name="{{name}}" author="{{author}}" src="{{music}}" controls loop/>
-    <!-- </view> -->
   </view>

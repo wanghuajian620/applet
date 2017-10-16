@@ -8,8 +8,8 @@
 	},
 	"compileType": "weapp",
 	"libVersion": "1.5.4",
-	"appid": "touristappid",
-	"projectname": "myvirgo",
+	"appid": "wx089791287169af39",
+	"projectname": "blog",
 	"condition": {
 		"weapp": {
 			"current": -1,

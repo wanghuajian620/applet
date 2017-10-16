@@ -11,30 +11,32 @@
   width: 400px;
 }
 
-.width {
-  height: 1rem;
-  width: 100%;
-  bottom: 0;
-}
 .essay {
-  font-size:15px;
+  font-size: 15px;
   margin-bottom: 80px;
+}
+.player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
 <template>
   <view>
-    <view class="box">
-      <image class="border" src="{{killer}}"></image>
+    <image class="border" src="{{killer}}"></image>
+    <text>{{current}}</text>
+    <!-- <text>{{text}}</text> -->
+    <view class="player">
+      <audio poster="{{shangwenjie}}" name="{{name}}" author="{{author}}" src="{{music}}" controls loop bindtimeupdate="update"></audio>
     </view>  
-    <!-- <view class="width"> -->
-      <audio class="width" poster="{{shangwenjie}}" name="{{name}}" author="{{author}}" src="{{music}}" controls loop></audio>
-    <!-- </view> -->
+  </view>
   </view>
 </template>
 
 
 <script>
 import wepy from 'wepy'
+import text from '../audio/text.js'
 
 export default class Index extends wepy.page {
   config = {
@@ -45,15 +47,26 @@ export default class Index extends wepy.page {
     music: '../audio/尚雯婕 - 最终信仰.mp3',
     name: '最终信仰',
     author: '尚雯婕',
-    shangwenjie: '../image/19e8c807b18775ae8b35b61026d07420.jpg'
+    shangwenjie: '../image/19e8c807b18775ae8b35b61026d07420.jpg',
+    text: '',
+    current: '',
+    timestamp: ''
   }
-
+  methods = {
+    update(e) {
+      let self = this
+      for (let i = 0; i < self.text.length; i++) {
+        console.log(self.text[i][0], e.detail.currentTime.toFixed(2))
+        if (self.text[i][0] === e.detail.currentTime.toFixed(2)) {
+          self.current = self.text[i][1]
+        }
+      }
+    }
+  }
   onLoad() {
-    // wepy.playBackgroundAudio({
-    //   dataUrl: '../audio/尚雯婕 - 最终信仰.mp3',
-    //   title: '',
-    //   coverImgUrl: ''
-    // })
+    let self = this
+    self.text = text
+    console.log(self.text)
   }
   onReady(e) {
     // 使用 wx.createAudioContext 获取 audio 上下文 context

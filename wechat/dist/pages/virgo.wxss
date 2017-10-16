@@ -1,1 +1,1 @@
-.box{background-color:white;border:1px soild black;height:500px;width:400px}.border{height:500px;width:400px}.width{height:1rem;width:100%;bottom:0}.essay{font-size:15px;margin-bottom:80px}
+.box{background-color:white;border:1px soild black;height:500px;width:400px}.border{height:500px;width:400px}.essay{font-size:15px;margin-bottom:80px}.player{display:flex;justify-content:center;align-items:center}

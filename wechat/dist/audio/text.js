@@ -1,0 +1,4 @@
+'use strict';
+
+module.exports = [['00.00', '尚雯婕 - 最终信仰'], ['1.50', '作词：唐恬(国语)/尚雯婕(英语)'], ['2.50', '作曲：尚雯婕'], ['3.50', '制作人：Daniel Merlot']];
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRleHQuanMiXSwibmFtZXMiOlsibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6Ijs7QUFBQUEsT0FBT0MsT0FBUCxHQUFpQixDQUNmLENBQUMsT0FBRCxFQUFVLFlBQVYsQ0FEZSxFQUVmLENBQUMsTUFBRCxFQUFTLG1CQUFULENBRmUsRUFHZixDQUFDLE1BQUQsRUFBUyxRQUFULENBSGUsRUFJZixDQUFDLE1BQUQsRUFBUyxtQkFBVCxDQUplLENBQWpCIiwiZmlsZSI6InRleHQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJtb2R1bGUuZXhwb3J0cyA9IFtcbiAgWycwMC4wMCcsICflsJrpm6/lqZUgLSDmnIDnu4jkv6Hku7AnXSxcbiAgWycxLjUwJywgJ+S9nOivje+8muWUkOaBrCjlm73or60pL+Wwmumbr+WplSjoi7Hor60pJ10sXG4gIFsnMi41MCcsICfkvZzmm7LvvJrlsJrpm6/lqZUnXSxcbiAgWyczLjUwJywgJ+WItuS9nOS6uu+8mkRhbmllbCBNZXJsb3QnXVxuXVxuIl19
