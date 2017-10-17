@@ -6,16 +6,17 @@
   align-items: center;
   background-color: #008B8B;
 }
+
 .line {
-  border-right: 1px solid black;
-  // border-left: 1px solid black;
-  
+  border-right: 1px solid black; // border-left: 1px solid black;
   //margin-right: 20px;
   height: 30px;
 }
+
 .js {
   margin-left: 8px
 }
+
 .background {
   width: 100%;
   height: 560px;
@@ -26,22 +27,27 @@
 
 
 <template>
-<view>
-  <view class="background">
-    <view class="all">
-      <text style="color: {{color1}} " @tap="js">javascript</text>
-      <view class="line"></view>
-      <text style="color: {{color2}}" @tap="client">client</text>
-      <view class="line"></view>
-      <text style="color: {{color3}}" @tap="server">server</text>
-      <view class="line"></view>
-      <text style="color: {{color4}}" @tap="jotting">jotting</text>
-      <view class="line"></view>
+  <view>
+    <view class="background">
+      <view class="all">
+        <text style="color: {{color1}} " @tap="js">javascript</text>
+        <view class="line"></view>
+        <text style="color: {{color2}}" @tap="client">client</text>
+        <view class="line"></view>
+        <text style="color: {{color3}}" @tap="server">server</text>
+        <view class="line"></view>
+        <text style="color: {{color4}}" @tap="jotting">jotting</text>
+        <view class="line"></view>
+      </view>
+      <text class="js">{{text}}</text>
+      <!-- <view class="background"> -->
     </view>
-  <text class="js">{{text}}</text>
-  <!-- <view class="background"> -->
+    <view>
+      <text @tap="onShareAppMessage"></text>
+      <text @tap="onPullDownRefresh"></text>
+      <text @tap="startPullDownRefresh"></text>
+    </view>
   </view>
-</view>  
 </template>
 
 
@@ -50,7 +56,8 @@ import wepy from 'wepy'
 
 export default class Index extends wepy.page {
   config = {
-    navigationBarTitleText: '博客'
+    navigationBarTitleText: '博客',
+    enablePullDownRefresh: true
   }
   data = {
     text: 'js',
@@ -98,6 +105,20 @@ export default class Index extends wepy.page {
       self.color4 = '#CCFFFF'
     }
   }
-  onLoad() {}
+  onLoad() { }
+
+  onPullDownRefresh() {
+    wepy.startPullDownRefresh()
+    setTimeout(function() {
+      wepy.stopPullDownRefresh()
+    }, 1000)
+  }
+
+  onShareAppMessage() {
+    return {
+      title: '博客',
+      path: '/pages/classify'
+    }
+  }
 }
 </script>

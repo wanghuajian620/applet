@@ -23,7 +23,7 @@ export default class extends wepy.app {
       'pages/email'
     ],
     window: {
-      backgroundTextStyle: 'light',
+      backgroundTextStyle: 'dark',
       navigationBarBackgroundColor: 'beige',
       navigationBarTitleText: 'my virgo blog',
       navigationBarTextStyle: 'black'

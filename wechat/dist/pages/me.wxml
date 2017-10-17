@@ -12,4 +12,7 @@
       <text bindtap="email" style="color: {{color2}}">My Email</text>
       <image class="github" src="{{email}}"/>
     </view>
+    <view>
+      <text bindtap="onShareAppMessage"/>
+    </view>  
   </view>

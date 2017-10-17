@@ -54,6 +54,9 @@
       <text @tap="email" style="color: {{color2}}">My Email</text>
       <image class="github" src="{{email}}"></image>
     </view>
+    <view>
+      <text @tap="onShareAppMessage"></text>
+    </view>  
   </view>
 </template>
 
@@ -87,6 +90,12 @@ export default class Index extends wepy.page {
       })
       let self = this
       self.color2 = 'green'
+    },
+    onShareAppMessage() {
+      return {
+        title: '博客',
+        path: '/pages/me'
+      }
     }
   }
   onLoad() {

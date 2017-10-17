@@ -27,7 +27,7 @@
     <text>{{current}}</text>
     <!-- <text>{{text}}</text> -->
     <view class="player">
-      <audio poster="{{shangwenjie}}" name="{{name}}" author="{{author}}" src="{{music}}" controls loop bindtimeupdate="update"></audio>
+      <audio poster="{{shangwenjie}}" name="{{name}}" author="{{author}}" src="http://localhost:5000/尚雯婕 - 最终信仰.mp3" controls loop bindtimeupdate="update"></audio>
     </view>  
   </view>
   </view>
@@ -58,7 +58,7 @@ export default class Index extends wepy.page {
       for (let i = 0; i < self.text.length; i++) {
         console.log(self.text[i][0], e.detail.currentTime.toFixed(2))
         if (self.text[i][0] === e.detail.currentTime.toFixed(2)) {
-          self.current = self.text[i][1]
+          self.current = self.text[i][2]
         }
       }
     }
