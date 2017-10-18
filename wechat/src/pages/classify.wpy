@@ -31,13 +31,13 @@
     <view class="background">
       <view class="all">
         <text style="color: {{color1}} " @tap="js">javascript</text>
-        <view class="line"></view>
+        <!-- <view class="line"></view> -->
         <text style="color: {{color2}}" @tap="client">client</text>
-        <view class="line"></view>
+        <!-- <view class="line"></view> -->
         <text style="color: {{color3}}" @tap="server">server</text>
-        <view class="line"></view>
+        <!-- <view class="line"></view> -->
         <text style="color: {{color4}}" @tap="jotting">jotting</text>
-        <view class="line"></view>
+        <!-- <view class="line"></view> -->
       </view>
       <!-- <text class="js">{{text}}</text> -->
       <!-- <view class="background"> -->

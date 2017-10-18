@@ -4,11 +4,12 @@
       <text>{{weather.city.text}}:{{weather.city.data}}</text>
       <text>{{weather.weather.text}}:{{weather.weather.data}}</text>
       <text>{{weather.temperature.text}}:{{weather.temperature.data}}°C</text>
+      <text>{{weather.winddirection.text}}:{{weather.winddirection.data}}</text>
     </view> 
     <view class="flex1 box2">
-      <image class="border" bindtap="photo" src="http://localhost:5000/e3808f16ec5284e36ae5ed4fbdcf2c4a.jpg"/>
+      <image class="border" bindtap="photo" src="{{illustration}}"/>
     </view>
-    <view class="flex1">
+    <view class="flex1 distance">
       <text>人生最美丽的时刻</text> 
       <text>都是当你失去一切的时候</text>
     </view>  
