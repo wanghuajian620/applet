@@ -17,6 +17,7 @@ export default class extends wepy.app {
   config = {
     pages: [
       'pages/virgo',
+      'pages/photo',
       'pages/classify',
       'pages/me',
       'pages/github',

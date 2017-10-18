@@ -1,9 +1,15 @@
 
-  <view>
-    <image class="border" src="{{killer}}"/>
-    <text>{{current}}</text>
-    <!-- <text>{{text}}</text> -->
-    <view class="player">
-      <audio poster="{{shangwenjie}}" name="{{name}}" author="{{author}}" src="http://localhost:5000/尚雯婕 - 最终信仰.mp3" controls loop bindtimeupdate="update"/>
+  <view class="background">
+    <view class="flex1 box">
+      <text>{{weather.city.text}}:{{weather.city.data}}</text>
+      <text>{{weather.weather.text}}:{{weather.weather.data}}</text>
+      <text>{{weather.temperature.text}}:{{weather.temperature.data}}°C</text>
+    </view> 
+    <view class="flex1 box2">
+      <image class="border" bindtap="photo" src="http://localhost:5000/e3808f16ec5284e36ae5ed4fbdcf2c4a.jpg"/>
+    </view>
+    <view class="flex1">
+      <text>人生最美丽的时刻</text> 
+      <text>都是当你失去一切的时候</text>
     </view>  
   </view>

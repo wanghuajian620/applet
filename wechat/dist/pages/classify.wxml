@@ -11,7 +11,7 @@
         <text style="color: {{color4}}" bindtap="jotting">jotting</text>
         <view class="line"/>
       </view>
-      <text class="js">{{text}}</text>
+      <!-- <text class="js">{{text}}</text> -->
       <!-- <view class="background"> -->
     </view>
     <view>

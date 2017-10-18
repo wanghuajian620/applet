@@ -9,7 +9,7 @@
 
 .box {
   height: 150px;
-  width: 100%; // background-color: white;
+  width: 100%; 
 }
 
 .circle {
@@ -44,15 +44,14 @@
   <view class="photo">
     <view class="flex box">
       <image class="circle" src="{{avatarUrl}}"></image>
-      <!-- <text>{{nickName}}</text> -->
     </view>
     <view class="flex1 box">
-      <text @tap="github" style="color: {{color1}}">My Github</text>
-      <image class="github" src="{{cat}}"></image>
+      <image @tap="github" class="github" src="{{cat}}"></image>
+      <text style="color: {{color1}}">My Github</text>
     </view>
     <view class="flex1 box">
-      <text @tap="email" style="color: {{color2}}">My Email</text>
-      <image class="github" src="{{email}}"></image>
+      <image @tap="email" class="github" src="{{email}}"></image>
+      <text style="color: {{color2}}">My Email</text>
     </view>
     <view>
       <text @tap="onShareAppMessage"></text>

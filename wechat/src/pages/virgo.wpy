@@ -1,76 +1,78 @@
 <style lang="less">
-.box {
-  background-color: white;
-  border: 1px soild black;
-  height: 500px;
-  width: 400px;
+.background {
+  width: 100%;
+  height: 560px;
+  background-image: url('http://im6.leaderhero.com/wallpaper/201/874289.417.741.85c484.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed
 }
-
-.border {
-  height: 500px;
-  width: 400px;
-}
-
-.essay {
-  font-size: 15px;
-  margin-bottom: 80px;
-}
-.player {
+.flex1 {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center
 }
+.box {
+  height: 150px;
+  width: 100%; 
+}
+.box2 {
+  height: 350px;
+  width: 100%
+}
+.border {
+  height: 350px;
+  width: 100%
+}
+
 </style>
+
+
 <template>
-  <view>
-    <image class="border" src="{{killer}}"></image>
-    <text>{{current}}</text>
-    <!-- <text>{{text}}</text> -->
-    <view class="player">
-      <audio poster="{{shangwenjie}}" name="{{name}}" author="{{author}}" src="http://localhost:5000/尚雯婕 - 最终信仰.mp3" controls loop bindtimeupdate="update"></audio>
+  <view class="background">
+    <view class="flex1 box">
+      <text>{{weather.city.text}}:{{weather.city.data}}</text>
+      <text>{{weather.weather.text}}:{{weather.weather.data}}</text>
+      <text>{{weather.temperature.text}}:{{weather.temperature.data}}°C</text>
+    </view> 
+    <view class="flex1 box2">
+      <image class="border" @tap="photo" src="http://localhost:5000/e3808f16ec5284e36ae5ed4fbdcf2c4a.jpg"></image>
+    </view>
+    <view class="flex1">
+      <text>人生最美丽的时刻</text> 
+      <text>都是当你失去一切的时候</text>
     </view>  
-  </view>
   </view>
 </template>
 
 
 <script>
 import wepy from 'wepy'
-import text from '../audio/text.js'
-
+var amapFile = require('../libs/amap-wx.js')
 export default class Index extends wepy.page {
   config = {
     navigationBarTitleText: '博客'
   }
-  data = {
-    killer: '../image/31bf63aec9678fbdced765f51bd0a1f5.jpg',
-    music: '../audio/尚雯婕 - 最终信仰.mp3',
-    name: '最终信仰',
-    author: '尚雯婕',
-    shangwenjie: '../image/19e8c807b18775ae8b35b61026d07420.jpg',
-    text: '',
-    current: '',
-    timestamp: ''
-  }
   methods = {
-    update(e) {
-      let self = this
-      for (let i = 0; i < self.text.length; i++) {
-        console.log(self.text[i][0], e.detail.currentTime.toFixed(2))
-        if (self.text[i][0] === e.detail.currentTime.toFixed(2)) {
-          self.current = self.text[i][2]
-        }
-      }
+    photo() {
+      wepy.navigateTo({
+        url: './photo'
+      })
     }
   }
   onLoad() {
-    let self = this
-    self.text = text
-    console.log(self.text)
-  }
-  onReady(e) {
-    // 使用 wx.createAudioContext 获取 audio 上下文 context
-    this.audioCtx = wepy.createAudioContext('myAudio')
+    let that = this
+    let myAmapFun = new amapFile.AMapWX({ key: 'c2cbd0e24e64f42a77408a348f11de87' })
+    myAmapFun.getWeather({
+      success: function(data) {
+        that.setData({
+          weather: data
+        })
+      },
+      fail: function(info) {
+        console.log(info)
+      }
+    })
   }
 }
 </script>

@@ -1,0 +1,26 @@
+<style lang="less">
+.background {
+  width: 100%;
+  height: 610px;
+  background-image: url(http://im6.leaderhero.com/wallpaper/20141021/068b46e5a2.jpg.417_741.jpg);
+  background-repeat: no-repeat
+}
+</style>
+
+
+<template>
+  <view class="background">
+  </view>  
+</template>
+
+
+<script>
+import wepy from 'wepy'
+
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '博客'
+  }
+  onload() {}
+}
+</script>

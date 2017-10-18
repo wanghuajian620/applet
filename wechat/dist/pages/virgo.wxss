@@ -1,1 +1,1 @@
-.box{background-color:white;border:1px soild black;height:500px;width:400px}.border{height:500px;width:400px}.essay{font-size:15px;margin-bottom:80px}.player{display:flex;justify-content:center;align-items:center}
+.background{width:100%;height:560px;background-image:url('http://im6.leaderhero.com/wallpaper/201/874289.417.741.85c484.jpg');background-repeat:no-repeat;background-attachment:fixed}.flex1{display:flex;flex-direction:column;justify-content:center;align-items:center}.box{height:150px;width:100%}.box2{height:350px;width:100%}.border{height:350px;width:100%}

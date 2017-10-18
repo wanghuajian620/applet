@@ -1,4 +1,4 @@
 
-<view>
-  <text>{{email}}</text>
+<view class="background">
+  <text class="flex">{{email}}</text>
 </view>
