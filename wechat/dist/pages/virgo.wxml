@@ -1,21 +1,21 @@
 
 <view>
   <view class="flex">
-    <text class="box distance"/>  
+    <image bindtap="a" class="box distance border" src="http://localhost:5000/d94182b201b59e20e1778744e6247458.jpg"/>  
   </view>
   <view class="age ago">
     <text>20岁以前</text>
     <view class="ago1 word">2017-10-19 16:35:20</view>
   </view>
   <view class="flex">  
-    <text class="box distance"/>
+    <image bindtap="b" class="box distance border" src="http://localhost:5000/d94182b201b59e20e1778744e6247458.jpg"/>
   </view>
   <view class="age ago">
     <text>20岁以后40岁以前</text>
     <view class="ago1 word">2017-10-19 17:33:20</view>
   </view>  
   <view class="flex">  
-    <text class="box distance"/>
+    <image bindtap="c" class="box distance border" src="http://localhost:5000/d94182b201b59e20e1778744e6247458.jpg"/>
   </view>
   <view class="age ago">
     <text>40岁以后</text>
