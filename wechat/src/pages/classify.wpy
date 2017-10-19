@@ -6,6 +6,9 @@
   align-items: center;
   background-color: #008B8B;
 }
+.word {
+  font-size: 13px
+}
 
 .line {
   border-right: 1px solid black; // border-left: 1px solid black;
@@ -29,15 +32,12 @@
 <template>
   <view>
     <view class="background">
-      <view class="all">
+      <view class="all word">
         <text style="color: {{color1}} " @tap="js">javascript</text>
-        <!-- <view class="line"></view> -->
-        <text style="color: {{color2}}" @tap="client">client</text>
-        <!-- <view class="line"></view> -->
-        <text style="color: {{color3}}" @tap="server">server</text>
-        <!-- <view class="line"></view> -->
-        <text style="color: {{color4}}" @tap="jotting">jotting</text>
-        <!-- <view class="line"></view> -->
+        <text style="color: {{color2}}" @tap="HTML">HTML</text>
+        <text style="color: {{color3}}" @tap="Node">Node.js</text>
+        <text style="color: {{color4}}" @tap="ES6">ES6</text>
+        <text style="color: {{color5}}" @tap="CSS">CSS</text>
       </view>
       <!-- <text class="js">{{text}}</text> -->
       <!-- <view class="background"> -->
@@ -64,7 +64,8 @@ export default class Index extends wepy.page {
     color1: '#CCFFFF',
     color2: '#202020',
     color3: '#202020',
-    color4: '#202020'
+    color4: '#202020',
+    color5: '#202020'
   }
   methods = {
     js() {
@@ -75,9 +76,10 @@ export default class Index extends wepy.page {
       self.color2 = '#202020'
       self.color3 = '#202020'
       self.color4 = '#202020'
+      self.color5 = '#202020'
     },
 
-    client() {
+    HTML() {
       let self = this
 
       self.text = 'client'
@@ -85,8 +87,9 @@ export default class Index extends wepy.page {
       self.color2 = '#CCFFFF'
       self.color3 = '#202020'
       self.color4 = '#202020'
+      self.color5 = '#202020'
     },
-    server() {
+    Node() {
       let self = this
 
       self.text = 'server'
@@ -94,8 +97,9 @@ export default class Index extends wepy.page {
       self.color2 = '#202020'
       self.color3 = '#CCFFFF'
       self.color4 = '#202020'
+      self.color5 = '#202020'
     },
-    jotting() {
+    ES6() {
       let self = this
 
       self.text = 'jotting'
@@ -103,6 +107,17 @@ export default class Index extends wepy.page {
       self.color2 = '#202020'
       self.color3 = '#202020'
       self.color4 = '#CCFFFF'
+      self.color5 = '#202020'
+    },
+    CSS() {
+      let self = this
+
+      self.text = 'CSS'
+      self.color1 = '#202020'
+      self.color2 = '#202020'
+      self.color3 = '#202020'
+      self.color4 = '#202020'
+      self.color5 = '#CCFFFF'
     }
   }
   onLoad() { }
@@ -116,7 +131,7 @@ export default class Index extends wepy.page {
 
   onShareAppMessage() {
     return {
-      title: '博客',
+      title: '分类',
       path: '/pages/classify'
     }
   }

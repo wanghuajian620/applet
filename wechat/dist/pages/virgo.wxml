@@ -1,16 +1,24 @@
 
-  <view class="background">
-    <view class="flex1 box">
-      <text>{{weather.city.text}}:{{weather.city.data}}</text>
-      <text>{{weather.weather.text}}:{{weather.weather.data}}</text>
-      <text>{{weather.temperature.text}}:{{weather.temperature.data}}°C</text>
-      <text>{{weather.winddirection.text}}:{{weather.winddirection.data}}</text>
-    </view> 
-    <view class="flex1 box2">
-      <image class="border" bindtap="photo" src="{{illustration}}"/>
-    </view>
-    <view class="flex1 distance">
-      <text>人生最美丽的时刻</text> 
-      <text>都是当你失去一切的时候</text>
-    </view>  
+<view>
+  <view class="flex">
+    <text class="box distance"/>  
   </view>
+  <view class="age ago">
+    <text>20岁以前</text>
+    <view class="ago1 word">2017-10-19 16:35:20</view>
+  </view>
+  <view class="flex">  
+    <text class="box distance"/>
+  </view>
+  <view class="age ago">
+    <text>20岁以后40岁以前</text>
+    <view class="ago1 word">2017-10-19 17:33:20</view>
+  </view>  
+  <view class="flex">  
+    <text class="box distance"/>
+  </view>
+  <view class="age ago">
+    <text>40岁以后</text>
+    <view class="ago1 word">2017-10-19 17:36:20</view>
+  </view> 
+</view>

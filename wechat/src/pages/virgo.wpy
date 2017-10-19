@@ -1,86 +1,70 @@
 <style lang="less">
-.background {
-  width: 100%;
-  height: 560px;
-  background-image: url('http://im6.leaderhero.com/wallpaper/user/194/849812.417.741.d2bef1.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed
-}
-.flex1 {
+.flex {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center
 }
 .box {
-  height: 120px;
-  width: 100%; 
+  background-color: grey;
+  height: 250px;
+  width: 350px
 }
-.box2 {
-  height: 350px;
-  width: 100%
-}
-.border {
-  height: 350px;
-  width: 100%
+.word {
+  font-size: 15px
 }
 .distance {
-  margin-top: 15px
+  margin: 20px 15px 8px 15px
+}
+.age {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start
+}
+.ago {
+  margin-left: 15px;
+}
+.ago1 {
+  padding-top: 6px
 }
 
 </style>
 
 
 <template>
-  <view class="background">
-    <view class="flex1 box">
-      <text>{{weather.city.text}}:{{weather.city.data}}</text>
-      <text>{{weather.weather.text}}:{{weather.weather.data}}</text>
-      <text>{{weather.temperature.text}}:{{weather.temperature.data}}°C</text>
-      <text>{{weather.winddirection.text}}:{{weather.winddirection.data}}</text>
-    </view> 
-    <view class="flex1 box2">
-      <image class="border" @tap="photo" src="{{illustration}}"></image>
-    </view>
-    <view class="flex1 distance">
-      <text>人生最美丽的时刻</text> 
-      <text>都是当你失去一切的时候</text>
-    </view>  
+<view>
+  <view class="flex">
+    <text class="box distance"></text>  
   </view>
+  <view class="age ago">
+    <text>20岁以前</text>
+    <view class="ago1 word">2017-10-19 16:35:20</view>
+  </view>
+  <view class="flex">  
+    <text class="box distance"></text>
+  </view>
+  <view class="age ago">
+    <text>20岁以后40岁以前</text>
+    <view class="ago1 word">2017-10-19 17:33:20</view>
+  </view>  
+  <view class="flex">  
+    <text class="box distance"></text>
+  </view>
+  <view class="age ago">
+    <text>40岁以后</text>
+    <view class="ago1 word">2017-10-19 17:36:20</view>
+  </view> 
+</view>  
 </template>
 
 
 <script>
 import wepy from 'wepy'
-var amapFile = require('../libs/amap-wx.js')
 export default class Index extends wepy.page {
   config = {
     navigationBarTitleText: '博客'
   }
-  data = {
-    illustration: '../image/9534ecea81ffe552e76e0250f55a02bc.jpeg'
-  }
-  methods = {
-    photo() {
-      wepy.navigateTo({
-        url: './photo'
-      })
-    }
-  }
-  onLoad() {
-    let self = this
-    let myAmapFun = new amapFile.AMapWX({ key: 'c2cbd0e24e64f42a77408a348f11de87' })
-    myAmapFun.getWeather({
-      success: function(data) {
-        self.setData({
-          weather: data
-        })
-        return data
-      },
-      fail: function(info) {
-        console.log(info)
-      }
-    })
-  }
+  onLoad() {}
 }
 </script>
