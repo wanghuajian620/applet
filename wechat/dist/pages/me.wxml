@@ -1,7 +1,8 @@
 
-  <view class="photo">
+  <view>
     <view class="flex box">
       <image class="circle" src="{{avatarUrl}}"/>
+      <text>{{nickName}}</text>
     </view>
     <view class="flex1 box">
       <image bindtap="github" class="github" src="{{cat}}"/>

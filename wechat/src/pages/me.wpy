@@ -21,6 +21,7 @@
 
 .flex {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -41,9 +42,10 @@
 </style>
 
 <template>
-  <view class="photo">
+  <view>
     <view class="flex box">
       <image class="circle" src="{{avatarUrl}}"></image>
+      <text>{{nickName}}</text>
     </view>
     <view class="flex1 box">
       <image @tap="github" class="github" src="{{cat}}"></image>
@@ -69,7 +71,7 @@ export default class Index extends wepy.page {
   }
   data = {
     avatarUrl: '',
-    // nickName: '',
+    nickName: '',
     cat: '../image/github.png',
     email: '../image/邮箱-2.png',
     color1: 'black',
@@ -102,8 +104,8 @@ export default class Index extends wepy.page {
     wepy.getUserInfo({
       success(res) {
         // var userInfo = res.userInfo
-        // self.nickName = res.userInfo.nickName
         self.avatarUrl = res.userInfo.avatarUrl
+        self.nickName = res.userInfo.nickName
       }
     })
   }
