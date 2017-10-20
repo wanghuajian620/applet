@@ -1,19 +1,21 @@
 
-  <view>
-    <view class="background">
-      <view class="all word">
-        <text style="color: {{color1}} " bindtap="js">javascript</text>
-        <text style="color: {{color2}}" bindtap="HTML">HTML</text>
-        <text style="color: {{color3}}" bindtap="Node">Node.js</text>
-        <text style="color: {{color4}}" bindtap="ES6">ES6</text>
-        <text style="color: {{color5}}" bindtap="CSS">CSS</text>
-      </view>
+  <scroll-view scroll-y="true" style="height: {{height}}px; width:{{width}}px">
+    <view class="line">
+    </view>
+    <view class="all word">
+        <text style="color: {{color1}}; border-bottom: 1px solid {{color11}}" bindtap="js">JavaScript</text>
+        <text style="color: {{color2}}; border-bottom: 1px solid {{color22}}" bindtap="HTML">HTML5</text>
+        <text style="color: {{color3}}; border-bottom: 1px solid {{color33}}" bindtap="Node">Node.js</text>
+        <text style="color: {{color4}}; border-bottom: 1px solid {{color44}}" bindtap="ES6">ES6</text>
+        <text style="color: {{color5}}; border-bottom: 1px solid {{color55}}" bindtap="CSS">CSS</text>
+      </view>  
+    <!-- <view class="background"> -->
       <!-- <text class="js">{{text}}</text> -->
       <!-- <view class="background"> -->
-    </view>
+    <!-- </view> -->
     <view>
       <text bindtap="onShareAppMessage"/>
       <text bindtap="onPullDownRefresh"/>
       <text bindtap="startPullDownRefresh"/>
     </view>
-  </view>
+  </scroll-view>

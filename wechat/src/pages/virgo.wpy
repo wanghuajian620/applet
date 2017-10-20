@@ -14,7 +14,7 @@
   font-size: 15px
 }
 .distance {
-  margin: 20px 15px 8px 15px
+  margin: 5px 15px 5px 15px
 }
 .age {
   display: flex;
@@ -26,11 +26,17 @@
   margin-left: 15px;
 }
 .ago1 {
-  padding-top: 6px
+  padding-bottom: 10px;
+  // padding-top: 6px
 }
 .border {
   height: 250px;
   width: 350px
+}
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  color: transparent;
 }
 
 </style>
@@ -38,27 +44,29 @@
 
 <template>
 <view>
-  <view class="flex">
-    <image @tap="a" class="box distance border" src="http://localhost:5000/d94182b201b59e20e1778744e6247458.jpg"></image>  
-  </view>
-  <view class="age ago">
-    <text>20岁以前</text>
-    <view class="ago1 word">2017-10-19 16:35:20</view>
-  </view>
-  <view class="flex">  
-    <image @tap="b" class="box distance border" src="http://localhost:5000/d94182b201b59e20e1778744e6247458.jpg"></image>
-  </view>
-  <view class="age ago">
-    <text>20岁以后40岁以前</text>
-    <view class="ago1 word">2017-10-19 17:33:20</view>
-  </view>  
-  <view class="flex">  
-    <image @tap="c" class="box distance border" src="http://localhost:5000/d94182b201b59e20e1778744e6247458.jpg"></image>
-  </view>
-  <view class="age ago">
-    <text>40岁以后</text>
-    <view class="ago1 word">2017-10-19 17:36:20</view>
-  </view> 
+  <scroll-view scroll-y= "true" style="height: {{height}}px; width:{{width}}px">
+    <view class="flex">
+      <image @tap="a" class="box distance border" src="{{teenager}}"></image>
+    </view>
+    <view class="age ago">
+      <text>20岁以前</text>
+      <view class="ago1 word">2017-10-19 16:35:20</view>
+    </view>
+    <view class="flex">
+      <image @tap="b" class="box distance border" src="{{youth}}"></image>
+    </view>
+    <view class="age ago">
+      <text>20岁以后40岁以前</text>
+      <view class="ago1 word">2017-10-19 17:33:20</view>
+    </view>  
+    <view class="flex">  
+      <image @tap="c" class="box distance border" src="{{adult}}"></image>
+    </view>
+    <view class="age ago">
+      <text>40岁以后</text>
+      <view class="ago1 word">2017-10-19 17:36:20</view>
+    </view> 
+  </scroll-view>
 </view>  
 </template>
 
@@ -67,12 +75,14 @@
 import wepy from 'wepy'
 export default class Index extends wepy.page {
   config = {
-    navigationBarTitleText: '博客'
+    navigationBarTitleText: '我的博客'
   }
   data = {
-    teenager: '../image/3f828038d65fbf33d963fd56a1055593.jpeg',
-    youth: '../image/3f828038d65fbf33d963fd56a1055593.jpeg',
-    adult: '../image/3f828038d65fbf33d963fd56a1055593.jpeg'
+    teenager: '../image/ddb69b9490b27b2d6518589cddfcb557.jpeg',
+    youth: '../image/ddb69b9490b27b2d6518589cddfcb557.jpeg',
+    adult: '../image/ddb69b9490b27b2d6518589cddfcb557.jpeg',
+    height: 0,
+    width: 0
   }
   methods = {
     a() {
@@ -91,6 +101,14 @@ export default class Index extends wepy.page {
       })
     }
   }
-  onLoad() {}
+  onLoad() {
+    let self = this
+    wepy.getSystemInfo({
+      success(res) {
+        self.height = res.windowHeight
+        self.width = res.windowWidth
+      }
+    })
+  }
 }
 </script>

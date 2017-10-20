@@ -27,10 +27,10 @@
 import wepy from 'wepy'
 export default class Index extends wepy.page {
   config = {
-    navigationBarTitleText: '博客'
+    navigationBarTitleText: 'Email'
   }
   data = {
-    email: 'sunshineboy_1026@163.com'
+    email: 'Email: sunshineboy_1026@163.com'
   }
   onLoad() {}
 }

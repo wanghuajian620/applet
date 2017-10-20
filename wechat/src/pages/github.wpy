@@ -31,7 +31,7 @@
 import wepy from 'wepy'
 export default class Index extends wepy.page {
   config = {
-    navigationBarTitleText: '博客'
+    navigationBarTitleText: 'Github'
   }
   data = {
     github: 'http://github.com/wanghuajian620'

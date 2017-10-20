@@ -4,16 +4,19 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: #008B8B;
+  // background-color: darkgray;
+  margin-top: 5px
+  
 }
 .word {
-  font-size: 13px
+  font-size: 13px;
+  // font-weight: 900 // 字体加粗
 }
 
 .line {
-  border-right: 1px solid black; // border-left: 1px solid black;
-  //margin-right: 20px;
-  height: 30px;
+  border: 1px solid darkgrey;
+  background-color: #F8F8FF; 
+  width: 100%;
 }
 
 .js {
@@ -26,28 +29,35 @@
   background-image: url('http://im6.leaderhero.com/wallpaper/201/874289.417.741.85c484.jpg');
   background-repeat: no-repeat;
 }
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  color: transparent;
+}
 </style>
 
 
 <template>
-  <view>
-    <view class="background">
-      <view class="all word">
-        <text style="color: {{color1}} " @tap="js">javascript</text>
-        <text style="color: {{color2}}" @tap="HTML">HTML</text>
-        <text style="color: {{color3}}" @tap="Node">Node.js</text>
-        <text style="color: {{color4}}" @tap="ES6">ES6</text>
-        <text style="color: {{color5}}" @tap="CSS">CSS</text>
-      </view>
+  <scroll-view scroll-y= "true" style="height: {{height}}px; width:{{width}}px">
+    <view class="line">
+    </view>
+    <view class="all word">
+        <text style="color: {{color1}}; border-bottom: 1px solid {{color11}}" @tap="js">JavaScript</text>
+        <text style="color: {{color2}}; border-bottom: 1px solid {{color22}}" @tap="HTML">HTML5</text>
+        <text style="color: {{color3}}; border-bottom: 1px solid {{color33}}" @tap="Node">Node.js</text>
+        <text style="color: {{color4}}; border-bottom: 1px solid {{color44}}" @tap="ES6">ES6</text>
+        <text style="color: {{color5}}; border-bottom: 1px solid {{color55}}" @tap="CSS">CSS</text>
+      </view>  
+    <!-- <view class="background"> -->
       <!-- <text class="js">{{text}}</text> -->
       <!-- <view class="background"> -->
-    </view>
+    <!-- </view> -->
     <view>
       <text @tap="onShareAppMessage"></text>
       <text @tap="onPullDownRefresh"></text>
       <text @tap="startPullDownRefresh"></text>
     </view>
-  </view>
+  </scroll-view>
 </template>
 
 
@@ -56,27 +66,39 @@ import wepy from 'wepy'
 
 export default class Index extends wepy.page {
   config = {
-    navigationBarTitleText: '博客',
+    navigationBarTitleText: '分类',
     enablePullDownRefresh: true
   }
   data = {
     text: 'js',
-    color1: '#CCFFFF',
+    color1: '#62b900',
+    color11: '#62b900',
     color2: '#202020',
+    color22: '#FFFFFF',
     color3: '#202020',
+    color33: '#FFFFFF',
     color4: '#202020',
-    color5: '#202020'
+    color44: '#FFFFFF',
+    color5: '#202020',
+    color55: '#FFFFFF',
+    height: 0,
+    width: 0
   }
   methods = {
     js() {
       let self = this
 
       self.text = 'javascript'
-      self.color1 = '#CCFFFF'
+      self.color1 = '#62b900'
+      self.color11 = '#62b900'
       self.color2 = '#202020'
+      self.color22 = '#FFFFFF'
       self.color3 = '#202020'
+      self.color33 = '#FFFFFF'
       self.color4 = '#202020'
+      self.color44 = '#FFFFFF'
       self.color5 = '#202020'
+      self.color55 = '#FFFFFF'
     },
 
     HTML() {
@@ -84,44 +106,71 @@ export default class Index extends wepy.page {
 
       self.text = 'client'
       self.color1 = '#202020'
-      self.color2 = '#CCFFFF'
+      self.color11 = '#FFFFFF'
+      self.color2 = '#62b900'
+      self.color22 = '#62b900'
       self.color3 = '#202020'
+      self.color33 = '#FFFFFF'
       self.color4 = '#202020'
+      self.color44 = '#FFFFFF'
       self.color5 = '#202020'
+      self.color55 = '#FFFFFF'
     },
     Node() {
       let self = this
 
       self.text = 'server'
       self.color1 = '#202020'
+      self.color11 = '#FFFFFF'
       self.color2 = '#202020'
-      self.color3 = '#CCFFFF'
+      self.color22 = '#FFFFFF'
+      self.color3 = '#62b900'
+      self.color33 = '#62b900'
       self.color4 = '#202020'
+      self.color44 = '#FFFFFF'
       self.color5 = '#202020'
+      self.color55 = '#FFFFFF'
     },
     ES6() {
       let self = this
 
       self.text = 'jotting'
       self.color1 = '#202020'
+      self.color11 = '#FFFFFF'
       self.color2 = '#202020'
+      self.color22 = '#FFFFFF'
       self.color3 = '#202020'
-      self.color4 = '#CCFFFF'
+      self.color33 = '#FFFFFF'
+      self.color4 = '#62b900'
+      self.color44 = '#62b900'
       self.color5 = '#202020'
+      self.color55 = '#FFFFFF'
     },
     CSS() {
       let self = this
 
       self.text = 'CSS'
       self.color1 = '#202020'
+      self.color11 = '#FFFFFF'
       self.color2 = '#202020'
+      self.color22 = '#FFFFFF'
       self.color3 = '#202020'
+      self.color33 = '#FFFFFF'
       self.color4 = '#202020'
-      self.color5 = '#CCFFFF'
+      self.color44 = '#FFFFFF'
+      self.color5 = '#62b900'
+      self.color55 = '#62b900'
     }
   }
-  onLoad() { }
-
+  onLoad() {
+    let self = this
+    wepy.getSystemInfo({
+      success(res) {
+        self.height = res.windowHeight
+        self.width = res.windowWidth
+      }
+    })
+  }
   onPullDownRefresh() {
     wepy.startPullDownRefresh()
     setTimeout(function() {
