@@ -1,18 +1,26 @@
 
-  <view>
+  <view class="background">
+    <view class="top">
+    </view>
     <view class="flex box">
       <image class="circle" src="{{avatarUrl}}"/>
       <text>{{nickName}}</text>
     </view>
-    <view class="flex1 box">
-      <image bindtap="github" class="github" src="{{cat}}"/>
-      <text style="color: {{color1}}">My Github</text>
+    <view class="techcat distance1">
+      <view class="background1 techcat border">
+        <image class="icon distance" src="{{cat}}"/>
+        <text>My Github</text>
+        <image bindtap="github" class="icon distance2" src="{{symbol}}"/>
+      </view>
     </view>
-    <view class="flex1 box">
-      <image bindtap="email" class="github" src="{{email}}"/>
-      <text style="color: {{color2}}">My Email</text>
+    <view class="techcat distance3">
+      <view class="background1 techcat border1">
+        <image class="icon distance" src="{{email}}"/>
+        <text>My Email</text>
+        <image bindtap="email" class="icon distance4" src="{{sign}}"/>
+      </view>
     </view>
     <view>
       <text bindtap="onShareAppMessage"/>
-    </view>  
+    </view>
   </view>

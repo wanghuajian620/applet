@@ -1,22 +1,20 @@
 <style lang="less">
-.photo {
-  background-color: white;
-  height: 555px;
-  width: 375px;
-  background-image: url('http://im6.leaderhero.com/wallpaper/20150625/9a10dbb1f3.jpg.417_741.jpg');
-  background-repeat: no-repeat
+.top {
+  height: 30px;
+  width: 100%;
+  background-color: #F8F8F8
 }
 
-.box {
-  height: 150px;
-  width: 100%; 
+.background {
+  width: 100%;
+  height: 560px;
+  background-color: #F8F8F8
 }
 
-.circle {
-  height: 100px;
-  width: 100px;
-  border: 1px solid green;
-  border-radius: 50%;
+.background1 {
+  width: 340px;
+  height: 80px;
+  background-color: #FFFFFF
 }
 
 .flex {
@@ -24,40 +22,99 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 30px
 }
 
-.flex1 {
+.box {
+  height: 150px;
+  width: 100%;
+}
+
+.border {
+  height: 40px;
+  width: 340px;
+  border-radius: 5px;
+  border: 1px solid #FFFFFF
+}
+
+.border1 {
+  height: 40px;
+  width: 340px;
+  border-radius: 5px;
+  border: 1px solid #FFFFFF
+}
+
+.circle {
+  height: 70px;
+  width: 70px;
+  border: 1px solid green;
+  border-radius: 50%;
+}
+
+.techcat {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center
 }
 
-.github {
-  height: 50px;
-  width: 50px;
-  border: 1px solid green;
-  border-radius: 50%
+.distance {
+  margin: 5px 10px 5px 15px
+}
+
+.distance1 {
+  margin-top: 80px;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+.distance3 {
+  margin-left: 15px;
+  margin-right: 10px
+}
+
+.distance2 {
+  margin-left: 150px;
+  margin-right: 5px
+}
+
+.distance4 {
+  margin-left: 160px;
+  margin-right: 5px
+}
+
+.icon {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid white
 }
 </style>
 
 <template>
-  <view>
+  <view class="background">
+    <view class="top">
+    </view>
     <view class="flex box">
       <image class="circle" src="{{avatarUrl}}"></image>
       <text>{{nickName}}</text>
     </view>
-    <view class="flex1 box">
-      <image @tap="github" class="github" src="{{cat}}"></image>
-      <text style="color: {{color1}}">My Github</text>
+    <view class="techcat distance1">
+      <view class="background1 techcat border">
+        <image class="icon distance" src="{{cat}}"></image>
+        <text>My Github</text>
+        <image @tap="github" class="icon distance2" src="{{symbol}}"></image>
+      </view>
     </view>
-    <view class="flex1 box">
-      <image @tap="email" class="github" src="{{email}}"></image>
-      <text style="color: {{color2}}">My Email</text>
+    <view class="techcat distance3">
+      <view class="background1 techcat border1">
+        <image class="icon distance" src="{{email}}"></image>
+        <text>My Email</text>
+        <image @tap="email" class="icon distance4" src="{{sign}}"></image>
+      </view>
     </view>
     <view>
       <text @tap="onShareAppMessage"></text>
-    </view>  
+    </view>
   </view>
 </template>
 
@@ -72,25 +129,37 @@ export default class Index extends wepy.page {
   data = {
     avatarUrl: '',
     nickName: '',
-    cat: '../image/github.png',
-    email: '../image/邮箱-2.png',
-    color1: 'black',
-    color2: 'black'
+    cat: '../image/github-3.png',
+    symbol: '../image/下一步.png',
+    email: '../image/邮件.png',
+    sign: '../image/下一步.png'
   }
   methods = {
     github() {
-      wepy.navigateTo({
-        url: './github'
+      wepy.showModal({
+        title: 'My Github',
+        content: 'http://github.com/wanghuajian620',
+        success: function(res) {
+          if (res.confirm) {
+            console.log('true')
+          } else if (res.cancel) {
+            console.log('true')
+          }
+        }
       })
-      let self = this
-      self.color1 = 'green'
     },
     email() {
-      wepy.navigateTo({
-        url: './email'
+      wepy.showModal({
+        title: 'My Email',
+        content: 'sunshineboy_1026@163.com',
+        success: function(res) {
+          if (res.confirm) {
+            console.log('true')
+          } else if (res.cancel) {
+            console.log('true')
+          }
+        }
       })
-      let self = this
-      self.color2 = 'green'
     },
     onShareAppMessage() {
       return {
@@ -103,7 +172,6 @@ export default class Index extends wepy.page {
     let self = this
     wepy.getUserInfo({
       success(res) {
-        // var userInfo = res.userInfo
         self.avatarUrl = res.userInfo.avatarUrl
         self.nickName = res.userInfo.nickName
       }

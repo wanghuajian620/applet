@@ -6,21 +6,21 @@
     </view>
     <view class="age ago">
       <text>20岁以前</text>
-      <view class="ago1 word">2017-10-19 16:35:20</view>
+      <view class="bottom word">2017-10-19 16:35:20</view>
     </view>
     <view class="flex">
       <image bindtap="b" class="box distance border" src="{{youth}}"/>
     </view>
     <view class="age ago">
       <text>20岁以后40岁以前</text>
-      <view class="ago1 word">2017-10-19 17:33:20</view>
+      <view class="bottom word">2017-10-19 17:33:20</view>
     </view>  
     <view class="flex">  
       <image bindtap="c" class="box distance border" src="{{adult}}"/>
     </view>
     <view class="age ago">
       <text>40岁以后</text>
-      <view class="ago1 word">2017-10-19 17:36:20</view>
+      <view class="bottom word">2017-10-19 17:36:20</view>
     </view> 
   </scroll-view>
 </view>
