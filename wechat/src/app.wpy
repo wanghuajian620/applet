@@ -22,9 +22,7 @@ export default class extends wepy.app {
       'pages/third',
       'pages/photo',
       'pages/classify',
-      'pages/me',
-      'pages/github',
-      'pages/email'
+      'pages/me'
     ],
     window: {
       backgroundTextStyle: 'dark',
