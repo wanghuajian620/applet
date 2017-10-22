@@ -5,6 +5,13 @@
   justify-content: center;
   align-items: center
 }
+.flextop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 13px
+}
 .box {
   background-color: grey;
   height: 250px;
@@ -44,25 +51,25 @@
 <template>
 <view>
   <scroll-view scroll-y= "true" style="height: {{height}}px; width:{{width}}px">
-    <view class="flex">
-      <image @tap="a" class="box distance border" src="{{teenager}}"></image>
+    <view class="flextop">
+      <image @tap="tree" class="box distance border" src="{{teenager}}"></image>
     </view>
     <view class="age ago">
-      <text>20岁以前</text>
+      <text>那棵树下</text>
       <view class="bottom word">2017-10-19 16:35:20</view>
     </view>
     <view class="flex">
-      <image @tap="b" class="box distance border" src="{{youth}}"></image>
+      <image @tap="sea" class="box distance border" src="{{youth}}"></image>
     </view>
     <view class="age ago">
-      <text>20岁以后40岁以前</text>
+      <text>那片大海</text>
       <view class="bottom word">2017-10-19 17:33:20</view>
     </view>  
     <view class="flex">  
-      <image @tap="c" class="box distance border" src="{{adult}}"></image>
+      <image @tap="landmark" class="box distance border" src="{{adult}}"></image>
     </view>
     <view class="age ago">
-      <text>40岁以后</text>
+      <text>那个地标</text>
       <view class="bottom word">2017-10-19 17:36:20</view>
     </view> 
   </scroll-view>
@@ -84,17 +91,17 @@ export default class Index extends wepy.page {
     width: 0
   }
   methods = {
-    a() {
+    tree() {
       wepy.navigateTo({
         url: './first'
       })
     },
-    b() {
+    sea() {
       wepy.navigateTo({
         url: './second'
       })
     },
-    c() {
+    landmark() {
       wepy.navigateTo({
         url: './third'
       })

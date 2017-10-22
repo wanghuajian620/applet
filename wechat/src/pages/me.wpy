@@ -11,7 +11,7 @@
   background-color: #F8F8F8
 }
 
-.background1 {
+.backgroundcat {
   width: 340px;
   height: 80px;
   background-color: #FFFFFF
@@ -30,14 +30,12 @@
   width: 100%;
 }
 
-.border {
-  height: 40px;
+.line {
   width: 340px;
-  border-radius: 5px;
-  border: 1px solid #FFFFFF
+  border: 1px solid #F8F8F8
 }
 
-.border1 {
+.border {
   height: 40px;
   width: 340px;
   border-radius: 5px;
@@ -47,7 +45,7 @@
 .circle {
   height: 70px;
   width: 70px;
-  border: 1px solid green;
+  border: 1px solid #87CEFF;
   border-radius: 50%;
 }
 
@@ -61,23 +59,23 @@
   margin: 5px 10px 5px 15px
 }
 
-.distance1 {
+.distancecat {
   margin-top: 80px;
   margin-left: 15px;
   margin-right: 10px;
 }
 
-.distance3 {
+.distanceemail {
   margin-left: 15px;
   margin-right: 10px
 }
 
-.distance2 {
+.space {
   margin-left: 150px;
   margin-right: 5px
 }
 
-.distance4 {
+.interval {
   margin-left: 160px;
   margin-right: 5px
 }
@@ -98,18 +96,19 @@
       <image class="circle" src="{{avatarUrl}}"></image>
       <text>{{nickName}}</text>
     </view>
-    <view class="techcat distance1">
-      <view class="background1 techcat border">
+    <view @tap="github" class="techcat distancecat">
+      <view class="backgroundcat techcat border">
         <image class="icon distance" src="{{cat}}"></image>
         <text>My Github</text>
-        <image @tap="github" class="icon distance2" src="{{symbol}}"></image>
+        <image class="icon space" src="{{symbol}}"></image>
       </view>
     </view>
-    <view class="techcat distance3">
-      <view class="background1 techcat border1">
+    <view class="line"></view>
+    <view @tap="email" class="techcat distanceemail">
+      <view class="backgroundcat techcat border">
         <image class="icon distance" src="{{email}}"></image>
         <text>My Email</text>
-        <image @tap="email" class="icon distance4" src="{{sign}}"></image>
+        <image class="icon interval" src="{{sign}}"></image>
       </view>
     </view>
     <view>
@@ -136,28 +135,38 @@ export default class Index extends wepy.page {
   }
   methods = {
     github() {
-      wepy.showModal({
-        title: 'My Github',
-        content: 'http://github.com/wanghuajian620',
+      wepy.setClipboardData({
+        data: 'http://github.com/wanghuajian620',
         success: function(res) {
-          if (res.confirm) {
-            console.log('true')
-          } else if (res.cancel) {
-            console.log('true')
-          }
+          wepy.showActionSheet({
+            itemList: ['http://github.com/wanghuajian620'],
+            success: function(res) {
+              if (res.tapIndex === 0) {
+                wepy.showModal({
+                  title: '提示',
+                  content: '复制成功'
+                })
+              }
+            }
+          })
         }
       })
     },
     email() {
-      wepy.showModal({
-        title: 'My Email',
-        content: 'sunshineboy_1026@163.com',
+      wepy.setClipboardData({
+        data: 'sunshineboy_1026@163.com',
         success: function(res) {
-          if (res.confirm) {
-            console.log('true')
-          } else if (res.cancel) {
-            console.log('true')
-          }
+          wepy.showActionSheet({
+            itemList: ['sunshineboy_1026@163.com'],
+            success: function(res) {
+              if (res.tapIndex === 0) {
+                wepy.showModal({
+                  title: '提示',
+                  content: '复制成功'
+                })
+              }
+            }
+          })
         }
       })
     },

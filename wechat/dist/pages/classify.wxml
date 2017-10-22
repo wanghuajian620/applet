@@ -3,11 +3,11 @@
     <view class="line">
     </view>
     <view class="all word">
-        <text style="color: {{color1}}; border-bottom: 1px solid {{color11}}" bindtap="js">JavaScript</text>
-        <text style="color: {{color2}}; border-bottom: 1px solid {{color22}}" bindtap="HTML">HTML5</text>
-        <text style="color: {{color3}}; border-bottom: 1px solid {{color33}}" bindtap="Node">Node.js</text>
-        <text style="color: {{color4}}; border-bottom: 1px solid {{color44}}" bindtap="ES6">ES6</text>
-        <text style="color: {{color5}}; border-bottom: 1px solid {{color55}}" bindtap="CSS">CSS</text>
+        <text style="color: {{JavaScript}}; border-bottom: 1px solid {{JavaScriptline}}" bindtap="js">JavaScript</text>
+        <text style="color: {{HTML}}; border-bottom: 1px solid {{HTMLline}}" bindtap="HTML">HTML5</text>
+        <text style="color: {{Node}}; border-bottom: 1px solid {{Nodeline}}" bindtap="Node">Node.js</text>
+        <text style="color: {{ES6}}; border-bottom: 1px solid {{ES6line}}" bindtap="ES6">ES6</text>
+        <text style="color: {{CSS}}; border-bottom: 1px solid {{CSSline}}" bindtap="CSS">CSS</text>
       </view>  
     <!-- <view class="background"> -->
       <!-- <text class="js">{{text}}</text> -->

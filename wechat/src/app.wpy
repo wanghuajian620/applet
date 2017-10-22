@@ -28,7 +28,7 @@ export default class extends wepy.app {
     ],
     window: {
       backgroundTextStyle: 'dark',
-      navigationBarBackgroundColor: '#62b900',
+      navigationBarBackgroundColor: '#87CEFF',
       navigationBarTitleText: 'my virgo blog',
       navigationBarTextStyle: 'black'
     },

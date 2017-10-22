@@ -41,11 +41,11 @@
     <view class="line">
     </view>
     <view class="all word">
-        <text style="color: {{color1}}; border-bottom: 1px solid {{color11}}" @tap="js">JavaScript</text>
-        <text style="color: {{color2}}; border-bottom: 1px solid {{color22}}" @tap="HTML">HTML5</text>
-        <text style="color: {{color3}}; border-bottom: 1px solid {{color33}}" @tap="Node">Node.js</text>
-        <text style="color: {{color4}}; border-bottom: 1px solid {{color44}}" @tap="ES6">ES6</text>
-        <text style="color: {{color5}}; border-bottom: 1px solid {{color55}}" @tap="CSS">CSS</text>
+        <text style="color: {{JavaScript}}; border-bottom: 1px solid {{JavaScriptline}}" @tap="js">JavaScript</text>
+        <text style="color: {{HTML}}; border-bottom: 1px solid {{HTMLline}}" @tap="HTML">HTML5</text>
+        <text style="color: {{Node}}; border-bottom: 1px solid {{Nodeline}}" @tap="Node">Node.js</text>
+        <text style="color: {{ES6}}; border-bottom: 1px solid {{ES6line}}" @tap="ES6">ES6</text>
+        <text style="color: {{CSS}}; border-bottom: 1px solid {{CSSline}}" @tap="CSS">CSS</text>
       </view>  
     <!-- <view class="background"> -->
       <!-- <text class="js">{{text}}</text> -->
@@ -70,16 +70,16 @@ export default class Index extends wepy.page {
   }
   data = {
     text: 'js',
-    color1: '#62b900',
-    color11: '#62b900',
-    color2: '#202020',
-    color22: '#FFFFFF',
-    color3: '#202020',
-    color33: '#FFFFFF',
-    color4: '#202020',
-    color44: '#FFFFFF',
-    color5: '#202020',
-    color55: '#FFFFFF',
+    JavaScript: '#62b900',
+    JavaScriptline: '#62b900',
+    HTML: '#202020',
+    HTMLline: '#FFFFFF',
+    Node: '#202020',
+    Nodeline: '#FFFFFF',
+    ES6: '#202020',
+    ES6line: '#FFFFFF',
+    CSS: '#202020',
+    CSSline: '#FFFFFF',
     height: 0,
     width: 0
   }
@@ -88,77 +88,77 @@ export default class Index extends wepy.page {
       let self = this
 
       self.text = 'javascript'
-      self.color1 = '#62b900'
-      self.color11 = '#62b900'
-      self.color2 = '#202020'
-      self.color22 = '#FFFFFF'
-      self.color3 = '#202020'
-      self.color33 = '#FFFFFF'
-      self.color4 = '#202020'
-      self.color44 = '#FFFFFF'
-      self.color5 = '#202020'
-      self.color55 = '#FFFFFF'
+      self.JavaScript = '#62b900'
+      self.JavaScriptline = '#62b900'
+      self.HTML = '#202020'
+      self.HTMLline = '#FFFFFF'
+      self.Node = '#202020'
+      self.Nodeline = '#FFFFFF'
+      self.ES6 = '#202020'
+      self.ES6line = '#FFFFFF'
+      self.CSS = '#202020'
+      self.CSSline = '#FFFFFF'
     },
 
     HTML() {
       let self = this
 
       self.text = 'client'
-      self.color1 = '#202020'
-      self.color11 = '#FFFFFF'
-      self.color2 = '#62b900'
-      self.color22 = '#62b900'
-      self.color3 = '#202020'
-      self.color33 = '#FFFFFF'
-      self.color4 = '#202020'
-      self.color44 = '#FFFFFF'
-      self.color5 = '#202020'
-      self.color55 = '#FFFFFF'
+      self.JavaScript = '#202020'
+      self.JavaScriptline = '#FFFFFF'
+      self.HTML = '#62b900'
+      self.HTMLline = '#62b900'
+      self.Node = '#202020'
+      self.Nodeline = '#FFFFFF'
+      self.ES6 = '#202020'
+      self.ES6line = '#FFFFFF'
+      self.CSS = '#202020'
+      self.CSSline = '#FFFFFF'
     },
     Node() {
       let self = this
 
       self.text = 'server'
-      self.color1 = '#202020'
-      self.color11 = '#FFFFFF'
-      self.color2 = '#202020'
-      self.color22 = '#FFFFFF'
-      self.color3 = '#62b900'
-      self.color33 = '#62b900'
-      self.color4 = '#202020'
-      self.color44 = '#FFFFFF'
-      self.color5 = '#202020'
-      self.color55 = '#FFFFFF'
+      self.JavaScript = '#202020'
+      self.JavaScriptline = '#FFFFFF'
+      self.HTML = '#202020'
+      self.HTMLline = '#FFFFFF'
+      self.Node = '#62b900'
+      self.Nodeline = '#62b900'
+      self.ES6 = '#202020'
+      self.ES6line = '#FFFFFF'
+      self.CSS = '#202020'
+      self.CSSline = '#FFFFFF'
     },
     ES6() {
       let self = this
 
       self.text = 'jotting'
-      self.color1 = '#202020'
-      self.color11 = '#FFFFFF'
-      self.color2 = '#202020'
-      self.color22 = '#FFFFFF'
-      self.color3 = '#202020'
-      self.color33 = '#FFFFFF'
-      self.color4 = '#62b900'
-      self.color44 = '#62b900'
-      self.color5 = '#202020'
-      self.color55 = '#FFFFFF'
+      self.JavaScript = '#202020'
+      self.JavaScriptline = '#FFFFFF'
+      self.HTML = '#202020'
+      self.HTMLline = '#FFFFFF'
+      self.Node = '#202020'
+      self.Nodeline = '#FFFFFF'
+      self.ES6 = '#62b900'
+      self.ES6line = '#62b900'
+      self.CSS = '#202020'
+      self.CSSline = '#FFFFFF'
     },
     CSS() {
       let self = this
 
       self.text = 'CSS'
-      self.color1 = '#202020'
-      self.color11 = '#FFFFFF'
-      self.color2 = '#202020'
-      self.color22 = '#FFFFFF'
-      self.color3 = '#202020'
-      self.color33 = '#FFFFFF'
-      self.color4 = '#202020'
-      self.color44 = '#FFFFFF'
-      self.color5 = '#62b900'
-      self.color55 = '#62b900'
+      self.JavaScript = '#202020'
+      self.JavaScriptline = '#FFFFFF'
+      self.HTML = '#202020'
+      self.HTMLline = '#FFFFFF'
+      self.Node = '#202020'
+      self.Nodeline = '#FFFFFF'
+      self.ES6 = '#202020'
+      self.ES6line = '#FFFFFF'
+      self.CSS = '#62b900'
+      self.CSSline = '#62b900'
     }
   }
   onLoad() {

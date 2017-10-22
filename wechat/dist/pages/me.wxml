@@ -6,18 +6,19 @@
       <image class="circle" src="{{avatarUrl}}"/>
       <text>{{nickName}}</text>
     </view>
-    <view class="techcat distance1">
-      <view class="background1 techcat border">
+    <view bindtap="github" class="techcat distancecat">
+      <view class="backgroundcat techcat border">
         <image class="icon distance" src="{{cat}}"/>
         <text>My Github</text>
-        <image bindtap="github" class="icon distance2" src="{{symbol}}"/>
+        <image class="icon space" src="{{symbol}}"/>
       </view>
     </view>
-    <view class="techcat distance3">
-      <view class="background1 techcat border1">
+    <view class="line"/>
+    <view bindtap="email" class="techcat distanceemail">
+      <view class="backgroundcat techcat border">
         <image class="icon distance" src="{{email}}"/>
         <text>My Email</text>
-        <image bindtap="email" class="icon distance4" src="{{sign}}"/>
+        <image class="icon interval" src="{{sign}}"/>
       </view>
     </view>
     <view>
