@@ -32,23 +32,23 @@ export default class extends wepy.app {
     },
     tabBar: {
       color: '#404040',
-      selectedColor: '#62b900',
+      selectedColor: '#87CEFF',
       backgroundColor: '#F0F0F0',
       list: [{
         pagePath: 'pages/virgo',
         text: '首页',
         iconPath: './image/homepage.png',
-        selectedIconPath: './image/homepage_fill.png'
+        selectedIconPath: './image/homepage_fill-2.png'
       }, {
         pagePath: 'pages/classify',
         text: '分类',
         iconPath: './image/manage.png',
-        selectedIconPath: './image/manage_fill.png'
+        selectedIconPath: './image/manage_fill-2.png'
       }, {
         pagePath: 'pages/me',
         text: '我',
         iconPath: './image/people.png',
-        selectedIconPath: './image/people_fill.png'
+        selectedIconPath: './image/people_fill-2.png'
       }]
     }
   }

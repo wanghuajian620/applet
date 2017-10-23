@@ -1,26 +1,32 @@
 
 <view>
   <scroll-view scroll-y="true" style="height: {{height}}px; width:{{width}}px">
-    <view class="flextop">
-      <image bindtap="tree" class="box distance border" src="{{teenager}}"/>
+    <view bindtap="tree">
+      <view class="flextop">
+        <image class="box distance border" src="{{teenager}}"/>
+      </view>
+      <view class="flexphoto ago">
+        <text class="wordtext">那棵树下</text>
+        <view class="bottom worddate">2017-10-19 16:35:20</view>
+      </view>
     </view>
-    <view class="age ago">
-      <text>那棵树下</text>
-      <view class="bottom word">2017-10-19 16:35:20</view>
+    <view bindtap="sea">  
+      <view class="flex">
+        <image class="box distance border" src="{{youth}}"/>
+      </view>
+      <view class="flexphoto ago">
+        <text class="wordtext">那片大海</text>
+        <view class="bottom worddate">2017-10-19 17:33:20</view>
+      </view>
     </view>
-    <view class="flex">
-      <image bindtap="sea" class="box distance border" src="{{youth}}"/>
-    </view>
-    <view class="age ago">
-      <text>那片大海</text>
-      <view class="bottom word">2017-10-19 17:33:20</view>
-    </view>  
-    <view class="flex">  
-      <image bindtap="landmark" class="box distance border" src="{{adult}}"/>
-    </view>
-    <view class="age ago">
-      <text>那个地标</text>
-      <view class="bottom word">2017-10-19 17:36:20</view>
-    </view> 
+    <view bindtap="landmark">    
+      <view class="flex">  
+        <image class="box distance border" src="{{adult}}"/>
+      </view>
+      <view class="flexphoto ago">
+        <text class="wordtext">那个地标</text>
+        <view class="bottom worddate">2017-10-19 17:36:20</view>
+      </view>
+    </view>   
   </scroll-view>
 </view>

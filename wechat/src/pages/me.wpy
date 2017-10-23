@@ -2,19 +2,19 @@
 .top {
   height: 30px;
   width: 100%;
-  background-color: #F8F8F8
+  background-color: #FFFFFF
 }
 
 .background {
   width: 100%;
   height: 560px;
-  background-color: #F8F8F8
+  background-color: #FFFFFF
 }
 
 .backgroundcat {
   width: 340px;
   height: 80px;
-  background-color: #FFFFFF
+  background-color: #F8F8F8
 }
 
 .flex {
@@ -32,14 +32,14 @@
 
 .line {
   width: 340px;
-  border: 1px solid #F8F8F8
+  border: 1px solid #FFFFFF
 }
 
 .border {
   height: 40px;
   width: 340px;
   border-radius: 5px;
-  border: 1px solid #FFFFFF
+  border: 1px solid #F8F8F8
 }
 
 .circle {
@@ -84,7 +84,7 @@
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  border: 1px solid white
+  border: 1px solid #F8F8F8
 }
 </style>
 
