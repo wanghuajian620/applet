@@ -86,35 +86,44 @@
   border-radius: 50%;
   border: 1px solid #F8F8F8
 }
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  color: transparent
+}
 </style>
 
 <template>
-  <view class="background">
-    <view class="top">
-    </view>
-    <view class="flex box">
-      <image class="circle" src="{{avatarUrl}}"></image>
-      <text>{{nickName}}</text>
-    </view>
-    <view @tap="github" class="techcat distancecat">
-      <view class="backgroundcat techcat border">
-        <image class="icon distance" src="{{cat}}"></image>
-        <text>My Github</text>
-        <image class="icon space" src="{{symbol}}"></image>
+<view>
+  <view style="height: {{height}}px; width:{{width}}px">
+    <view class="background">
+      <view class="top">
       </view>
-    </view>
-    <view class="line"></view>
-    <view @tap="email" class="techcat distanceemail">
-      <view class="backgroundcat techcat border">
-        <image class="icon distance" src="{{email}}"></image>
-        <text>My Email</text>
-        <image class="icon interval" src="{{sign}}"></image>
+      <view class="flex box">
+        <image class="circle" src="{{avatarUrl}}"></image>
+        <text>{{nickName}}</text>
       </view>
-    </view>
-    <view>
-      <text @tap="onShareAppMessage"></text>
+      <view @tap="github" class="techcat distancecat">
+        <view class="backgroundcat techcat border">
+          <image class="icon distance" src="{{cat}}"></image>
+          <text>My Github</text>
+          <image class="icon space" src="{{symbol}}"></image>
+        </view>
+      </view>
+      <view class="line"></view>
+      <view @tap="email" class="techcat distanceemail">
+        <view class="backgroundcat techcat border">
+          <image class="icon distance" src="{{email}}"></image>
+          <text>My Email</text>
+          <image class="icon interval" src="{{sign}}"></image>
+        </view>
+      </view>
+      <view>
+        <text @tap="onShareAppMessage"></text>
+      </view>  
     </view>
   </view>
+</view>    
 </template>
 
 
@@ -131,7 +140,9 @@ export default class Index extends wepy.page {
     cat: '../image/github-3.png',
     symbol: '../image/下一步.png',
     email: '../image/邮件.png',
-    sign: '../image/下一步.png'
+    sign: '../image/下一步.png',
+    height: 0,
+    width: 0
   }
   methods = {
     github() {
@@ -179,6 +190,12 @@ export default class Index extends wepy.page {
   }
   onLoad() {
     let self = this
+    wepy.getSystemInfo({
+      success(res) {
+        self.height = res.windowHeight
+        self.width = res.windowWidth
+      }
+    })
     wepy.getUserInfo({
       success(res) {
         self.avatarUrl = res.userInfo.avatarUrl

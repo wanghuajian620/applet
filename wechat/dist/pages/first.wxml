@@ -1,3 +1,7 @@
 
 <view class="background">
+  <text class="flex">学习</text>
+  <view class="flexcircle">
+    <image class="circle" src="{{heart}}"/>
+  </view>
 </view>

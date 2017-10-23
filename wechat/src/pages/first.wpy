@@ -3,12 +3,35 @@
   height: 610px;
   width: 100%;
   background-image: url(http://im6.leaderhero.com/wallpaper/20150630/f55c4336eb.jpg.417_741.jpg);
-  background-repeat: no-repeat
+  background-repeat: no-repeat;
+}
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 30px;
+}
+.circle {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+.flexcircle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 350px;
+  margin-left: 240px;
 }
 </style>
 
 <template>
-<view class="background">
+<view class='background'>
+  <text class='flex'>学习</text>
+  <view class='flexcircle'>
+    <image class='circle' src="{{heart}}"></image>
+  </view>
 </view>
 </template>
 
@@ -18,6 +41,11 @@ import wepy from 'wepy'
 export default class Index extends wepy.page {
   config = {
     navigationBarTitleText: 'jotting'
+  }
+  data = {
+    heart: '../image/心.png'
+  }
+  methods = {
   }
 }
 </script>

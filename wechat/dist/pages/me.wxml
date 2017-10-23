@@ -1,27 +1,31 @@
 
-  <view class="background">
-    <view class="top">
-    </view>
-    <view class="flex box">
-      <image class="circle" src="{{avatarUrl}}"/>
-      <text>{{nickName}}</text>
-    </view>
-    <view bindtap="github" class="techcat distancecat">
-      <view class="backgroundcat techcat border">
-        <image class="icon distance" src="{{cat}}"/>
-        <text>My Github</text>
-        <image class="icon space" src="{{symbol}}"/>
+<view>
+  <view style="height: {{height}}px; width:{{width}}px">
+    <view class="background">
+      <view class="top">
       </view>
-    </view>
-    <view class="line"/>
-    <view bindtap="email" class="techcat distanceemail">
-      <view class="backgroundcat techcat border">
-        <image class="icon distance" src="{{email}}"/>
-        <text>My Email</text>
-        <image class="icon interval" src="{{sign}}"/>
+      <view class="flex box">
+        <image class="circle" src="{{avatarUrl}}"/>
+        <text>{{nickName}}</text>
       </view>
-    </view>
-    <view>
-      <text bindtap="onShareAppMessage"/>
+      <view bindtap="github" class="techcat distancecat">
+        <view class="backgroundcat techcat border">
+          <image class="icon distance" src="{{cat}}"/>
+          <text>My Github</text>
+          <image class="icon space" src="{{symbol}}"/>
+        </view>
+      </view>
+      <view class="line"/>
+      <view bindtap="email" class="techcat distanceemail">
+        <view class="backgroundcat techcat border">
+          <image class="icon distance" src="{{email}}"/>
+          <text>My Email</text>
+          <image class="icon interval" src="{{sign}}"/>
+        </view>
+      </view>
+      <view>
+        <text bindtap="onShareAppMessage"/>
+      </view>  
     </view>
   </view>
+</view>

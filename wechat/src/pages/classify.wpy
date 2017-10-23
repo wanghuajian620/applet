@@ -1,5 +1,5 @@
 <style lang="less">
-.all {
+.flextext {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -9,7 +9,6 @@
 }
 .word {
   font-size: 13px;
-  // font-weight: 900 // 字体加粗
 }
 
 .line {
@@ -33,30 +32,43 @@
   height: 0px;
   color: transparent;
 }
+.box {
+  height: 250px;
+  width: 350px;
+  background-color: #F8F8F8
+}
+.flextop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 13px
+}
 </style>
 
 
 <template>
-  <scroll-view scroll-y= "true" style="height: {{height}}px; width:{{width}}px">
+  <view>
+  <!-- <scroll-view scroll-y= "true" style="height: {{height}}px; width:{{width}}px"> -->
     <view class="line">
     </view>
-    <view class="all word">
+    <view class="flextext word">
         <text style="color: {{JavaScript}}; border-bottom: 1px solid {{JavaScriptline}}" @tap="js">JavaScript</text>
         <text style="color: {{HTML}}; border-bottom: 1px solid {{HTMLline}}" @tap="HTML">HTML5</text>
         <text style="color: {{Node}}; border-bottom: 1px solid {{Nodeline}}" @tap="Node">Node.js</text>
         <text style="color: {{ES6}}; border-bottom: 1px solid {{ES6line}}" @tap="ES6">ES6</text>
         <text style="color: {{CSS}}; border-bottom: 1px solid {{CSSline}}" @tap="CSS">CSS</text>
-      </view>  
-    <!-- <view class="background"> -->
-      <!-- <text class="js">{{text}}</text> -->
-      <!-- <view class="background"> -->
-    <!-- </view> -->
+      </view>
+    <view class="flextop">
+      <text class="box"></text>
+    </view>  
     <view>
       <text @tap="onShareAppMessage"></text>
       <text @tap="onPullDownRefresh"></text>
       <text @tap="startPullDownRefresh"></text>
     </view>
-  </scroll-view>
+  <!-- </scroll-view> -->
+  </view>
 </template>
 
 
@@ -69,7 +81,7 @@ export default class Index extends wepy.page {
     enablePullDownRefresh: true
   }
   data = {
-    text: 'js',
+    // text: 'js',
     JavaScript: '#62b900',
     JavaScriptline: '#62b900',
     HTML: '#202020',
@@ -87,7 +99,7 @@ export default class Index extends wepy.page {
     js() {
       let self = this
 
-      self.text = 'javascript'
+      // self.text = 'javascript'
       self.JavaScript = '#62b900'
       self.JavaScriptline = '#62b900'
       self.HTML = '#202020'
@@ -103,7 +115,7 @@ export default class Index extends wepy.page {
     HTML() {
       let self = this
 
-      self.text = 'client'
+      // self.text = 'client'
       self.JavaScript = '#202020'
       self.JavaScriptline = '#FFFFFF'
       self.HTML = '#62b900'
@@ -118,7 +130,7 @@ export default class Index extends wepy.page {
     Node() {
       let self = this
 
-      self.text = 'server'
+      // self.text = 'server'
       self.JavaScript = '#202020'
       self.JavaScriptline = '#FFFFFF'
       self.HTML = '#202020'
@@ -133,7 +145,7 @@ export default class Index extends wepy.page {
     ES6() {
       let self = this
 
-      self.text = 'jotting'
+      // self.text = 'jotting'
       self.JavaScript = '#202020'
       self.JavaScriptline = '#FFFFFF'
       self.HTML = '#202020'
@@ -148,7 +160,7 @@ export default class Index extends wepy.page {
     CSS() {
       let self = this
 
-      self.text = 'CSS'
+      // self.text = 'CSS'
       self.JavaScript = '#202020'
       self.JavaScriptline = '#FFFFFF'
       self.HTML = '#202020'

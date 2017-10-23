@@ -1,5 +1,5 @@
 <style lang="less">
-.flex {
+.flexphoto {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,13 +26,13 @@
 .distance {
   margin: 5px 15px 5px 15px
 }
-.flexphoto {
+.flextext {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start
 }
-.ago {
+.textspace {
   margin-left: 15px;
 }
 .bottom {
@@ -47,40 +47,70 @@
   height: 0px;
   color: transparent
 }
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.columncenter {
+  display: flex;
+  align-items: center;
+}
+.bottomone {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  border:1px solid white;
+  height: 0.8rem;
+  width: 100%;
+  background-color: #f4f5f7;
+}
 
 </style>
 
 
 <template>
 <view>
-  <scroll-view scroll-y= "true" style="height: {{height}}px; width:{{width}}px">
-    <view @tap="tree">
-      <view class="flextop">
-        <image class="box distance border" src="{{teenager}}"></image>
-      </view>
-      <view class="flexphoto ago">
-        <text class="wordtext">那棵树下</text>
-        <view class="bottom worddate">2017-10-19 16:35:20</view>
-      </view>
-    </view>
-    <view @tap="sea">  
-      <view class="flex">
-        <image class="box distance border" src="{{youth}}"></image>
-      </view>
-      <view class="flexphoto ago">
-        <text class="wordtext">那片大海</text>
-        <view class="bottom worddate">2017-10-19 17:33:20</view>
+  <scroll-view scroll-y= "true" style="height: {{height}}px; width:{{width}}px; background-color: #f4f5f7">
+    <view class="center" style="margin-top: 0.8rem">
+      <view style="background-color: white; height:320px; width:350px">
+        <view @tap="tree">
+          <view class="columncenter">
+            <image class="box distance border tree" src="{{teenager}}" style="margin-top: 0.7rem"></image>
+          </view>
+          <view class="flextext textspace">
+            <text class="wordtext">那棵树下</text>
+            <view class="bottom worddate">2017-10-19 16:35:20</view>
+          </view>
+        </view> 
       </view>
     </view>
-    <view @tap="landmark">    
-      <view class="flex">  
-        <image class="box distance border" src="{{adult}}"></image>
+    <view class="center" style="margin-top: 0.8rem">
+      <view style="background-color: white; height:320px; width:350px">
+        <view @tap="tree">
+          <view class="columncenter">
+            <image class="box distance border tree" src="{{youth}}" style="margin-top: 0.7rem"></image>
+          </view>
+          <view class="flextext textspace">
+            <text class="wordtext">那片大海</text>
+            <view class="bottom worddate">2017-10-19 16:35:20</view>
+          </view>
+        </view> 
       </view>
-      <view class="flexphoto ago">
-        <text class="wordtext">那个地标</text>
-        <view class="bottom worddate">2017-10-19 17:36:20</view>
+    </view>
+    <view class="center" style="margin-top: 0.8rem;">
+      <view style="background-color: white; height:320px; width:350px">
+        <view @tap="tree">
+          <view class="columncenter">
+            <image class="box distance border tree" src="{{adult}}" style="margin-top: 0.7rem"></image>
+          </view>
+          <view class="flextext textspace">
+            <text class="wordtext">那个地标</text>
+            <view class="bottom worddate">2017-10-19 16:35:20</view>
+          </view>
+        </view> 
       </view>
-    </view>   
+    </view>
   </scroll-view>
 </view>  
 </template>

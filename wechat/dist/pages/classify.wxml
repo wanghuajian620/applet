@@ -1,21 +1,22 @@
 
-  <scroll-view scroll-y="true" style="height: {{height}}px; width:{{width}}px">
+  <view>
+  <!-- <scroll-view scroll-y= "true" style="height: {{height}}px; width:{{width}}px"> -->
     <view class="line">
     </view>
-    <view class="all word">
+    <view class="flextext word">
         <text style="color: {{JavaScript}}; border-bottom: 1px solid {{JavaScriptline}}" bindtap="js">JavaScript</text>
         <text style="color: {{HTML}}; border-bottom: 1px solid {{HTMLline}}" bindtap="HTML">HTML5</text>
         <text style="color: {{Node}}; border-bottom: 1px solid {{Nodeline}}" bindtap="Node">Node.js</text>
         <text style="color: {{ES6}}; border-bottom: 1px solid {{ES6line}}" bindtap="ES6">ES6</text>
         <text style="color: {{CSS}}; border-bottom: 1px solid {{CSSline}}" bindtap="CSS">CSS</text>
-      </view>  
-    <!-- <view class="background"> -->
-      <!-- <text class="js">{{text}}</text> -->
-      <!-- <view class="background"> -->
-    <!-- </view> -->
+      </view>
+    <view class="flextop">
+      <text class="box"/>
+    </view>  
     <view>
       <text bindtap="onShareAppMessage"/>
       <text bindtap="onPullDownRefresh"/>
       <text bindtap="startPullDownRefresh"/>
     </view>
-  </scroll-view>
+  <!-- </scroll-view> -->
+  </view>
