@@ -13,7 +13,7 @@
 .word {
   font-size: 10px
 }
-.wordsun {
+.wordcotton {
   font-size: 15px
 }
 .row {
@@ -29,7 +29,7 @@
   align-items: center
 }
 .background {
-  height: 660px;
+  height: 1450px;
   width: 100%;
   background-color: #CCCCCC
 }
@@ -40,21 +40,44 @@
   padding-top: 10px;
   background-color: white
 }
-.bordertwo {
-  height: 20px;
-  width: 180px;
+.box {
+  height: 180px;
+  width: 170px;
+  margin-top: 10px;
+  margin-left: 10px;
+  border: 1px solid black
+}
+.change {
+  width: 170px;
+  margin-left: 10px;
+}
+.cloths {
+  margin-top: 5px;
+  margin-left: 5px
+}
+.card {
+  height: 280px;
+  width: 190px;
+  margin-top: 5px;
+  margin-right: 1px;
   background-color: white
 }
-.sun {
+.card1 {
+  height: 280px;
+  width: 190px;
+  margin-top: 5px;
+  margin-left: 1px;
+  background-color: white
+}
+.photo {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center
 }
-.box {
-  height: 200px;
-  width: 180px;
-  border: 1px solid black
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent
 }
 
 </style>
@@ -117,18 +140,62 @@
       </view>
     </view>
   </view>
-  <view class="row">
-    <view class="sun bordertwo">
-      <text class="wordsun">一米阳光</text>
+  <view class="photo">
+    <view class="card">
+      <image class="box" src="{{cotton}}"></image>
+      <view class="change">
+        <text class="wordcotton">针织马甲女中长款冬季韩版百搭2017新款V领混色毛线 💰128</text>
+      </view>
     </view>
-    <view class="sun bordertwo">
-      <text class="wordsun">灵魂干货</text>
+    <view class="card1">
+      <image class="box" src="{{jacket}}"></image>
+      <view class="change">
+        <text class="wordcotton">钱夫人港味学院风V领刺绣针织马甲女背心宽松无袖上衣 💰169</text>
+      </view>
     </view>
   </view>
-  <view>
-    <view class="box"></view>
-    <text>针织马甲女中长款冬季韩版百搭2017新款V领混色毛线</text>
-  </view>      
+  <view class="photo">
+    <view class="card">
+      <image class="box" src="{{sweater}}"></image>
+      <view class="change">
+        <text class="wordcotton">丢丢韩版原宿宽松绞花毛线针织无袖马甲背心外套马甲女 💰159</text>
+      </view>
+    </view>
+    <view class="card1">
+      <image class="box" src="{{wool}}"></image>
+      <view class="change">
+        <text class="wordcotton">羊毛格子复古V领背心马甲女套头宽松针织毛线宽松韩版 💰229</text>
+      </view>
+    </view>
+  </view>
+  <view class="photo">
+    <view class="card">
+      <image class="box" src="{{downcoat}}"></image>
+      <view class="change">
+        <text class="wordcotton">滕雨佳冬季大毛领中长款羽绒服新款韩国同款加厚外套 💰399</text>
+      </view>
+    </view>
+    <view class="card1">
+      <image class="box" src="{{downjacket}}"></image>
+      <view class="change">
+        <text class="wordcotton">大毛羽绒服女装中长款秋冬季2017新款时尚韩国厚外套 💰798</text>
+      </view>
+    </view>
+  </view>
+  <view class="photo">
+    <view class="card">
+      <image class="box" src="{{surname}}"></image>
+      <view class="change">
+        <text class="wordcotton">夕芮2017冬季新款彩色貂子毛领羽绒服韩版连帽中长腰 💰698</text>
+      </view>
+    </view>
+    <view class="card1">
+      <image class="box" src="{{gold}}"></image>
+      <view class="change">
+        <text class="wordcotton">金丝绒羽绒服女中长款2017新款冬款韩版时尚大毛领过膝加厚 💰169</text>
+      </view>
+    </view>
+  </view>                                   
 </view>  
 </template>
 
@@ -164,7 +231,15 @@ export default class Home extends wepy.page {
     travel: '../image/旅行.png',
     money: '../image/淘.png',
     auction: '../image/拍卖.png',
-    classify: '../image/分类曾，.png'
+    classify: '../image/分类曾，.png',
+    cotton: '../image/WechatIMG26.jpeg',
+    jacket: '../image/WechatIMG28.jpeg',
+    sweater: '../image/WechatIMG29.jpeg',
+    wool: '../image/WechatIMG30.jpeg',
+    downcoat: '../image/WechatIMG31.jpeg',
+    downjacket: '../image/WechatIMG32.jpeg',
+    surname: '../image/WechatIMG33.jpeg',
+    gold: '../image/WechatIMG34.jpeg'
   }
 }
 </script>

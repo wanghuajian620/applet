@@ -1,3 +1,18 @@
 
-<view>
+<view class="background">
+  <view class="top"/>
+  <view class="flex">
+    <image class="circle" src="{{avatarUrl}}"/>
+    <text>{{nickName}}</text>
+  </view>
+  <view class="center">
+    <view class="pay">
+      <view class="box"/>
+    </view>  
+    <text class="pay"/>
+    <text class="pay"/>
+    <text class="pay"/>
+    <text class="pay"/>
+    <text class="pay"/>
+  </view>     
 </view>

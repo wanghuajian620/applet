@@ -1,9 +1,66 @@
 <style lang="less">
+.top {
+  height: 30px;
+  width: 380px;
+  background-color: #CCCCCC
+}
+.background {
+  height: 610px;
+  width: 380px;
+  background-color: #CCCCCC
+}
+.circle {
+  height: 60px;
+  width: 60px;
+  border: 1px solid blue;
+  border-radius: 50%
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px
+}
+.pay {
+  height: 40px;
+  width: 350px;
+  border: 1px solid red;
+  background-color: white
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: center;
+  margin-top: 80px
+}
+.box {
+  height: 40px;
+  width: 40px;
+  border: 1px solid red;
+  border-radius: 50%
+}
 </style>
 
 
 <template>
-<view>
+<view class="background">
+  <view class="top"></view>
+  <view class="flex">
+    <image class="circle" src="{{avatarUrl}}"></image>
+    <text>{{nickName}}</text>
+  </view>
+  <view class="center">
+    <view class="pay">
+      <view class="box"></view>
+    </view>  
+    <text class="pay"></text>
+    <text class="pay"></text>
+    <text class="pay"></text>
+    <text class="pay"></text>
+    <text class="pay"></text>
+  </view>     
 </view>
 </template>
 
@@ -15,6 +72,19 @@ import wepy from 'wepy'
 export default class Index extends wepy.page {
   config = {
     navigationBarTitleText: '我的淘宝'
+  }
+  data = {
+    avatarUrl: '',
+    nickName: ''
+  }
+  onLoad() {
+    let self = this
+    wepy.getUserInfo({
+      success(res) {
+        self.avatarUrl = res.userInfo.avatarUrl
+        self.nickName = res.userInfo.nickName
+      }
+    })
   }
 }
 </script>

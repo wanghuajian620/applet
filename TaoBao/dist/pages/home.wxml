@@ -55,16 +55,60 @@
       </view>
     </view>
   </view>
-  <view class="row">
-    <view class="sun bordertwo">
-      <text class="wordsun">一米阳光</text>
+  <view class="photo">
+    <view class="card">
+      <image class="box" src="{{cotton}}"/>
+      <view class="change">
+        <text class="wordcotton">针织马甲女中长款冬季韩版百搭2017新款V领混色毛线 💰128</text>
+      </view>
     </view>
-    <view class="sun bordertwo">
-      <text class="wordsun">灵魂干货</text>
+    <view class="card1">
+      <image class="box" src="{{jacket}}"/>
+      <view class="change">
+        <text class="wordcotton">钱夫人港味学院风V领刺绣针织马甲女背心宽松无袖上衣 💰169</text>
+      </view>
     </view>
   </view>
-  <view>
-    <view class="box"/>
-    <text>针织马甲女中长款冬季韩版百搭2017新款V领混色毛线</text>
-  </view>      
+  <view class="photo">
+    <view class="card">
+      <image class="box" src="{{sweater}}"/>
+      <view class="change">
+        <text class="wordcotton">丢丢韩版原宿宽松绞花毛线针织无袖马甲背心外套马甲女 💰159</text>
+      </view>
+    </view>
+    <view class="card1">
+      <image class="box" src="{{wool}}"/>
+      <view class="change">
+        <text class="wordcotton">羊毛格子复古V领背心马甲女套头宽松针织毛线宽松韩版 💰229</text>
+      </view>
+    </view>
+  </view>
+  <view class="photo">
+    <view class="card">
+      <image class="box" src="{{downcoat}}"/>
+      <view class="change">
+        <text class="wordcotton">滕雨佳冬季大毛领中长款羽绒服新款韩国同款加厚外套 💰399</text>
+      </view>
+    </view>
+    <view class="card1">
+      <image class="box" src="{{downjacket}}"/>
+      <view class="change">
+        <text class="wordcotton">大毛羽绒服女装中长款秋冬季2017新款时尚韩国厚外套 💰798</text>
+      </view>
+    </view>
+  </view>
+  <view class="photo">
+    <view class="card">
+      <image class="box" src="{{surname}}"/>
+      <view class="change">
+        <text class="wordcotton">夕芮2017冬季新款彩色貂子毛领羽绒服韩版连帽中长腰 💰698</text>
+      </view>
+    </view>
+    <view class="card1">
+      <image class="box" src="{{gold}}"/>
+      <view class="change">
+        <text class="wordcotton">金丝绒羽绒服女中长款2017新款冬款韩版时尚大毛领过膝加厚 💰169</text>
+      </view>
+    </view>
+  </view>                                   
 </view>
