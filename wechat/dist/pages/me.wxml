@@ -1,9 +1,7 @@
 
-<view>
-  <view style="height: {{height}}px; width:{{width}}px">
+  <view>
     <view class="background">
-      <view class="top">
-      </view>
+      <view class="top"/>
       <view class="flex box">
         <image class="circle" src="{{avatarUrl}}"/>
         <text>{{nickName}}</text>
@@ -28,4 +26,3 @@
       </view>  
     </view>
   </view>
-</view>

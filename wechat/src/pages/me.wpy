@@ -94,11 +94,9 @@
 </style>
 
 <template>
-<view>
-  <view style="height: {{height}}px; width:{{width}}px">
+  <view>
     <view class="background">
-      <view class="top">
-      </view>
+      <view class="top"></view>
       <view class="flex box">
         <image class="circle" src="{{avatarUrl}}"></image>
         <text>{{nickName}}</text>
@@ -122,8 +120,7 @@
         <text @tap="onShareAppMessage"></text>
       </view>  
     </view>
-  </view>
-</view>    
+  </view>    
 </template>
 
 
@@ -135,8 +132,8 @@ export default class Index extends wepy.page {
     navigationBarTitleText: '我的'
   }
   data = {
-    avatarUrl: '',
-    nickName: '',
+    avatarUrl: '../image/WechatIMG25.jpeg',
+    nickName: 'A∞(华健)',
     cat: '../image/github-3.png',
     symbol: '../image/下一步.png',
     email: '../image/邮件.png',
@@ -194,12 +191,6 @@ export default class Index extends wepy.page {
       success(res) {
         self.height = res.windowHeight
         self.width = res.windowWidth
-      }
-    })
-    wepy.getUserInfo({
-      success(res) {
-        self.avatarUrl = res.userInfo.avatarUrl
-        self.nickName = res.userInfo.nickName
       }
     })
   }

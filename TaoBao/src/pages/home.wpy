@@ -1,22 +1,135 @@
 <style lang="less">
+.swiper {
+  height: 220px;
+  width: 100%;
+  background-color: grey
+}
+.circle {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid white
+}
+.word {
+  font-size: 10px
+}
+.wordsun {
+  font-size: 15px
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5px
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+.background {
+  height: 660px;
+  width: 100%;
+  background-color: #CCCCCC
+}
+.border {
+  height: 140px;
+  width: 380px;
+  margin-top: 5px;
+  padding-top: 10px;
+  background-color: white
+}
+.bordertwo {
+  height: 20px;
+  width: 180px;
+  background-color: white
+}
+.sun {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+}
+.box {
+  height: 200px;
+  width: 180px;
+  border: 1px solid black
+}
 
 </style>
 
 
 <template>
+<view class="background">
   <view>
-    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-      <block wx:for="{{imgUrls}}">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
         <swiper-item>
-          <image src="{{item}}" class="slide-image" width="355" height="150"/>
+          <image src="{{item}}" class="swiper"/>
         </swiper-item>
       </block>
     </swiper>
-    <button bindtap="changeIndicatorDots"> indicator-dots </button>
-    <button bindtap="changeAutoplay"> autoplay </button>
-    <slider bindchange="intervalChange" show-value min="500" max="2000" /> interval
-    <slider bindchange="durationChange" show-value min="1000" max="10000" /> duration
   </view>
+  <view class="border">
+    <view class="row">
+      <view class="column">
+        <image class="circle" src="{{skycat}}"></image>
+        <text class="word">天猫</text>
+      </view>
+      <view class="column">
+        <image class="circle" src="{{gather}}"></image>
+        <text class="word">聚划算</text>
+      </view>
+      <view class="column">
+        <image class="circle" src="{{global}}"></image>
+        <text class="word">天猫国际</text>
+      </view>
+      <view class="column">
+        <image class="circle" src="{{restaurant}}"></image>
+        <text class="word">外卖</text>
+      </view>
+      <view class="column">
+        <image class="circle" src="{{supermarket}}"></image>
+        <text class="word">天猫超市</text>
+      </view>
+    </view>
+    <view class="row">
+      <view class="column">
+        <image class="circle" src="{{pay}}"></image>
+        <text class="word">充值中心</text>
+      </view>
+      <view class="column">
+        <image class="circle" src="{{travel}}"></image>
+        <text class="word">飞猪旅行</text>
+      </view>
+      <view class="column">
+        <image class="circle" src="{{money}}"></image>
+        <text class="word">领金币</text>
+      </view>
+      <view class="column">
+        <image class="circle" src="{{auction}}"></image>
+        <text class="word">拍卖</text>
+      </view>
+      <view class="column">
+        <image class="circle" src="{{classify}}"></image>
+        <text class="word">分类</text>
+      </view>
+    </view>
+  </view>
+  <view class="row">
+    <view class="sun bordertwo">
+      <text class="wordsun">一米阳光</text>
+    </view>
+    <view class="sun bordertwo">
+      <text class="wordsun">灵魂干货</text>
+    </view>
+  </view>
+  <view>
+    <view class="box"></view>
+    <text>针织马甲女中长款冬季韩版百搭2017新款V领混色毛线</text>
+  </view>      
+</view>  
 </template>
 
 
@@ -24,12 +137,34 @@
 <script>
 import wepy from 'wepy'
 
-export default class Index extends wepy.page {
+export default class Home extends wepy.page {
   config = {
     navigationBarTitleText: 'TaoBao'
   }
   data = {
-    
+    imgUrls: [
+      'http://img3.imgtn.bdimg.com/it/u=2023558336,835531241&fm=27&gp=0.jpg',
+      'http://img1.imgtn.bdimg.com/it/u=2148098677,2559283192&fm=27&gp=0.jpg',
+      'http://img3.imgtn.bdimg.com/it/u=1062444696,2096228103&fm=27&gp=0.jpg',
+      'http://img0.imgtn.bdimg.com/it/u=2568531671,305585221&fm=27&gp=0.jpg',
+      'http://img3.imgtn.bdimg.com/it/u=828347997,3608985208&fm=27&gp=0.jpg',
+      'http://img4.imgtn.bdimg.com/it/u=3311698162,3898636936&fm=27&gp=0.jpg'
+    ],
+    indicatorDots: true,
+    autoplay: true,
+    interval: 2000,
+    duration: 1000,
+    vertical: true,
+    skycat: '../image/天猫.png',
+    gather: '../image/聚划算.png',
+    global: '../image/进口商品.png',
+    restaurant: '../image/外卖.png',
+    supermarket: '../image/天猫超市.png',
+    pay: '../image/充值中心.png',
+    travel: '../image/旅行.png',
+    money: '../image/淘.png',
+    auction: '../image/拍卖.png',
+    classify: '../image/分类曾，.png'
   }
 }
 </script>

@@ -1,3 +1,70 @@
 
-<view>
+<view class="background">
+  <view>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+      <block  wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item}}" class="swiper"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="border">
+    <view class="row">
+      <view class="column">
+        <image class="circle" src="{{skycat}}"/>
+        <text class="word">天猫</text>
+      </view>
+      <view class="column">
+        <image class="circle" src="{{gather}}"/>
+        <text class="word">聚划算</text>
+      </view>
+      <view class="column">
+        <image class="circle" src="{{global}}"/>
+        <text class="word">天猫国际</text>
+      </view>
+      <view class="column">
+        <image class="circle" src="{{restaurant}}"/>
+        <text class="word">外卖</text>
+      </view>
+      <view class="column">
+        <image class="circle" src="{{supermarket}}"/>
+        <text class="word">天猫超市</text>
+      </view>
+    </view>
+    <view class="row">
+      <view class="column">
+        <image class="circle" src="{{pay}}"/>
+        <text class="word">充值中心</text>
+      </view>
+      <view class="column">
+        <image class="circle" src="{{travel}}"/>
+        <text class="word">飞猪旅行</text>
+      </view>
+      <view class="column">
+        <image class="circle" src="{{money}}"/>
+        <text class="word">领金币</text>
+      </view>
+      <view class="column">
+        <image class="circle" src="{{auction}}"/>
+        <text class="word">拍卖</text>
+      </view>
+      <view class="column">
+        <image class="circle" src="{{classify}}"/>
+        <text class="word">分类</text>
+      </view>
+    </view>
+  </view>
+  <view class="row">
+    <view class="sun bordertwo">
+      <text class="wordsun">一米阳光</text>
+    </view>
+    <view class="sun bordertwo">
+      <text class="wordsun">灵魂干货</text>
+    </view>
+  </view>
+  <view>
+    <view class="box"/>
+    <text>针织马甲女中长款冬季韩版百搭2017新款V领混色毛线</text>
+  </view>      
 </view>

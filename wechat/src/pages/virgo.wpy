@@ -1,21 +1,36 @@
 <style lang="less">
-.flexphoto {
+.center {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center
-}
-.flextop {
-  display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding-top: 13px
 }
-.box {
-  background-color: grey;
+.top {
+  margin-top: 0.7rem
+}
+.card {
+  background-color: white;
+  height: 302px;
+  width: 350px
+}
+.columncenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.distance {
+  margin: 5px 15px 5px 15px
+}
+.border {
   height: 250px;
   width: 350px
+}
+.flextext {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 .wordtext {
   font-size: 12px
@@ -23,47 +38,16 @@
 .worddate {
   font-size: 10px
 }
-.distance {
-  margin: 5px 15px 5px 15px
-}
-.flextext {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start
-}
 .textspace {
   margin-left: 15px;
 }
 .bottom {
   padding-bottom: 10px;
 }
-.border {
-  height: 250px;
-  width: 350px
-}
 ::-webkit-scrollbar {
   width: 0px;
   height: 0px;
   color: transparent
-}
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.columncenter {
-  display: flex;
-  align-items: center;
-}
-.bottomone {
-  display: flex;
-  position: fixed;
-  bottom: 0;
-  border:1px solid white;
-  height: 0.8rem;
-  width: 100%;
-  background-color: #f4f5f7;
 }
 
 </style>
@@ -72,42 +56,36 @@
 <template>
 <view>
   <scroll-view scroll-y= "true" style="height: {{height}}px; width:{{width}}px; background-color: #f4f5f7">
-    <view class="center" style="margin-top: 0.8rem">
-      <view style="background-color: white; height:320px; width:350px">
-        <view @tap="tree">
-          <view class="columncenter">
-            <image class="box distance border tree" src="{{teenager}}" style="margin-top: 0.7rem"></image>
-          </view>
-          <view class="flextext textspace">
-            <text class="wordtext">那棵树下</text>
-            <view class="bottom worddate">2017-10-19 16:35:20</view>
-          </view>
+    <view class="center top">
+      <view @tap="tree" class="card">
+        <view class="columncenter">
+          <image class="distance border" src="{{teenager}}" style="margin-top: 0.7rem"></image>
+        </view>
+        <view class="flextext textspace">
+          <text class="wordtext">那棵树下</text>
+          <view class="bottom worddate">2017-10-19 16:35:20</view>
         </view> 
       </view>
     </view>
-    <view class="center" style="margin-top: 0.8rem">
-      <view style="background-color: white; height:320px; width:350px">
-        <view @tap="tree">
-          <view class="columncenter">
-            <image class="box distance border tree" src="{{youth}}" style="margin-top: 0.7rem"></image>
-          </view>
-          <view class="flextext textspace">
-            <text class="wordtext">那片大海</text>
-            <view class="bottom worddate">2017-10-19 16:35:20</view>
-          </view>
+    <view class="center top">
+      <view @tap="sea" class="card">
+        <view class="columncenter">
+          <image class="distance border" src="{{youth}}" style="margin-top: 0.7rem"></image>
+        </view>
+        <view class="flextext textspace">
+          <text class="wordtext">那片大海</text>
+          <view class="bottom worddate">2017-10-19 16:35:20</view>
         </view> 
       </view>
     </view>
-    <view class="center" style="margin-top: 0.8rem;">
-      <view style="background-color: white; height:320px; width:350px">
-        <view @tap="tree">
-          <view class="columncenter">
-            <image class="box distance border tree" src="{{adult}}" style="margin-top: 0.7rem"></image>
-          </view>
-          <view class="flextext textspace">
-            <text class="wordtext">那个地标</text>
-            <view class="bottom worddate">2017-10-19 16:35:20</view>
-          </view>
+    <view class="center top">
+      <view @tap="landmark" class="card">
+        <view class="columncenter">
+          <image class="distance border" src="{{adult}}" style="margin-top: 0.7rem"></image>
+        </view>
+        <view class="flextext textspace">
+          <text class="wordtext">那个地标</text>
+          <view class="bottom worddate">2017-10-19 16:35:20</view>
         </view> 
       </view>
     </view>

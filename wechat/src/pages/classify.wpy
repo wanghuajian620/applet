@@ -49,7 +49,6 @@
 
 <template>
   <view>
-  <!-- <scroll-view scroll-y= "true" style="height: {{height}}px; width:{{width}}px"> -->
     <view class="line">
     </view>
     <view class="flextext word">
@@ -67,7 +66,6 @@
       <text @tap="onPullDownRefresh"></text>
       <text @tap="startPullDownRefresh"></text>
     </view>
-  <!-- </scroll-view> -->
   </view>
 </template>
 
@@ -81,7 +79,6 @@ export default class Index extends wepy.page {
     enablePullDownRefresh: true
   }
   data = {
-    // text: 'js',
     JavaScript: '#62b900',
     JavaScriptline: '#62b900',
     HTML: '#202020',
@@ -99,7 +96,6 @@ export default class Index extends wepy.page {
     js() {
       let self = this
 
-      // self.text = 'javascript'
       self.JavaScript = '#62b900'
       self.JavaScriptline = '#62b900'
       self.HTML = '#202020'
@@ -115,7 +111,6 @@ export default class Index extends wepy.page {
     HTML() {
       let self = this
 
-      // self.text = 'client'
       self.JavaScript = '#202020'
       self.JavaScriptline = '#FFFFFF'
       self.HTML = '#62b900'
@@ -130,7 +125,6 @@ export default class Index extends wepy.page {
     Node() {
       let self = this
 
-      // self.text = 'server'
       self.JavaScript = '#202020'
       self.JavaScriptline = '#FFFFFF'
       self.HTML = '#202020'
@@ -145,7 +139,6 @@ export default class Index extends wepy.page {
     ES6() {
       let self = this
 
-      // self.text = 'jotting'
       self.JavaScript = '#202020'
       self.JavaScriptline = '#FFFFFF'
       self.HTML = '#202020'
@@ -160,7 +153,6 @@ export default class Index extends wepy.page {
     CSS() {
       let self = this
 
-      // self.text = 'CSS'
       self.JavaScript = '#202020'
       self.JavaScriptline = '#FFFFFF'
       self.HTML = '#202020'

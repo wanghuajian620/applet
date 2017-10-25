@@ -1,6 +1,5 @@
 
   <view>
-  <!-- <scroll-view scroll-y= "true" style="height: {{height}}px; width:{{width}}px"> -->
     <view class="line">
     </view>
     <view class="flextext word">
@@ -18,5 +17,4 @@
       <text bindtap="onPullDownRefresh"/>
       <text bindtap="startPullDownRefresh"/>
     </view>
-  <!-- </scroll-view> -->
   </view>
