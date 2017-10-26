@@ -1,0 +1,211 @@
+<style lang="less">
+.background {
+  height: 610px;
+  width: 100%;
+  background-color: #F8F8F8
+}
+.background1 {
+  height: 100%;
+  width: 100%;
+  background-color: #FFFFFF
+}
+.photo {
+  height: 350px;
+  width: 100%
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // margin-top: 5px;
+  // margin-left: 10px;
+  // margin-right: 10px;
+  background-color: #F8F8F8
+}
+.money {
+  display: flex;
+  flex-direction: row;
+}
+.left {
+  margin-left: 5px;
+  margin-top: 2px
+}
+.circle {
+  height: 20px;
+  width: 20px;
+  margin-top: 5px;
+  border: 1px solid white;
+  border-radius: 50%
+}
+.flex1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px
+}
+.flex2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  background-color: #FFFFFF
+}
+.flex3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.flex4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #FFFFFF
+}
+.flex5 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.flex6 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 6px
+}
+.word {
+  font-size: 15px
+}
+.line {
+  width: 100%;
+  margin-top: 2px;
+  border: 1px solid #F8F8F8
+}
+.line2 {
+  width: 350px;
+  margin-top: 15px;
+  border: 1px solid #FFFFFF
+}
+.line3 {
+  width: 100%;
+  margin-top: 20px;
+  border: 1px solid #FFFFFF
+}
+.circletrue {
+  height: 15px;
+  width: 15px;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin-top: 1px
+}
+.circle2 {
+  height: 15px;
+  width: 15px;
+  margin-left: 220px;
+  border: 1px solid white;
+  border-radius: 50%
+}
+.circle3 {
+  height: 15px;
+  width: 15px;
+  margin-left: 270px;
+  border: 1px solid white;
+  border-radius: 50%
+}
+</style>
+
+
+<template>
+<view>
+  <view class="background">
+    <swiper class="photo" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <swiper-item>
+          <image class="photo" src="{{item}}"/>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="flex">
+      <view class="background1">
+        <text class="word">针织马甲女中长款冬季韩版百搭2017新款V领混色毛线套头毛衣背心</text>
+      </view>
+      <view class="background1">  
+        <view class="money">
+          <image class="circle" src="{{coin}}"></image>
+          <text class="left">128</text>
+        </view>
+        <view class="flex1">
+          <text class="word">快递：免运费</text>
+          <text class="word">月销50笔</text>
+          <text class="word">河北保定</text> 
+        </view>  
+      </view>  
+      <view class="flex2">
+        <view class="flex3">
+          <image class="circletrue" src="{{check}}"></image>
+          <text class="word">15天退货</text>
+        </view>
+        <view class="flex3">  
+          <image class="circletrue" src="{{check}}"></image>
+          <text class="word">公益宝贝</text>
+        </view>
+        <view class="flex3">  
+          <image class="circletrue" src="{{check}}"></image>
+          <text class="word">24小时内发货</text>
+        </view>  
+      </view>
+      <view class="line2"></view>
+      <view class="flex4">
+        <view class="flex5">
+          <text class="word">请选择 颜色分类</text>
+          <image class="circle2" src="{{pass}}"></image>
+        </view>
+        <view class="line"></view>
+        <view class="flex5">
+          <text class="word">产品参数</text>
+          <image class="circle3" src="{{pass}}"></image>
+        </view>
+      </view>
+      <view class="line3"></view>
+      <view class="flex6">
+        <text class="word">联系卖家</text>
+        <text class="word">加入购物车</text>
+        <text class="word">立即购买</text>
+      </view>     
+    </view>
+  </view>
+</view>
+</template>
+
+
+
+<script>
+import wepy from 'wepy'
+
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '针织衫'
+  }
+  data = {
+    imgUrls: [
+      'https://gd1.alicdn.com/imgextra/i4/TB1flZ9PFXXXXb8XVXXYXGcGpXX_M2.SS2',
+      'https://gd1.alicdn.com/imgextra/i1/TB1n_g4PFXXXXaSaXXXYXGcGpXX_M2.SS2',
+      'https://gd1.alicdn.com/imgextra/i4/TB1Vk.1PFXXXXbOaXXXYXGcGpXX_M2.SS2',
+      'https://gd1.alicdn.com/imgextra/i3/TB19IxGPVXXXXa3XXXXYXGcGpXX_M2.SS2',
+      'https://gd4.alicdn.com/imgextra/i4/1016299118/TB2eipMh00opuFjSZFxXXaDNVXa_!!1016299118.jpg'
+    ],
+    indicatorDots: true,
+    autoplay: true,
+    interval: 2000,
+    duration: 1000,
+    vertical: true,
+    coin: '../image/钱-2.png',
+    check: '../image/对勾-2.png',
+    pass: '../image/大于号-2.png'
+  }
+  methods = {}
+}
+</script>

@@ -1,0 +1,60 @@
+
+<view>
+  <view class="background">
+    <swiper class="photo" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+      <block  wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <swiper-item>
+          <image class="photo" src="{{item}}"/>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="flex">
+      <view class="background1">
+        <text class="word">针织马甲女中长款冬季韩版百搭2017新款V领混色毛线套头毛衣背心</text>
+      </view>
+      <view class="background1">  
+        <view class="money">
+          <image class="circle" src="{{coin}}"/>
+          <text class="left">128</text>
+        </view>
+        <view class="flex1">
+          <text class="word">快递：免运费</text>
+          <text class="word">月销50笔</text>
+          <text class="word">河北保定</text> 
+        </view>  
+      </view>  
+      <view class="flex2">
+        <view class="flex3">
+          <image class="circletrue" src="{{check}}"/>
+          <text class="word">15天退货</text>
+        </view>
+        <view class="flex3">  
+          <image class="circletrue" src="{{check}}"/>
+          <text class="word">公益宝贝</text>
+        </view>
+        <view class="flex3">  
+          <image class="circletrue" src="{{check}}"/>
+          <text class="word">24小时内发货</text>
+        </view>  
+      </view>
+      <view class="line2"/>
+      <view class="flex4">
+        <view class="flex5">
+          <text class="word">请选择 颜色分类</text>
+          <image class="circle2" src="{{pass}}"/>
+        </view>
+        <view class="line"/>
+        <view class="flex5">
+          <text class="word">产品参数</text>
+          <image class="circle3" src="{{pass}}"/>
+        </view>
+      </view>
+      <view class="line3"/>
+      <view class="flex6">
+        <text class="word">联系卖家</text>
+        <text class="word">加入购物车</text>
+        <text class="word">立即购买</text>
+      </view>     
+    </view>
+  </view>
+</view>

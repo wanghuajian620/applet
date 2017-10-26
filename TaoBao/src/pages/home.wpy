@@ -141,7 +141,7 @@
     </view>
   </view>
   <view class="photo">
-    <view class="card">
+    <view @tap="IMG26" class="card">
       <image class="box" src="{{cotton}}"></image>
       <view class="change">
         <text class="wordcotton">针织马甲女中长款冬季韩版百搭2017新款V领混色毛线 💰128</text>
@@ -240,6 +240,13 @@ export default class Home extends wepy.page {
     downjacket: '../image/WechatIMG32.jpeg',
     surname: '../image/WechatIMG33.jpeg',
     gold: '../image/WechatIMG34.jpeg'
+  }
+  methods = {
+    IMG26() {
+      wepy.navigateTo({
+        url: './IMG26'
+      })
+    }
   }
 }
 </script>

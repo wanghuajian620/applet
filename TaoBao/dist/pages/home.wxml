@@ -56,7 +56,7 @@
     </view>
   </view>
   <view class="photo">
-    <view class="card">
+    <view bindtap="IMG26" class="card">
       <image class="box" src="{{cotton}}"/>
       <view class="change">
         <text class="wordcotton">针织马甲女中长款冬季韩版百搭2017新款V领混色毛线 💰128</text>

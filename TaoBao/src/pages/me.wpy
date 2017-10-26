@@ -2,17 +2,17 @@
 .top {
   height: 30px;
   width: 380px;
-  background-color: #CCCCCC
+  background-color: #FFFFFF
 }
 .background {
   height: 610px;
   width: 380px;
-  background-color: #CCCCCC
+  background-color: #FFFFFF
 }
 .circle {
   height: 60px;
   width: 60px;
-  border: 1px solid blue;
+  border: 1px solid #F8F8F8;
   border-radius: 50%
 }
 .flex {
@@ -25,21 +25,62 @@
 .pay {
   height: 40px;
   width: 350px;
-  border: 1px solid red;
-  background-color: white
+  border-radius: 5px;
+  border: 1px solid #F8F8F8;
+  background-color: #F8F8F8
+}
+.pay1 {
+  height: 40px;
+  width: 350px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #F8F8F8;
+  background-color: #F8F8F8
 }
 .center {
   display: flex;
   flex-direction: column;
   align-items: center;
-  // justify-content: center;
   margin-top: 80px
 }
+.paycenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.margin {
+  margin-left: 10px
+}
+.icon {
+  margin-left: 205px
+}
+.icon1 {
+  margin-left: 220px
+}
+.icon2 {
+  margin-left: 200px
+}
 .box {
-  height: 40px;
-  width: 40px;
-  border: 1px solid red;
+  height: 25px;
+  width: 25px;
+  border: 1px solid #F8F8F8;
   border-radius: 50%
+}
+.distance {
+  margin-top: 25px
+}
+.word {
+  font-size: 13px
+}
+.line {
+  width: 340px;
+  border: 1px solid #FFFFFF
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent
 }
 </style>
 
@@ -52,14 +93,42 @@
     <text>{{nickName}}</text>
   </view>
   <view class="center">
-    <view class="pay">
-      <view class="box"></view>
-    </view>  
-    <text class="pay"></text>
-    <text class="pay"></text>
-    <text class="pay"></text>
-    <text class="pay"></text>
-    <text class="pay"></text>
+    <view class="pay1 paycenter">
+      <image class="margin box" src="{{order}}"></image>
+      <text class="margin word">我的订单</text>
+      <image class="icon box" src="{{brand}}"></image>
+    </view>
+    <view class="distance">  
+      <view class="pay paycenter">
+        <image class="margin box" src="{{wallet}}"></image>
+        <text class="margin word">待付款</text>
+        <image class="icon1 box" src="{{brand}}"></image>
+      </view>
+      <view class="line"></view> 
+      <view class="pay paycenter">
+        <image class="margin box" src="{{shipments}}"></image>
+        <text class="margin word">待发货</text>
+        <image class="icon1 box" src="{{brand}}"></image>
+      </view>
+       <view class="line"></view> 
+      <view class="pay paycenter">
+        <image class="margin box" src="{{deLivery}}"></image>
+        <text class="margin word">待收货</text>
+        <image class="icon1 box" src="{{brand}}"></image>
+      </view>
+       <view class="line"></view>
+      <view class="pay paycenter">
+        <image class="margin box" src="{{evaluate}}"></image>
+        <text class="margin word">待评价</text>
+        <image class="icon1 box" src="{{brand}}"></image>
+      </view>
+       <view class="line"></view> 
+      <view class="pay paycenter">
+        <image class="margin box" src="{{refund}}"></image>
+        <text class="margin word">退款/售后</text>
+        <image class="icon2 box" src="{{brand}}"></image>
+      </view>
+    </view> 
   </view>     
 </view>
 </template>
@@ -75,7 +144,14 @@ export default class Index extends wepy.page {
   }
   data = {
     avatarUrl: '',
-    nickName: ''
+    nickName: '',
+    order: '../image/订单-3.png',
+    wallet: '../image/待付款-2.png',
+    shipments: '../image/待发货-2.png',
+    deLivery: '../image/待收货-2.png',
+    evaluate: '../image/待评价-2.png',
+    refund: '../image/退款-2.png',
+    brand: '../image/大于号-2.png'
   }
   onLoad() {
     let self = this
