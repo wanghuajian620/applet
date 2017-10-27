@@ -20,7 +20,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 30px
+  margin-top: 20px
 }
 .pay {
   height: 40px;
@@ -33,7 +33,7 @@
   height: 40px;
   width: 350px;
   border-radius: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
   border: 1px solid #F8F8F8;
   background-color: #F8F8F8
 }
@@ -41,7 +41,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 80px
+  margin-top: 60px
 }
 .paycenter {
   display: flex;
@@ -60,6 +60,9 @@
 }
 .icon2 {
   margin-left: 200px
+}
+.icon3 {
+  margin-left: 180px
 }
 .box {
   height: 25px;
@@ -90,7 +93,7 @@
   <view class="top"></view>
   <view class="flex">
     <image class="circle" src="{{avatarUrl}}"></image>
-    <text>{{nickName}}</text>
+    <text class="word">{{nickName}}</text>
   </view>
   <view class="center">
     <view class="pay1 paycenter">
@@ -98,7 +101,13 @@
       <text class="margin word">我的订单</text>
       <image class="icon box" src="{{brand}}"></image>
     </view>
-    <view class="distance">  
+    <view class="distance">
+      <view class="pay paycenter">
+        <image class="margin box" src="{{site}}"></image>
+        <text class="margin word">我的收货地址</text>
+        <image class="icon3 box" src="{{brand}}"></image>
+      </view>
+      <view class="line"></view>  
       <view class="pay paycenter">
         <image class="margin box" src="{{wallet}}"></image>
         <text class="margin word">待付款</text>
@@ -146,6 +155,7 @@ export default class Index extends wepy.page {
     avatarUrl: '',
     nickName: '',
     order: '../image/订单-3.png',
+    site: '../image/收货地址.png',
     wallet: '../image/待付款-2.png',
     shipments: '../image/待发货-2.png',
     deLivery: '../image/待收货-2.png',

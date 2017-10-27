@@ -1,12 +1,8 @@
 <style lang="less">
 .background {
-  height: 610px;
-  width: 100%;
   background-color: #F8F8F8
 }
-.background1 {
-  height: 100%;
-  width: 100%;
+.backgroundtext {
   background-color: #FFFFFF
 }
 .photo {
@@ -17,16 +13,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  // margin-top: 5px;
-  // margin-left: 10px;
-  // margin-right: 10px;
   background-color: #F8F8F8
 }
-.money {
+.price {
   display: flex;
   flex-direction: row;
 }
-.left {
+.number {
   margin-left: 5px;
   margin-top: 2px
 }
@@ -37,44 +30,46 @@
   border: 1px solid white;
   border-radius: 50%
 }
-.flex1 {
+.flextransport {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-left: 5px;
-  margin-right: 5px;
   margin-top: 5px
 }
-.flex2 {
+.flexreturn {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-top: 5px;
   background-color: #FFFFFF
 }
-.flex3 {
+.flexcheck {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.flex4 {
+.flexoption {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: #FFFFFF
+  background-color: #FFFFFF;
+  margin-top: 20px
 }
-.flex5 {
+.flexclassify {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
 }
-.flex6 {
+.flexseller {
   display: flex;
+  bottom: 0;
+  width: 100%;
   flex-direction: row;
+  position: absolute;
   justify-content: space-around;
-  margin-top: 6px
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: orange
 }
 .word {
   font-size: 15px
@@ -84,12 +79,13 @@
   margin-top: 2px;
   border: 1px solid #F8F8F8
 }
-.line2 {
-  width: 350px;
-  margin-top: 15px;
-  border: 1px solid #FFFFFF
+.sell {
+  margin-right:55px
 }
-.line3 {
+.site {
+  margin-right: 48px
+}
+.bottomline {
   width: 100%;
   margin-top: 20px;
   border: 1px solid #FFFFFF
@@ -101,25 +97,30 @@
   border-radius: 50%;
   margin-top: 1px
 }
-.circle2 {
+.circlepass {
   height: 15px;
   width: 15px;
   margin-left: 220px;
   border: 1px solid white;
   border-radius: 50%
 }
-.circle3 {
+.circleparameter {
   height: 15px;
   width: 15px;
   margin-left: 270px;
   border: 1px solid white;
   border-radius: 50%
 }
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent
+}
 </style>
 
 
 <template>
-<view>
+<view style="width:{{width}}px; height:{{height}}px">
   <view class="background">
     <swiper class="photo" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
       <block wx:for="{{imgUrls}}" wx:key="{{index}}">
@@ -129,48 +130,47 @@
       </block>
     </swiper>
     <view class="flex">
-      <view class="background1">
+      <view class="backgroundtext">
         <text class="word">针织马甲女中长款冬季韩版百搭2017新款V领混色毛线套头毛衣背心</text>
       </view>
-      <view class="background1">  
-        <view class="money">
+      <view class="backgroundtext">  
+        <view class="price">
           <image class="circle" src="{{coin}}"></image>
-          <text class="left">128</text>
+          <text class="number">128</text>
         </view>
-        <view class="flex1">
-          <text class="word">快递：免运费</text>
-          <text class="word">月销50笔</text>
-          <text class="word">河北保定</text> 
-        </view>  
-      </view>  
-      <view class="flex2">
-        <view class="flex3">
-          <image class="circletrue" src="{{check}}"></image>
-          <text class="word">15天退货</text>
+        <view class="flextransport">
+          <text class="word">快递:免运费</text>
+          <view class="word">月销50笔</view>
+          <view class="word site">河北保定</view> 
         </view>
-        <view class="flex3">  
-          <image class="circletrue" src="{{check}}"></image>
-          <text class="word">公益宝贝</text>
+        <view class="flexreturn">
+          <view class="flexcheck">
+            <image class="circletrue" src="{{check}}"></image>
+            <text class="word">15天退货</text>
+          </view>
+          <view class="flexcheck">  
+            <image class="circletrue" src="{{check}}"></image>
+            <text class="word">公益宝贝</text>
+          </view>
+          <view class="flexcheck">  
+            <image class="circletrue" src="{{check}}"></image>
+            <text class="word">24小时内发货</text>
+          </view>
         </view>
-        <view class="flex3">  
-          <image class="circletrue" src="{{check}}"></image>
-          <text class="word">24小时内发货</text>
-        </view>  
-      </view>
-      <view class="line2"></view>
-      <view class="flex4">
-        <view class="flex5">
+      </view> 
+      <view class="flexoption">
+        <view class="flexclassify">
           <text class="word">请选择 颜色分类</text>
-          <image class="circle2" src="{{pass}}"></image>
+          <image class="circlepass" src="{{pass}}"></image>
         </view>
         <view class="line"></view>
-        <view class="flex5">
+        <view class="flexclassify">
           <text class="word">产品参数</text>
-          <image class="circle3" src="{{pass}}"></image>
+          <image class="circleparameter" src="{{pass}}"></image>
         </view>
       </view>
-      <view class="line3"></view>
-      <view class="flex6">
+      <view class="bottomline"></view>
+      <view class="flexseller">
         <text class="word">联系卖家</text>
         <text class="word">加入购物车</text>
         <text class="word">立即购买</text>
@@ -203,9 +203,20 @@ export default class Index extends wepy.page {
     duration: 1000,
     vertical: true,
     coin: '../image/钱-2.png',
-    check: '../image/对勾-2.png',
-    pass: '../image/大于号-2.png'
+    check: '../image/对勾-3.png',
+    pass: '../image/大于号-2.png',
+    width: '',
+    height: ''
   }
   methods = {}
+  onLoad() {
+    wepy.getSystemInfo({
+      success(res) {
+        let self = this
+        self.width = res.windowWidth
+        self.height = res.windowHeight
+      }
+    })
+  }
 }
 </script>

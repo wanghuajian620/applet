@@ -3,7 +3,7 @@
   <view class="top"/>
   <view class="flex">
     <image class="circle" src="{{avatarUrl}}"/>
-    <text>{{nickName}}</text>
+    <text class="word">{{nickName}}</text>
   </view>
   <view class="center">
     <view class="pay1 paycenter">
@@ -11,7 +11,13 @@
       <text class="margin word">我的订单</text>
       <image class="icon box" src="{{brand}}"/>
     </view>
-    <view class="distance">  
+    <view class="distance">
+      <view class="pay paycenter">
+        <image class="margin box" src="{{site}}"/>
+        <text class="margin word">我的收货地址</text>
+        <image class="icon3 box" src="{{brand}}"/>
+      </view>
+      <view class="line"/>  
       <view class="pay paycenter">
         <image class="margin box" src="{{wallet}}"/>
         <text class="margin word">待付款</text>
