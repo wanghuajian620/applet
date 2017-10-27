@@ -6,46 +6,46 @@
     <text class="word">{{nickName}}</text>
   </view>
   <view class="center">
-    <view class="pay1 paycenter">
+    <view class="indent paycenter">
       <image class="margin box" src="{{order}}"/>
       <text class="margin word">我的订单</text>
-      <image class="icon box" src="{{brand}}"/>
+      <image class="payorder box" src="{{brand}}"/>
     </view>
     <view class="distance">
       <view class="pay paycenter">
         <image class="margin box" src="{{site}}"/>
         <text class="margin word">我的收货地址</text>
-        <image class="icon3 box" src="{{brand}}"/>
+        <image class="passsite box" src="{{brand}}"/>
       </view>
       <view class="line"/>  
       <view class="pay paycenter">
         <image class="margin box" src="{{wallet}}"/>
         <text class="margin word">待付款</text>
-        <image class="icon1 box" src="{{brand}}"/>
+        <image class="passpay box" src="{{brand}}"/>
       </view>
       <view class="line"/> 
       <view class="pay paycenter">
         <image class="margin box" src="{{shipments}}"/>
         <text class="margin word">待发货</text>
-        <image class="icon1 box" src="{{brand}}"/>
+        <image class="passpay box" src="{{brand}}"/>
       </view>
        <view class="line"/> 
       <view class="pay paycenter">
         <image class="margin box" src="{{deLivery}}"/>
         <text class="margin word">待收货</text>
-        <image class="icon1 box" src="{{brand}}"/>
+        <image class="passpay box" src="{{brand}}"/>
       </view>
        <view class="line"/>
       <view class="pay paycenter">
         <image class="margin box" src="{{evaluate}}"/>
         <text class="margin word">待评价</text>
-        <image class="icon1 box" src="{{brand}}"/>
+        <image class="passpay box" src="{{brand}}"/>
       </view>
        <view class="line"/> 
       <view class="pay paycenter">
         <image class="margin box" src="{{refund}}"/>
         <text class="margin word">退款/售后</text>
-        <image class="icon2 box" src="{{brand}}"/>
+        <image class="passreturn box" src="{{brand}}"/>
       </view>
     </view> 
   </view>     

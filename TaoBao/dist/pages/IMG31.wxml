@@ -2,7 +2,7 @@
 <view style="width:{{width}}px; height:{{height}}px">
   <view class="background">
     <swiper class="photo" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
-      <block  wx:for="{{pic}}" wx:key="{{index}}">
+      <block  wx:for="{{imgUrls}}" wx:key="{{index}}">
         <swiper-item>
           <image class="photo" src="{{item}}"/>
         </swiper-item>
@@ -10,12 +10,12 @@
     </swiper>
     <view class="flex">
       <view class="backgroundtext">
-        <text class="word">{{title}}</text>
+        <text class="word">滕雨佳SHOCK冬季大毛领中长款羽绒服女新款韩国同款加厚外套</text>
       </view>
       <view class="backgroundtext">  
         <view class="price">
           <image class="circle" src="{{coin}}"/>
-          <text class="number">128</text>
+          <text class="number">399</text>
         </view>
         <view class="flextransport">
           <text class="word">快递:免运费</text>

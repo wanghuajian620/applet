@@ -124,7 +124,7 @@
 <view style="width:{{width}}px; height:{{height}}px">
   <view class="background">
     <swiper class="photo" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
-      <block wx:for="{{pic}}" wx:key="{{index}}">
+      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
         <swiper-item>
           <image class="photo" src="{{item}}"/>
         </swiper-item>
@@ -132,12 +132,12 @@
     </swiper>
     <view class="flex">
       <view class="backgroundtext">
-        <text class="word">{{title}}</text>
+        <text class="word">钱夫人港味学院风V领刺绣针织马甲女背心宽松无袖上衣针织毛衫</text>
       </view>
       <view class="backgroundtext">  
         <view class="price">
           <image class="circle" src="{{coin}}"></image>
-          <text class="number">128</text>
+          <text class="number">169</text>
         </view>
         <view class="flextransport">
           <text class="word">快递:免运费</text>
@@ -191,7 +191,12 @@ export default class Index extends wepy.page {
     navigationBarTitleText: '针织衫'
   }
   data = {
-    imgUrls: [''
+    imgUrls: [
+      'https://gd1.alicdn.com/imgextra/i1/143440491/TB2.Ev1cp9gSKJjSspbXXbeNXXa_!!143440491.jpg',
+      'https://gd1.alicdn.com/imgextra/i1/143440491/TB27aLyjOFTMKJjSZFAXXckJpXa_!!143440491.jpg',
+      'https://gd3.alicdn.com/imgextra/i3/143440491/TB2vhrkXEMgYeJjSZFGXXXsMXXa_!!143440491.jpg',
+      'https://gd2.alicdn.com/imgextra/i1/143440491/TB2OHPKklcHL1JjSZJiXXcKcpXa_!!143440491.jpg',
+      'https://gd4.alicdn.com/imgextra/i4/143440491/TB2RqFPeWmWQ1JjSZPhXXXCJFXa_!!143440491.jpg'
     ],
     indicatorDots: true,
     autoplay: true,
@@ -202,17 +207,10 @@ export default class Index extends wepy.page {
     check: '../image/对勾-3.png',
     pass: '../image/大于号-2.png',
     width: '',
-    height: '',
-    icon: '',
-    title: '',
-    pic: []
+    height: ''
   }
   methods = {}
-  onLoad(data) {
-    let self = this
-    self.title = data.title
-    self.pic = data.pic.split(',')
-    console.log(data.pic)
+  onLoad() {
     wepy.getSystemInfo({
       success(res) {
         let self = this

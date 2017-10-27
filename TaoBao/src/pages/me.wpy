@@ -29,7 +29,7 @@
   border: 1px solid #F8F8F8;
   background-color: #F8F8F8
 }
-.pay1 {
+.indent {
   height: 40px;
   width: 350px;
   border-radius: 5px;
@@ -52,16 +52,16 @@
 .margin {
   margin-left: 10px
 }
-.icon {
+.payorder {
   margin-left: 205px
 }
-.icon1 {
+.passpay {
   margin-left: 220px
 }
-.icon2 {
+.passreturn {
   margin-left: 200px
 }
-.icon3 {
+.passsite {
   margin-left: 180px
 }
 .box {
@@ -96,46 +96,46 @@
     <text class="word">{{nickName}}</text>
   </view>
   <view class="center">
-    <view class="pay1 paycenter">
+    <view class="indent paycenter">
       <image class="margin box" src="{{order}}"></image>
       <text class="margin word">我的订单</text>
-      <image class="icon box" src="{{brand}}"></image>
+      <image class="payorder box" src="{{brand}}"></image>
     </view>
     <view class="distance">
       <view class="pay paycenter">
         <image class="margin box" src="{{site}}"></image>
         <text class="margin word">我的收货地址</text>
-        <image class="icon3 box" src="{{brand}}"></image>
+        <image class="passsite box" src="{{brand}}"></image>
       </view>
       <view class="line"></view>  
       <view class="pay paycenter">
         <image class="margin box" src="{{wallet}}"></image>
         <text class="margin word">待付款</text>
-        <image class="icon1 box" src="{{brand}}"></image>
+        <image class="passpay box" src="{{brand}}"></image>
       </view>
       <view class="line"></view> 
       <view class="pay paycenter">
         <image class="margin box" src="{{shipments}}"></image>
         <text class="margin word">待发货</text>
-        <image class="icon1 box" src="{{brand}}"></image>
+        <image class="passpay box" src="{{brand}}"></image>
       </view>
        <view class="line"></view> 
       <view class="pay paycenter">
         <image class="margin box" src="{{deLivery}}"></image>
         <text class="margin word">待收货</text>
-        <image class="icon1 box" src="{{brand}}"></image>
+        <image class="passpay box" src="{{brand}}"></image>
       </view>
        <view class="line"></view>
       <view class="pay paycenter">
         <image class="margin box" src="{{evaluate}}"></image>
         <text class="margin word">待评价</text>
-        <image class="icon1 box" src="{{brand}}"></image>
+        <image class="passpay box" src="{{brand}}"></image>
       </view>
        <view class="line"></view> 
       <view class="pay paycenter">
         <image class="margin box" src="{{refund}}"></image>
         <text class="margin word">退款/售后</text>
-        <image class="icon2 box" src="{{brand}}"></image>
+        <image class="passreturn box" src="{{brand}}"></image>
       </view>
     </view> 
   </view>     

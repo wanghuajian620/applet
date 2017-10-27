@@ -2,7 +2,7 @@
 <view style="width:{{width}}px; height:{{height}}px">
   <view class="background">
     <swiper class="photo" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
-      <block  wx:for="{{pic}}" wx:key="{{index}}">
+      <block  wx:for="{{imgUrls}}" wx:key="{{index}}">
         <swiper-item>
           <image class="photo" src="{{item}}"/>
         </swiper-item>
@@ -10,12 +10,12 @@
     </swiper>
     <view class="flex">
       <view class="backgroundtext">
-        <text class="word">{{title}}</text>
+        <text class="word">丢丢韩版原宿宽松绞花毛线针织无袖马甲背心外套马甲女秋中长款</text>
       </view>
       <view class="backgroundtext">  
         <view class="price">
           <image class="circle" src="{{coin}}"/>
-          <text class="number">128</text>
+          <text class="number">159</text>
         </view>
         <view class="flextransport">
           <text class="word">快递:免运费</text>
