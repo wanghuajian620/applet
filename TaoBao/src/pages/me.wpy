@@ -53,16 +53,10 @@
   margin-left: 10px
 }
 .payorder {
-  margin-left: 205px
-}
-.passpay {
   margin-left: 220px
 }
-.passreturn {
-  margin-left: 200px
-}
-.passsite {
-  margin-left: 180px
+.passpay {
+  margin-left: 190px
 }
 .box {
   height: 25px;
@@ -85,6 +79,12 @@
   height: 0;
   color: transparent
 }
+.laotong {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90px
+}
 </style>
 
 
@@ -102,43 +102,15 @@
       <image class="payorder box" src="{{brand}}"></image>
     </view>
     <view class="distance">
-      <view class="pay paycenter">
-        <image class="margin box" src="{{site}}"></image>
-        <text class="margin word">我的收货地址</text>
-        <image class="passsite box" src="{{brand}}"></image>
-      </view>
-      <view class="line"></view>  
-      <view class="pay paycenter">
-        <image class="margin box" src="{{wallet}}"></image>
-        <text class="margin word">待付款</text>
-        <image class="passpay box" src="{{brand}}"></image>
-      </view>
-      <view class="line"></view> 
-      <view class="pay paycenter">
-        <image class="margin box" src="{{shipments}}"></image>
-        <text class="margin word">待发货</text>
-        <image class="passpay box" src="{{brand}}"></image>
-      </view>
-       <view class="line"></view> 
-      <view class="pay paycenter">
-        <image class="margin box" src="{{deLivery}}"></image>
-        <text class="margin word">待收货</text>
-        <image class="passpay box" src="{{brand}}"></image>
-      </view>
-       <view class="line"></view>
-      <view class="pay paycenter">
-        <image class="margin box" src="{{evaluate}}"></image>
-        <text class="margin word">待评价</text>
-        <image class="passpay box" src="{{brand}}"></image>
-      </view>
-       <view class="line"></view> 
-      <view class="pay paycenter">
-        <image class="margin box" src="{{refund}}"></image>
-        <text class="margin word">退款/售后</text>
-        <image class="passreturn box" src="{{brand}}"></image>
-      </view>
-    </view> 
-  </view>     
+      <view class="pay paycenter" wx:for="{{b}}" wx:key="index" id="{{index}}">
+        <image class="margin box" src="{{item.icon}}"></image>
+        <view class="laotong">
+          <text  class="margin word">{{item.text}}</text>
+        </view>  
+        <image class="passpay box" src="{{item.check}}"></image>
+      </view>  
+    </view>
+  </view>  
 </view>
 </template>
 
@@ -161,7 +133,14 @@ export default class Index extends wepy.page {
     deLivery: '../image/待收货-2.png',
     evaluate: '../image/待评价-2.png',
     refund: '../image/退款-2.png',
-    brand: '../image/大于号-2.png'
+    brand: '../image/大于号-2.png',
+    b: [
+      {icon: '../image/收货地址.png', text: '我的收货地址', check: '../image/大于号-2.png'},
+      {icon: '../image/待付款-2.png', text: '待付款', check: '../image/大于号-2.png'},
+      {icon: '../image/待发货-2.png', text: '待发货', check: '../image/大于号-2.png'},
+      {icon: '../image/待收货-2.png', text: '待收货', check: '../image/大于号-2.png'},
+      {icon: '../image/退款-2.png', text: '退款/售后', check: '../image/大于号-2.png'}
+    ]
   }
   onLoad() {
     let self = this

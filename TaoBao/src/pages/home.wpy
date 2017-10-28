@@ -14,7 +14,7 @@
   font-size: 10px
 }
 .wordcotton {
-  font-size: 15px
+  font-size: 13px
 }
 .row {
   display: flex;
@@ -29,7 +29,6 @@
   align-items: center
 }
 .background {
-  height: 1450px;
   width: 100%;
   background-color: #CCCCCC
 }
@@ -40,39 +39,20 @@
   padding-top: 10px;
   background-color: white
 }
-.box {
-  height: 180px;
-  width: 170px;
-  margin-top: 10px;
-  margin-left: 10px;
-  border: 1px solid black
-}
 .change {
   width: 170px;
-  margin-left: 10px;
-}
-.cloths {
-  margin-top: 5px;
-  margin-left: 5px
-}
-.card {
-  height: 280px;
-  // width: 190px;
-  margin-top: 2px;
-  margin-right: 2px;
-  background-color: white
-}
-.cardright {
-  height: 280px;
-  width: 190px;
-  margin-top: 2px;
-  background-color: white
+  line-height: 80%
 }
 .photo {
   display: flex;
   flex-direction: row;
-  // justify-content: center;
   flex-wrap: wrap;
+}
+.card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center
 }
 ::-webkit-scrollbar {
   width: 0;
@@ -141,8 +121,8 @@
     </view>
   </view>
   <view class="photo">
-    <view @tap="IMG26" wx:for="{{a}}" wx:key="index" id="{{index}}" class="card">
-      <image class="box" src="{{item.icon}}"></image>
+    <view @tap="IMG26" wx:for="{{a}}" wx:key="index" id="{{index}}" class="card" style="width:{{width / 2}}px">
+      <image class="box" src="{{item.icon}}" style="width:{{width / 2 - 10}}px; height:180px"></image>
       <view class="change">
         <text class="wordcotton">{{item.title}}</text>
       </view>
@@ -184,12 +164,15 @@ export default class Home extends wepy.page {
     money: '../image/淘.png',
     auction: '../image/拍卖.png',
     classify: '../image/分类曾，.png',
-    a: null
+    a: null,
+    width: 0,
+    height: 0
   }
   methods = {
     IMG26(e) {
       let self = this
       let item = self.a[e.currentTarget.id]
+      console.log(e)
       wepy.navigateTo({
         url: `./IMG26?title=${item.title}&icon=${item.icon}&pic=${item.pic}`
       })
@@ -199,6 +182,12 @@ export default class Home extends wepy.page {
     let self = this
     self.a = a
     console.log(self.a)
+    wepy.getSystemInfo({
+      success: function(res) {
+        self.width = res.windowWidth
+        self.height = res.windowHeight
+      }
+    })
   }
 }
 </script>

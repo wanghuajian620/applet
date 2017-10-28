@@ -56,8 +56,8 @@
     </view>
   </view>
   <view class="photo">
-    <view bindtap="IMG26"  wx:for="{{a}}" wx:key="index" id="{{index}}" class="card">
-      <image class="box" src="{{item.icon}}"/>
+    <view bindtap="IMG26"  wx:for="{{a}}" wx:key="index" id="{{index}}" class="card" style="width:{{width / 2}}px">
+      <image class="box" src="{{item.icon}}" style="width:{{width / 2 - 10}}px; height:180px"/>
       <view class="change">
         <text class="wordcotton">{{item.title}}</text>
       </view>

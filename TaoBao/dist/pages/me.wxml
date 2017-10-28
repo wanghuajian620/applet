@@ -12,41 +12,13 @@
       <image class="payorder box" src="{{brand}}"/>
     </view>
     <view class="distance">
-      <view class="pay paycenter">
-        <image class="margin box" src="{{site}}"/>
-        <text class="margin word">我的收货地址</text>
-        <image class="passsite box" src="{{brand}}"/>
-      </view>
-      <view class="line"/>  
-      <view class="pay paycenter">
-        <image class="margin box" src="{{wallet}}"/>
-        <text class="margin word">待付款</text>
-        <image class="passpay box" src="{{brand}}"/>
-      </view>
-      <view class="line"/> 
-      <view class="pay paycenter">
-        <image class="margin box" src="{{shipments}}"/>
-        <text class="margin word">待发货</text>
-        <image class="passpay box" src="{{brand}}"/>
-      </view>
-       <view class="line"/> 
-      <view class="pay paycenter">
-        <image class="margin box" src="{{deLivery}}"/>
-        <text class="margin word">待收货</text>
-        <image class="passpay box" src="{{brand}}"/>
-      </view>
-       <view class="line"/>
-      <view class="pay paycenter">
-        <image class="margin box" src="{{evaluate}}"/>
-        <text class="margin word">待评价</text>
-        <image class="passpay box" src="{{brand}}"/>
-      </view>
-       <view class="line"/> 
-      <view class="pay paycenter">
-        <image class="margin box" src="{{refund}}"/>
-        <text class="margin word">退款/售后</text>
-        <image class="passreturn box" src="{{brand}}"/>
-      </view>
-    </view> 
-  </view>     
+      <view class="pay paycenter"  wx:for="{{b}}" wx:key="index" id="{{index}}">
+        <image class="margin box" src="{{item.icon}}"/>
+        <view class="laotong">
+          <text class="margin word">{{item.text}}</text>
+        </view>  
+        <image class="passpay box" src="{{item.check}}"/>
+      </view>  
+    </view>
+  </view>  
 </view>

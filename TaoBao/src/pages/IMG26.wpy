@@ -203,7 +203,7 @@ export default class Index extends wepy.page {
     pass: '../image/大于号-2.png',
     width: '',
     height: '',
-    icon: '',
+    // icon: '',
     title: '',
     pic: []
   }
