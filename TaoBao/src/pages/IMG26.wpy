@@ -203,6 +203,7 @@ export default class Index extends wepy.page {
     pass: '../image/大于号-2.png',
     width: '',
     height: '',
+    item: '',
     // icon: '',
     title: '',
     pic: []
@@ -211,7 +212,7 @@ export default class Index extends wepy.page {
   onLoad(data) {
     let self = this
     self.title = data.title
-    self.pic = data.pic.split(',')
+    self.pic = data.pic.split(',')// split(,)作用是把逗号隔开的字符串转换成数组
     console.log(data.pic)
     wepy.getSystemInfo({
       success(res) {

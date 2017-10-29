@@ -86,6 +86,9 @@
   border-radius: 50%;
   border: 1px solid #F8F8F8
 }
+.word {
+  font-size: 13px
+}
 ::-webkit-scrollbar {
   width: 0px;
   height: 0px;
@@ -99,12 +102,12 @@
       <view class="top"></view>
       <view class="flex box">
         <image class="circle" src="{{avatarUrl}}"></image>
-        <text>{{nickName}}</text>
+        <text class="word">{{nickName}}</text>
       </view>
       <view @tap="github" class="techcat distancecat">
         <view class="backgroundcat techcat border">
           <image class="icon distance" src="{{cat}}"></image>
-          <text>My Github</text>
+          <text class="word">My Github</text>
           <image class="icon space" src="{{symbol}}"></image>
         </view>
       </view>
@@ -112,7 +115,7 @@
       <view @tap="email" class="techcat distanceemail">
         <view class="backgroundcat techcat border">
           <image class="icon distance" src="{{email}}"></image>
-          <text>My Email</text>
+          <text class="word">My Email</text>
           <image class="icon interval" src="{{sign}}"></image>
         </view>
       </view>
