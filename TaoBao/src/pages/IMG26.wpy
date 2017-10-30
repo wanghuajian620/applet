@@ -173,7 +173,7 @@
       <view class="bottomline"></view>
       <view class="flexseller">
         <text class="word">联系卖家</text>
-        <text class="word">加入购物车</text>
+        <view @tap="join" class="word">加入购物车</view>
         <text class="word">立即购买</text>
       </view>     
     </view>
@@ -208,7 +208,40 @@ export default class Index extends wepy.page {
     title: '',
     pic: []
   }
-  methods = {}
+  methods = {
+    join() {
+      let self = this
+
+      wepy.showModal({
+        title: '提示',
+        content: '加入成功',
+        showCancel: false,
+        success: function(res) {
+          try {
+            let value = wepy.getStorageSync('shopping')
+            if (value) {
+              value.push({
+                title: self.title,
+                pic: self.pic
+              })
+
+              wepy.setStorageSync('shopping', value)
+            } else {
+              let value = []
+
+              value.push({
+                title: self.title,
+                pic: self.pic
+              })
+
+              wepy.setStorageSync('shopping', value)
+            }
+          } catch (e) {
+          }
+        }
+      })
+    }
+  }
   onLoad(data) {
     let self = this
     self.title = data.title

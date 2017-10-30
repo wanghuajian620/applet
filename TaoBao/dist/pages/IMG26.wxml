@@ -51,7 +51,7 @@
       <view class="bottomline"/>
       <view class="flexseller">
         <text class="word">联系卖家</text>
-        <text class="word">加入购物车</text>
+        <view bindtap="join" class="word">加入购物车</view>
         <text class="word">立即购买</text>
       </view>     
     </view>
