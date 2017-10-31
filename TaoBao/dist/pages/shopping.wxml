@@ -1,14 +1,18 @@
 
 <view class="container carts-list">
-  <view  wx:for="{{carts}}" class="carts-item" data-title="{{item.title}}" data-url="{{item.url}}" bindtap="bindViewTap">
+  <view  wx:for="{{value}}" wx:key="index" class="carts-item" data-title="{{item.title}}" data-url="{{item.url}}" data-index="{{index}}">
     <view>
-      <image class="carts-image" src="{{item.image}}" mode="aspectFill"/>
+      <image class="carts-image" src="{{item.pic}}" mode="aspectFill"/>
     </view>
     <view class="carts-text">
       <text class="carts-title">{{item.title}}</text>
       <view class="carts-subtitle">
         <text class="carts-price">{{item.sum}}</text>
-        <text>WXStepper</text>
+        <view class="arithmetic">
+          <text data-index="{{index}}" bindtap="minus">-</text>
+          <view style="width: 50px">{{item.num}}</view>
+          <text class="normal" data-index="{{index}}" bindtap="plus">+</text>
+        </view>  
       </view>
     </view>  
   </view>

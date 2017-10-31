@@ -12,24 +12,24 @@
 .carts-list {
   display: flex;
   flex-direction: column;
-  padding: 20rpx 40rpx;
+  padding: 10px 20px;
 }
  
 /*每行单元格*/
 .carts-item {
   display: flex;
   flex-direction: row;
-  height:150rpx;
+  height:75px;
   /*width属性解决标题文字太短而缩略图偏移*/
   width:100%;
-  border-bottom: 1px solid #eee;
-  padding: 30rpx 0;
+  border-bottom: 1px solid black;
+  padding: 15px 0;
 }
  
 /*左部图片*/
 .carts-image {
-  width:150rpx;
-  height:150rpx;
+  width:75px;
+  height:75px;
 }
  
  
@@ -43,15 +43,15 @@
  
 /*右上部分标题*/
 .carts-title {
-  margin: 10rpx;
-  font-size: 30rpx;
+  margin-left: 5px;
+  font-size: 13px;
 }
  
 /*右下部分价格与数量*/
 .carts-subtitle {
-  font-size: 25rpx;
+  font-size: 13px;
   color:darkgray;
-  padding: 0 20rpx;
+  padding: 0 10px;
   display: flex;
   flex-direction: row;
   justify-content:space-between;
@@ -61,19 +61,30 @@
 .carts-price {
   color: #f60;
 }
+
+/*加减算法*/
+.arithmetic {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 </style>
 
 <template>
 <view class="container carts-list">
-  <view wx:for="{{carts}}" class="carts-item" data-title="{{item.title}}" data-url="{{item.url}}" bindtap="bindViewTap">
+  <view wx:for="{{value}}" wx:key="index" class="carts-item" data-title="{{item.title}}" data-url="{{item.url}}" data-index="{{index}}">
     <view>
-      <image class="carts-image" src="{{item.image}}" mode="aspectFill"/>
+      <image class="carts-image" src="{{item.pic}}" mode="aspectFill"/>
     </view>
     <view class="carts-text">
       <text class="carts-title">{{item.title}}</text>
       <view class="carts-subtitle">
         <text class="carts-price">{{item.sum}}</text>
-        <text>WXStepper</text>
+        <view class="arithmetic">
+          <text data-index="{{index}}" bindtap="minus">-</text>
+          <view style="width: 50px">{{item.num}}</view>
+          <text class="normal" data-index="{{index}}" bindtap="plus">+</text>
+        </view>  
       </view>
     </view>  
   </view>
@@ -89,9 +100,39 @@ export default class Index extends wepy.page {
     navigationBarTitleText: '购物车'
   }
   data = {
-    carts: [
-      {}
-    ]
+    value: []
+  }
+  methods = {
+    minus(e) {
+      let self = this
+      const index = e.currentTarget.dataset.index
+      let num = self.value[index].num
+      self.num--
+      self.value[index].num = num
+      // this.setData({
+      //   carts: value
+      // })
+    },
+    plus(e) {
+      let self = this
+      const index = e.currentTarget.dataset.index
+      console.log(e)
+      let num = self.value[index].num
+      console.log(num)
+      num++
+      self.value[index].num = num
+      // this.setData({
+      //   carts: value
+      // })
+    }
+  }
+  onLoad() {
+    let self = this
+    self.value = wepy.getStorageSync('shopping')
+    console.log(self.value)
+    // self.setData({
+    //   value: wepy.getStorageSync('shopping')
+    // })
   }
 }
 </script>

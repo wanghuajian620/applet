@@ -173,7 +173,7 @@
       <view class="bottomline"></view>
       <view class="flexseller">
         <text class="word">联系卖家</text>
-        <view @tap="join" class="word">加入购物车</view>
+        <view @tap="join" data-index="{{index}}" class="word">加入购物车</view>
         <text class="word">立即购买</text>
       </view>     
     </view>
@@ -209,7 +209,7 @@ export default class Index extends wepy.page {
     pic: []
   }
   methods = {
-    join() {
+    join(e) {
       let self = this
 
       wepy.showModal({
@@ -218,11 +218,13 @@ export default class Index extends wepy.page {
         showCancel: false,
         success: function(res) {
           try {
+            // const index = e.cuurentTarget.dataset.index
             let value = wepy.getStorageSync('shopping')
             if (value) {
               value.push({
                 title: self.title,
-                pic: self.pic
+                pic: self.pic[0],
+                num: self.num
               })
 
               wepy.setStorageSync('shopping', value)
@@ -231,7 +233,8 @@ export default class Index extends wepy.page {
 
               value.push({
                 title: self.title,
-                pic: self.pic
+                pic: self.pic[0],
+                num: self.num
               })
 
               wepy.setStorageSync('shopping', value)
@@ -245,6 +248,7 @@ export default class Index extends wepy.page {
   onLoad(data) {
     let self = this
     self.title = data.title
+    self.num = data.num
     self.pic = data.pic.split(',')// split(,)作用是把逗号隔开的字符串转换成数组
     console.log(data.pic)
     wepy.getSystemInfo({

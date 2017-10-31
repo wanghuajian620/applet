@@ -174,7 +174,7 @@ export default class Home extends wepy.page {
       let item = self.a[e.currentTarget.id]
       console.log(e)
       wepy.navigateTo({
-        url: `./IMG26?title=${item.title}&icon=${item.icon}&pic=${item.pic}`// IMG26中onLoad()中传入的参数即是这的字符串拼接中的title，icon，pic
+        url: `./IMG26?title=${item.title}&icon=${item.icon}&pic=${item.pic}&num=${item.num}`// IMG26中onLoad()中传入的参数即是这的字符串拼接中的title，icon，pic
       })
     }
   }
