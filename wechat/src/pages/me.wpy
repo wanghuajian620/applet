@@ -45,7 +45,6 @@
 .circle {
   height: 70px;
   width: 70px;
-  border: 1px solid #87CEFF;
   border-radius: 50%;
 }
 
@@ -101,7 +100,7 @@
     <view class="background">
       <view class="top"></view>
       <view class="flex box">
-        <image class="circle" src="{{avatarUrl}}"></image>
+        <image @tap="click" class="circle" src="{{avatarUrl}}"></image>
         <text class="word">{{nickName}}</text>
       </view>
       <view @tap="github" class="techcat distancecat">
@@ -135,7 +134,7 @@ export default class Index extends wepy.page {
     navigationBarTitleText: '我的'
   }
   data = {
-    avatarUrl: '../image/WechatIMG25.jpeg',
+    avatarUrl: '../image/WechatIMG12.jpeg',
     nickName: 'A∞(华健)',
     cat: '../image/github-3.png',
     symbol: '../image/下一步.png',
@@ -155,7 +154,8 @@ export default class Index extends wepy.page {
               if (res.tapIndex === 0) {
                 wepy.showModal({
                   title: '提示',
-                  content: '复制成功'
+                  content: '复制成功',
+                  showCancel: false
                 })
               }
             }
@@ -173,12 +173,19 @@ export default class Index extends wepy.page {
               if (res.tapIndex === 0) {
                 wepy.showModal({
                   title: '提示',
-                  content: '复制成功'
+                  content: '复制成功',
+                  showCancel: false
                 })
               }
             }
           })
         }
+      })
+    },
+    click() {
+      wepy.previewImage({
+        current: '',
+        urls: ['../image/WechatIMG12.jpeg']
       })
     },
     onShareAppMessage() {

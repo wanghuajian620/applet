@@ -1,6 +1,6 @@
 
 <view class="background">
-  <text class="flex">学习</text>
+  <text class="flex">{{essay.essay}}</text>
   <view class="flexcircle">
     <image class="circle" src="{{heart}}"/>
   </view>

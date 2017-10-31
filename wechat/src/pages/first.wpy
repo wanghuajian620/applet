@@ -28,7 +28,7 @@
 
 <template>
 <view class='background'>
-  <text class='flex'>学习</text>
+  <text class='flex'>{{essay.essay}}</text>
   <view class='flexcircle'>
     <image class='circle' src="{{heart}}"></image>
   </view>
@@ -43,9 +43,27 @@ export default class Index extends wepy.page {
     navigationBarTitleText: 'jotting'
   }
   data = {
-    heart: '../image/心.png'
+    heart: '../image/心.png',
+    essay: '',
+    index: ''
   }
   methods = {
+  }
+  onLoad(data) {
+    let self = this
+    self.index = data.index
+    console.log(data.index)
+    wepy.request({
+      url: 'http://127.0.0.1:7001/virgo',
+      method: 'POST',
+      success: function(res) {
+        self.essay = res.data[self.index]
+        self.setData({
+          essay: res.data[self.index]
+        })
+        console.log(self.index)
+      }
+    })
   }
 }
 </script>
