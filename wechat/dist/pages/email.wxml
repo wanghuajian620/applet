@@ -1,4 +1,0 @@
-
-<view class="background">
-  <text class="flex">{{email}}</text>
-</view>

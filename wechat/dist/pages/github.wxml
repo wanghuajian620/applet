@@ -1,6 +1,0 @@
-
-<view class="background">
-  <view class="flex">
-  <text>{{github}}</text>
-  </view>
-</view>
