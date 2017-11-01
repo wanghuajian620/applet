@@ -1,30 +1,28 @@
 <style lang="less">
-.center {
+.flex {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 0.7rem
 }
 .card {
   background-color: white;
   height: 16.1rem;
-  width: 18.5rem
+  width: 18.5rem;
+  margin-top: 10px;
 }
-.photocenter {
+.flex-photo {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-.distance {
+.photo-border {
+  height: 250px;
+  width: 350px;
   margin: 5px 15px 5px 15px
 }
-.border {
-  height: 250px;
-  width: 350px
-}
-.flextext {
+.flex-text {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -50,12 +48,12 @@
 <template>
 <view>
   <scroll-view scroll-y= "true" style="height: {{height}}px; width:{{width}}px; background-color: #f4f5f7">
-    <view class="center">
-      <view @tap="tree" wx:for="{{essay}}" wx:key="index" data-index="{{index}}" class="card">
-        <view class="photocenter">
-          <image class="distance border" src="{{item.image}}" style="margin-top: 0.7rem"></image>
+    <view class="flex">
+      <view @tap="tree" class="card" wx:for="{{essay}}" wx:key="index" data-index="{{index}}">
+        <view class="flex-photo">
+          <image class="photo-border" src="{{item.image}}" style="margin-top: 0.7rem"></image>
         </view>
-        <view class="flextext">
+        <view class="flex-text">
           <text class="word">{{item.title}}</text>
           <view class="date">{{item.created}}</view>
         </view> 
@@ -82,20 +80,9 @@ export default class Index extends wepy.page {
   }
   methods = {
     tree(e) {
-      // let self = this
       let id = e.currentTarget.dataset.index
       wepy.navigateTo({
         url: `./first?index=${id}`
-      })
-    },
-    sea() {
-      wepy.navigateTo({
-        url: './second'
-      })
-    },
-    landmark() {
-      wepy.navigateTo({
-        url: './third'
       })
     }
   }
