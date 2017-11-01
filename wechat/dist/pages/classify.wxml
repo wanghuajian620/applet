@@ -3,15 +3,13 @@
     <view class="line">
     </view>
     <view class="flextext word">
-        <text style="color: {{JavaScript}}; border-bottom: 1px solid {{JavaScriptline}}" bindtap="js">JavaScript</text>
-        <text style="color: {{HTML}}; border-bottom: 1px solid {{HTMLline}}" bindtap="HTML">HTML5</text>
-        <text style="color: {{Node}}; border-bottom: 1px solid {{Nodeline}}" bindtap="Node">Node.js</text>
-        <text style="color: {{ES6}}; border-bottom: 1px solid {{ES6line}}" bindtap="ES6">ES6</text>
-        <text style="color: {{CSS}}; border-bottom: 1px solid {{CSSline}}" bindtap="CSS">CSS</text>
+      <view  wx:for="{{tab}}" wx:key="index" bindtap="tap" id="{{index}}">
+        <text style="color: {{index == currentTargetId ? 'red' : 'black'}}; border-bottom: 1px solid {{index == currentTargetId ? 'red' : 'black'}}">{{item}}</text>
       </view>
-    <view class="flextop">
-      <text class="box"/>
-    </view>  
+      </view>
+    <view bindtap="click" class="flex-brief"  wx:for="{{content}}" wx:key="index" data-index="{{index}}">
+      <view wx:if="{{item.type === tab[currentTargetId]}}" class="box">{{item.title}}</view>
+    </view>
     <view>
       <text bindtap="onShareAppMessage"/>
       <text bindtap="onPullDownRefresh"/>

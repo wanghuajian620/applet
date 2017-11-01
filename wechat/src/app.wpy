@@ -7,6 +7,11 @@
   justify-content: space-between;
   box-sizing: border-box;
 }
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  color: transparent
+}
 </style>
 
 <script>
@@ -20,8 +25,8 @@ export default class extends wepy.app {
       'pages/first',
       'pages/second',
       'pages/third',
-      'pages/photo',
       'pages/classify',
+      'pages/javascript',
       'pages/me'
     ],
     window: {

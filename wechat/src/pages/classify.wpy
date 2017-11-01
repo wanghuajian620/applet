@@ -32,18 +32,20 @@
   height: 0px;
   color: transparent;
 }
-.box {
-  height: 250px;
-  width: 350px;
-  background-color: #F8F8F8
-}
-.flextop {
+.flex-brief {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding-top: 13px
+  align-items: center
 }
+.box {
+  height: 100%;
+  width: 380px;
+  font-size: 12px;
+  padding: 15px 15px;
+  margin: 20px 20px;
+  border: 1px solid darkcyan
+}
+
 </style>
 
 
@@ -52,15 +54,13 @@
     <view class="line">
     </view>
     <view class="flextext word">
-        <text style="color: {{JavaScript}}; border-bottom: 1px solid {{JavaScriptline}}" @tap="js">JavaScript</text>
-        <text style="color: {{HTML}}; border-bottom: 1px solid {{HTMLline}}" @tap="HTML">HTML5</text>
-        <text style="color: {{Node}}; border-bottom: 1px solid {{Nodeline}}" @tap="Node">Node.js</text>
-        <text style="color: {{ES6}}; border-bottom: 1px solid {{ES6line}}" @tap="ES6">ES6</text>
-        <text style="color: {{CSS}}; border-bottom: 1px solid {{CSSline}}" @tap="CSS">CSS</text>
+      <view wx:for="{{tab}}" wx:key="index" @tap="tap" id="{{index}}">
+        <text style="color: {{index == currentTargetId ? 'red' : 'black'}}; border-bottom: 1px solid {{index == currentTargetId ? 'red' : 'black'}}">{{item}}</text>
       </view>
-    <view class="flextop">
-      <text class="box"></text>
-    </view>  
+      </view>
+    <view @tap="click" class="flex-brief" wx:for="{{content}}" wx:key="index" data-index="{{index}}">
+      <view wx:if="{{item.type === tab[currentTargetId]}}" class="box">{{item.title}}</view>
+    </view>
     <view>
       <text @tap="onShareAppMessage"></text>
       <text @tap="onPullDownRefresh"></text>
@@ -79,93 +79,32 @@ export default class Index extends wepy.page {
     enablePullDownRefresh: true
   }
   data = {
-    JavaScript: '#62b900',
-    JavaScriptline: '#62b900',
-    HTML: '#202020',
-    HTMLline: '#FFFFFF',
-    Node: '#202020',
-    Nodeline: '#FFFFFF',
-    ES6: '#202020',
-    ES6line: '#FFFFFF',
-    CSS: '#202020',
-    CSSline: '#FFFFFF',
     height: 0,
-    width: 0
+    width: 0,
+    content: '',
+    tab: ['JavaScript', 'css', 'html5', 'go', 'swift'],
+    currentTargetId: 0
   }
   methods = {
-    js() {
+    tap(e) {
       let self = this
 
-      self.JavaScript = '#62b900'
-      self.JavaScriptline = '#62b900'
-      self.HTML = '#202020'
-      self.HTMLline = '#FFFFFF'
-      self.Node = '#202020'
-      self.Nodeline = '#FFFFFF'
-      self.ES6 = '#202020'
-      self.ES6line = '#FFFFFF'
-      self.CSS = '#202020'
-      self.CSSline = '#FFFFFF'
+      self.currentTargetId = e.currentTarget.id
     },
-
-    HTML() {
+    click(e) {
       let self = this
-
-      self.JavaScript = '#202020'
-      self.JavaScriptline = '#FFFFFF'
-      self.HTML = '#62b900'
-      self.HTMLline = '#62b900'
-      self.Node = '#202020'
-      self.Nodeline = '#FFFFFF'
-      self.ES6 = '#202020'
-      self.ES6line = '#FFFFFF'
-      self.CSS = '#202020'
-      self.CSSline = '#FFFFFF'
-    },
-    Node() {
-      let self = this
-
-      self.JavaScript = '#202020'
-      self.JavaScriptline = '#FFFFFF'
-      self.HTML = '#202020'
-      self.HTMLline = '#FFFFFF'
-      self.Node = '#62b900'
-      self.Nodeline = '#62b900'
-      self.ES6 = '#202020'
-      self.ES6line = '#FFFFFF'
-      self.CSS = '#202020'
-      self.CSSline = '#FFFFFF'
-    },
-    ES6() {
-      let self = this
-
-      self.JavaScript = '#202020'
-      self.JavaScriptline = '#FFFFFF'
-      self.HTML = '#202020'
-      self.HTMLline = '#FFFFFF'
-      self.Node = '#202020'
-      self.Nodeline = '#FFFFFF'
-      self.ES6 = '#62b900'
-      self.ES6line = '#62b900'
-      self.CSS = '#202020'
-      self.CSSline = '#FFFFFF'
-    },
-    CSS() {
-      let self = this
-
-      self.JavaScript = '#202020'
-      self.JavaScriptline = '#FFFFFF'
-      self.HTML = '#202020'
-      self.HTMLline = '#FFFFFF'
-      self.Node = '#202020'
-      self.Nodeline = '#FFFFFF'
-      self.ES6 = '#202020'
-      self.ES6line = '#FFFFFF'
-      self.CSS = '#62b900'
-      self.CSSline = '#62b900'
+      let id = e.currentTarget.dataset.index
+      let essay = self.content[id].content
+      // self.currentTargetId = e.currentTarget.id
+      console.log(e, 'aaaaaaaaaaaaa')
+      // console.log(self.content[0], 'essay')
+      // console.log(essay)
+      wepy.navigateTo({
+        url: `./javascript?MD=${essay}`
+      })
     }
   }
-  onLoad() {
+  async onLoad() {
     let self = this
     wepy.getSystemInfo({
       success(res) {
@@ -173,6 +112,19 @@ export default class Index extends wepy.page {
         self.width = res.windowWidth
       }
     })
+    await wepy.request({
+      url: 'http://127.0.0.1:7001/classify',
+      success: function(res) {
+        self.content = res.data
+        self.setData({
+          content: res.data
+        })
+        console.log(self.content)
+        console.log(self.content[0].content, 'essay')
+      }
+    })
+
+    this.$apply()
   }
   onPullDownRefresh() {
     wepy.startPullDownRefresh()

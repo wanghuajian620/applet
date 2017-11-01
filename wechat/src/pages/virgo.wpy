@@ -81,6 +81,7 @@ export default class Index extends wepy.page {
   methods = {
     tree(e) {
       let id = e.currentTarget.dataset.index
+      // console.log(e)
       wepy.navigateTo({
         url: `./first?index=${id}`
       })

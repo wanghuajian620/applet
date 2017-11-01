@@ -1,15 +1,10 @@
 <style lang="less">
-.background {
-  height: 100%;
-  width: 100%;
-  // background-image: url(http://images.gaga.me/photos/ymd/90947a8247a535c65db2426c10d5710d.jpg?imageMogr2/thumbnail/!50p);
-  background-repeat: no-repeat;
-}
 .flex {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 30px;
+  margin: 20px 20px;
+  border: 1px solid #DDDDDD;
 }
 .circle {
   height: 30px;
