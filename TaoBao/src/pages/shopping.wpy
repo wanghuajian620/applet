@@ -109,9 +109,6 @@ export default class Index extends wepy.page {
       let num = self.value[index].num
       self.num--
       self.value[index].num = num
-      // this.setData({
-      //   carts: value
-      // })
     },
     plus(e) {
       let self = this
@@ -121,18 +118,12 @@ export default class Index extends wepy.page {
       console.log(num)
       num++
       self.value[index].num = num
-      // this.setData({
-      //   carts: value
-      // })
     }
   }
   onLoad() {
     let self = this
     self.value = wepy.getStorageSync('shopping')
     console.log(self.value)
-    // self.setData({
-    //   value: wepy.getStorageSync('shopping')
-    // })
   }
 }
 </script>
