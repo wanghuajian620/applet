@@ -2,11 +2,11 @@
   <view>
     <view class="line">
     </view>
-    <view class="flextext word">
+    <view class="flex-text word">
       <view  wx:for="{{tab}}" wx:key="index" bindtap="tap" id="{{index}}">
-        <text style="color: {{index == currentTargetId ? 'red' : 'black'}}; border-bottom: 1px solid {{index == currentTargetId ? 'red' : 'black'}}">{{item}}</text>
+        <text style="color: {{index == currentTargetId ? 'black' : '#666666'}}; border-bottom: {{index == currentTargetId ? '2px solid black' : ''}}">{{item}}</text>
       </view>
-      </view>
+    </view>
     <view bindtap="click" class="flex-brief"  wx:for="{{content}}" wx:key="index" data-index="{{index}}">
       <view wx:if="{{item.type === tab[currentTargetId]}}" class="box">{{item.title}}</view>
     </view>

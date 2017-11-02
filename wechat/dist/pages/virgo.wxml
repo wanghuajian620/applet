@@ -1,6 +1,7 @@
 
 <view>
-  <scroll-view scroll-y="true" style="height: {{height}}px; width:{{width}}px; background-color: #f4f5f7">
+  <scroll-view scroll-y="true" style="height: {{height}}px; width:{{width}}px; background-color: #F0F0F0">
+    <view class="line"/>
     <view class="flex">
       <view bindtap="tree" class="card"  wx:for="{{essay}}" wx:key="index" data-index="{{index}}">
         <view class="flex-photo">

@@ -1,26 +1,17 @@
 <style lang="less">
-.flextext {
+.flex-text {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
-  margin-top: 5px
-  
+  margin-top: 5px 
 }
 .word {
-  font-size: 13px;
+  font-size: 15px;
 }
-
 .line {
-  border: 1px solid darkgrey;
-  background-color: #F8F8FF; 
+  border: 1px solid darkgrey; 
   width: 100%;
 }
-
-.js {
-  margin-left: 8px
-}
-
 .background {
   width: 100%;
   height: 560px;
@@ -32,18 +23,20 @@
   height: 0px;
   color: transparent;
 }
+
+
 .flex-brief {
   display: flex;
   justify-content: center;
-  align-items: center
 }
 .box {
-  height: 100%;
   width: 380px;
   font-size: 12px;
-  padding: 15px 15px;
+  padding: 100px 100px;
   margin: 20px 20px;
-  border: 1px solid darkcyan
+  background-color: #F0F0F0;
+  // box-shadow: 5px 5px 10px #999999;
+  // border: 1px solid darkcyan
 }
 
 </style>
@@ -53,11 +46,11 @@
   <view>
     <view class="line">
     </view>
-    <view class="flextext word">
+    <view class="flex-text word">
       <view wx:for="{{tab}}" wx:key="index" @tap="tap" id="{{index}}">
-        <text style="color: {{index == currentTargetId ? 'red' : 'black'}}; border-bottom: 1px solid {{index == currentTargetId ? 'red' : 'black'}}">{{item}}</text>
+        <text style="color: {{index == currentTargetId ? 'black' : '#666666'}}; border-bottom: {{index == currentTargetId ? '2px solid black' : ''}}">{{item}}</text>
       </view>
-      </view>
+    </view>
     <view @tap="click" class="flex-brief" wx:for="{{content}}" wx:key="index" data-index="{{index}}">
       <view wx:if="{{item.type === tab[currentTargetId]}}" class="box">{{item.title}}</view>
     </view>
@@ -81,24 +74,25 @@ export default class Index extends wepy.page {
   data = {
     height: 0,
     width: 0,
-    content: '',
-    tab: ['JavaScript', 'css', 'html5', 'go', 'swift'],
-    currentTargetId: 0
+    tab: ['javascript', 'css', 'html5', 'go', 'swift'],
+    currentTargetId: 0,
+    content: ''
   }
   methods = {
     tap(e) {
       let self = this
 
       self.currentTargetId = e.currentTarget.id
+      console.log(e, 'eeeeeeeeeeee')
     },
     click(e) {
       let self = this
       let id = e.currentTarget.dataset.index
       let essay = self.content[id].content
-      // self.currentTargetId = e.currentTarget.id
-      console.log(e, 'aaaaaaaaaaaaa')
-      // console.log(self.content[0], 'essay')
-      // console.log(essay)
+      console.log(e, 'mmmmmmm')
+      console.log(id, 'dddddddddddddd')
+      console.log(essay)
+
       wepy.navigateTo({
         url: `./javascript?MD=${essay}`
       })
@@ -119,8 +113,6 @@ export default class Index extends wepy.page {
         self.setData({
           content: res.data
         })
-        console.log(self.content)
-        console.log(self.content[0].content, 'essay')
       }
     })
 

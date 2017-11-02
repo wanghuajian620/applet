@@ -49,10 +49,9 @@ export default class Index extends wepy.page {
   }
   methods = {
   }
-  onLoad(data) {
+  onLoad(e) {
     let self = this
-    self.index = data.index
-    console.log(data.index)
+    self.index = e.index
     wepy.request({
       url: 'http://127.0.0.1:7001/virgo',
       method: 'POST',
@@ -61,7 +60,6 @@ export default class Index extends wepy.page {
         self.setData({
           essay: res.data[self.index]
         })
-        console.log(self.index)
       }
     })
   }

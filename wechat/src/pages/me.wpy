@@ -1,14 +1,25 @@
 <style lang="less">
+.background {
+  width: 100%;
+  height: 560px;
+  background-color: #FFFFFF
+}
 .top {
   height: 30px;
   width: 100%;
   background-color: #FFFFFF
 }
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // margin-top: 30px
+}
 
-.background {
+.box {
+  height: 150px;
   width: 100%;
-  height: 560px;
-  background-color: #FFFFFF
 }
 
 .backgroundcat {
@@ -17,26 +28,13 @@
   background-color: #F8F8F8
 }
 
-.flex {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px
-}
-
-.box {
-  height: 150px;
-  width: 100%;
-}
-
 .line {
   width: 340px;
   border: 1px solid #FFFFFF
 }
 
 .border {
-  height: 40px;
+  height: 55px;
   width: 340px;
   border-radius: 5px;
   border: 1px solid #F8F8F8
@@ -48,45 +46,49 @@
   border-radius: 50%;
 }
 
-.techcat {
+.flex-cat {
   display: flex;
   justify-content: flex-start;
-  align-items: center
+  align-items: center;
 }
 
 .distance {
   margin: 5px 10px 5px 15px
 }
 
-.distancecat {
-  margin-top: 80px;
+.distance-cat {
+  margin-top: 50px;
   margin-left: 15px;
   margin-right: 10px;
 }
 
-.distanceemail {
+.distance-email {
   margin-left: 15px;
   margin-right: 10px
 }
 
 .space {
-  margin-left: 150px;
-  margin-right: 5px
+  margin-left: 176px;
 }
 
 .interval {
-  margin-left: 160px;
-  margin-right: 5px
+  margin-left: 184px;
 }
 
 .icon {
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
   border-radius: 50%;
   border: 1px solid #F8F8F8
 }
 .word {
-  font-size: 13px
+  font-size: 15px
+}
+.flex-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
 }
 ::-webkit-scrollbar {
   width: 0;
@@ -103,16 +105,18 @@
         <image @tap="click" class="circle" src="{{avatarUrl}}"></image>
         <text class="word">{{nickName}}</text>
       </view>
-      <view @tap="github" class="techcat distancecat">
-        <view class="backgroundcat techcat border">
+      <view @tap="github" class="flex-cat distance-cat">
+        <view class="backgroundcat flex-cat border">
           <image class="icon distance" src="{{cat}}"></image>
-          <text class="word">My Github</text>
+          <view class="flex-text">
+            <text class="word">My Github</text>
+          </view>  
           <image class="icon space" src="{{symbol}}"></image>
         </view>
       </view>
       <view class="line"></view>
-      <view @tap="email" class="techcat distanceemail">
-        <view class="backgroundcat techcat border">
+      <view @tap="email" class="flex-cat distance-email">
+        <view class="backgroundcat flex-cat border">
           <image class="icon distance" src="{{email}}"></image>
           <text class="word">My Email</text>
           <image class="icon interval" src="{{sign}}"></image>

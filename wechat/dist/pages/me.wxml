@@ -6,16 +6,18 @@
         <image bindtap="click" class="circle" src="{{avatarUrl}}"/>
         <text class="word">{{nickName}}</text>
       </view>
-      <view bindtap="github" class="techcat distancecat">
-        <view class="backgroundcat techcat border">
+      <view bindtap="github" class="flex-cat distance-cat">
+        <view class="backgroundcat flex-cat border">
           <image class="icon distance" src="{{cat}}"/>
-          <text class="word">My Github</text>
+          <view class="flex-text">
+            <text class="word">My Github</text>
+          </view>  
           <image class="icon space" src="{{symbol}}"/>
         </view>
       </view>
       <view class="line"/>
-      <view bindtap="email" class="techcat distanceemail">
-        <view class="backgroundcat techcat border">
+      <view bindtap="email" class="flex-cat distance-email">
+        <view class="backgroundcat flex-cat border">
           <image class="icon distance" src="{{email}}"/>
           <text class="word">My Email</text>
           <image class="icon interval" src="{{sign}}"/>
