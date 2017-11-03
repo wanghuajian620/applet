@@ -3,7 +3,19 @@
 
 module.exports = app => {
   class Classify extends app.Service {
-    * select() {
+    * select(par) {
+      let res;
+      try {
+        res = yield app.mysql.select('classify', {
+          where: { type: par.type },
+        });
+      } catch (e) {
+        this.ctx.logger.error(e);
+        return false;
+      }
+      return res;
+    }
+    * get() {
       let res;
       try {
         res = yield app.mysql.select('classify');

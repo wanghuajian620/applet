@@ -2,5 +2,6 @@
 
 module.exports = app => {
   app.post('/virgo', 'virgo.select');
-  app.get('/classify', 'classify.select');
+  app.post('/classify', 'classify.select');
+  app.post('/classify/get', 'classify.get');
 };
