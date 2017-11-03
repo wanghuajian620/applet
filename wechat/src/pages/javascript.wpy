@@ -18,24 +18,18 @@ export default class Index extends wepy.page {
     navigationBarTitleText: 'JavaScipt'
   }
   data = {
-    content: '',
     container: ''
   }
-  onLoad(data) {
+  onLoad() {
     let self = this
-    self.content = data.MD
-    console.log(data.MD)
-    wepy.request({
-      url: 'http://127.0.0.1:7001/classify/get',
-      method: 'POST',
-      success: function(res) {
-        self.container = res.data[self.content].content
-        self.setData({
-          container: res.data[self.content].content
-        })
-        console.log(res.data, 'tttttttt')
-      }
-    })
+
+    try {
+      let article = wepy.getStorageSync('article')
+
+      self.container = article
+    } catch (err) {
+      console.log(err)
+    }
   }
 }
 </script>
