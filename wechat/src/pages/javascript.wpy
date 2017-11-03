@@ -4,7 +4,7 @@
 
 <template>
 <view>
-  <text>{{content}}</text>
+  <text>{{container}}</text>
 </view>
 </template>
 
@@ -18,12 +18,24 @@ export default class Index extends wepy.page {
     navigationBarTitleText: 'JavaScipt'
   }
   data = {
-    content: ''
+    content: '',
+    container: ''
   }
   onLoad(data) {
     let self = this
     self.content = data.MD
     console.log(data.MD)
+    wepy.request({
+      url: 'http://127.0.0.1:7001/classify/get',
+      method: 'POST',
+      success: function(res) {
+        self.container = res.data[self.content].content
+        self.setData({
+          container: res.data[self.content].content
+        })
+        console.log(res.data, 'tttttttt')
+      }
+    })
   }
 }
 </script>

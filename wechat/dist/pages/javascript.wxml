@@ -1,4 +1,4 @@
 
 <view>
-  <text>{{content}}</text>
+  <text>{{container}}</text>
 </view>

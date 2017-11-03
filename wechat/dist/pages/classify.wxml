@@ -7,7 +7,7 @@
         <text style="color: {{index == currentTargetId ? 'black' : '#666666'}}; border-bottom: {{index == currentTargetId ? '2px solid black' : ''}}">{{item}}</text>
       </view>
     </view>
-    <view bindtap="click" class="flex-brief"  wx:for="{{content}}" wx:key="index" data-index="{{index}}">
+    <view bindtap="click" class="flex-brief"  wx:for="{{a}}" wx:key="index" data-index="{{index}}">
       <view wx:if="{{item.type === tab[currentTargetId]}}" class="box">{{item.title}}</view>
     </view>
     <view>
