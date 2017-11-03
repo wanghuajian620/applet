@@ -30,8 +30,8 @@ module.exports = app => {
         table.increments();
         table.string('type').notNullable().defaultTo('');
         table.string('title').notNullable().defaultTo('');
+        table.string('picture').notNullable().defaultTo('');
         table.text('content').notNullable().defaultTo('');
-        // table.string('ES6').notNullable().defaultTo('');
         // table.string('css').notNullable().defaultTo('');
         // table.timestamp('created').defaultTo(knex.fn.now());
         table.charset('utf8');
