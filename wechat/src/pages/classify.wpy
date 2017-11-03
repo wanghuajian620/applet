@@ -27,13 +27,23 @@
 
 .flex-brief {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 160px;
-  width: 330px;
   margin: 20px 20px;
   background-color: #F0F0F0;
   box-shadow: 5px 5px 10px #999999;
+}
+.flex-photo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+}
+.photo-border {
+  height: 150px;
+  width: 330px;
+  margin: 10px 5px 10px 5px;
 }
 
 </style>
@@ -49,8 +59,12 @@
       </view>
     </view>
     <view @tap="click" class="flex-brief" wx:for="{{a}}" wx:key="index" data-index="{{index}}">
-      <view wx:if="{{item.type === tab[currentTargetId]}}">{{item.title}}</view>
-      <!-- <view wx:if="{{item.type === tab[currentTargetId]}}">{{item.image}}</view> -->
+      <view class="flex-photo">
+        <image wx:if="{{item.type === tab[currentTargetId]}}" class="photo-border" src="{{item.picture}}"></image>
+      </view>
+      <view class="flex-title">  
+        <view class="word" wx:if="{{item.type === tab[currentTargetId]}}">{{item.title}}</view>
+      </view>  
     </view>
     <view>
       <text @tap="onShareAppMessage"></text>
@@ -74,9 +88,9 @@ export default class Index extends wepy.page {
     width: 0,
     tab: ['javascript', 'css', 'html5', 'go', 'swift'],
     currentTargetId: 0,
-    content: '',
     type: 'javascript',
     a: ''
+    // pic: ''
   }
   methods = {
     tap(e) {
@@ -102,7 +116,8 @@ export default class Index extends wepy.page {
       let self = this
       let id = e.currentTarget.dataset.index
       let essay = self.a[id].content
-
+      console.log(id, 'oooooooooooooooo')
+      console.log(self.a[id], 'iiiiiiiiiiiiii')
       try {
         wepy.setStorageSync('article', essay)
       } catch (err) {
@@ -112,7 +127,7 @@ export default class Index extends wepy.page {
       }
 
       wepy.navigateTo({
-        url: `./javascript`
+        url: './javascript'
       })
     }
   }
@@ -133,12 +148,11 @@ export default class Index extends wepy.page {
         type: self.type
       },
       success: function(res) {
-        console.log(res.data)
         self.a = res.data
         self.setData({
           a: res.data
         })
-        // console.log(res.data, 'ppppppppp')
+        console.log(res.data, 'ppppppppp')
       }
     })
 

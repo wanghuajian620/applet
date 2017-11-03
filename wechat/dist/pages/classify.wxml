@@ -8,8 +8,12 @@
       </view>
     </view>
     <view bindtap="click" class="flex-brief"  wx:for="{{a}}" wx:key="index" data-index="{{index}}">
-      <view wx:if="{{item.type === tab[currentTargetId]}}">{{item.title}}</view>
-      <!-- <view wx:if="{{item.type === tab[currentTargetId]}}">{{item.image}}</view> -->
+      <view class="flex-photo">
+        <image wx:if="{{item.type === tab[currentTargetId]}}" class="photo-border" src="{{item.picture}}"/>
+      </view>
+      <view class="flex-title">  
+        <view class="word" wx:if="{{item.type === tab[currentTargetId]}}">{{item.title}}</view>
+      </view>  
     </view>
     <view>
       <text bindtap="onShareAppMessage"/>
