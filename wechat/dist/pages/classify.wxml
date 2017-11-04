@@ -11,8 +11,15 @@
       <view class="flex-photo">
         <image wx:if="{{item.type === tab[currentTargetId]}}" class="photo-border" src="{{item.picture}}"/>
       </view>
-      <view class="flex-title">  
-        <view class="word" wx:if="{{item.type === tab[currentTargetId]}}">{{item.title}}</view>
+      <view class="flex-title">
+        <view class="title"> 
+          <text class="word" wx:if="{{item.type === tab[currentTargetId]}}">{{item.title}}</text>
+        </view>  
+        <view class="flex-label">
+          <text class="word-text" wx:if="{{item.type === tab[currentTargetId]}}">{{item.label}}</text>
+          <text class="word-text" wx:if="{{item.type === tab[currentTargetId]}}">{{item.icon}}</text>
+          <text class="word-text" wx:if="{{item.type === tab[currentTargetId]}}">{{item.read}}</text>
+        </view>  
       </view>  
     </view>
     <view>

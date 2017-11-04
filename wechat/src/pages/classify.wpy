@@ -8,6 +8,9 @@
 .word {
   font-size: 15px;
 }
+.word-text {
+  font-size: 12px
+}
 .line {
   border: 1px solid darkgrey; 
   width: 100%;
@@ -27,9 +30,7 @@
 
 .flex-brief {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
   margin: 20px 20px;
   background-color: #F0F0F0;
   box-shadow: 5px 5px 10px #999999;
@@ -37,13 +38,30 @@
 .flex-photo {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center
+  justify-content: space-between;
+  margin-left: 5px;
+  margin-right: 10px
 }
 .photo-border {
-  height: 150px;
-  width: 330px;
-  margin: 10px 5px 10px 5px;
+  height: 100px;
+  width: 150px;
+  margin: 5px 0px 5px 0px;
+}
+.flex-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+.title {
+  display: flex;
+  margin-top: 3px
+}
+.flex-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  color: orange
 }
 
 </style>
@@ -62,8 +80,15 @@
       <view class="flex-photo">
         <image wx:if="{{item.type === tab[currentTargetId]}}" class="photo-border" src="{{item.picture}}"></image>
       </view>
-      <view class="flex-title">  
-        <view class="word" wx:if="{{item.type === tab[currentTargetId]}}">{{item.title}}</view>
+      <view class="flex-title">
+        <view class="title"> 
+          <text class="word" wx:if="{{item.type === tab[currentTargetId]}}">{{item.title}}</text>
+        </view>  
+        <view class="flex-label">
+          <text class="word-text" wx:if="{{item.type === tab[currentTargetId]}}">{{item.label}}</text>
+          <text class="word-text" wx:if="{{item.type === tab[currentTargetId]}}">{{item.icon}}</text>
+          <text class="word-text" wx:if="{{item.type === tab[currentTargetId]}}">{{item.read}}</text>
+        </view>  
       </view>  
     </view>
     <view>
