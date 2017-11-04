@@ -32,7 +32,9 @@ module.exports = app => {
         table.string('title').notNullable().defaultTo('');
         table.string('picture').notNullable().defaultTo('');
         table.text('content').notNullable().defaultTo('');
-        // table.string('css').notNullable().defaultTo('');
+        table.string('label').notNullable().defaultTo('');
+        table.string('icon').notNullable().defaultTo('');
+        table.string('read').notNullable().defaultTo('');
         // table.timestamp('created').defaultTo(knex.fn.now());
         table.charset('utf8');
       });
