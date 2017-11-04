@@ -15,7 +15,7 @@ import wepy from 'wepy'
 
 export default class Index extends wepy.page {
   config = {
-    navigationBarTitleText: 'JavaScipt'
+    navigationBarTitleText: '我的博客'
   }
   data = {
     container: ''

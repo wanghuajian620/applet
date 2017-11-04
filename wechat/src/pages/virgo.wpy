@@ -55,7 +55,7 @@
   <scroll-view scroll-y= "true" style="height: {{height}}px; width:{{width}}px; background-color: #F0F0F0">
     <view class="line"></view>
     <view class="flex">
-      <view @tap="tree" class="card" wx:for="{{essay}}" wx:key="index" data-index="{{index}}">
+      <view @tap="tree" class="card" wx:for="{{essay}}" wx:key="index" id="{{index}}">
         <view class="flex-photo">
           <image class="photo-border" src="{{item.image}}" style="margin-top: 0.7rem"></image>
         </view>
@@ -77,19 +77,16 @@ export default class Index extends wepy.page {
     navigationBarTitleText: '我的博客'
   }
   data = {
-    teenager: '../image/ddb69b9490b27b2d6518589cddfcb557.jpeg',
-    youth: '../image/ddb69b9490b27b2d6518589cddfcb557.jpeg',
-    adult: '../image/ddb69b9490b27b2d6518589cddfcb557.jpeg',
     height: 0,
     width: 0,
     essay: ''
   }
   methods = {
     tree(e) {
-      let id = e.currentTarget.dataset.index
+      let current = e.currentTarget.id
       console.log(e, 'bbbbbb')
       wepy.navigateTo({
-        url: `./first?index=${id}`
+        url: `./first?index=${current}`
       })
     }
   }

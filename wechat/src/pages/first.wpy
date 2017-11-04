@@ -28,7 +28,7 @@
 
 <template>
 <view class='background'>
-  <text class='flex'>{{essay.essay}}</text>
+  <text class='flex'>{{essay}}</text>
   <view class='flexcircle'>
     <image class='circle' src="{{heart}}"></image>
   </view>
@@ -51,14 +51,14 @@ export default class Index extends wepy.page {
   }
   onLoad(e) {
     let self = this
-    self.index = e.index
+    self.index = e.index// 令data里面的index为 virgo传过来的是同一篇文章的索引
     wepy.request({
       url: 'http://127.0.0.1:7001/virgo',
       method: 'POST',
       success: function(res) {
-        self.essay = res.data[self.index]
+        self.essay = res.data[self.index].essay// 让data中的essay等于后台数据库表格中的essay，以便显示出来
         self.setData({
-          essay: res.data[self.index]
+          essay: res.data[self.index].essay
         })
       }
     })
