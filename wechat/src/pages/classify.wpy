@@ -43,9 +43,9 @@
   margin-right: 10px
 }
 .photo-border {
-  height: 100px;
-  width: 150px;
-  margin: 5px 0px 5px 0px;
+  height: 80px;
+  width: 100px;
+  margin: 10px 0px 10px 0px;
 }
 .flex-title {
   display: flex;
@@ -64,8 +64,17 @@
   color: #707070
 }
 .icon-space {
-  margin-left: 60px;
-  margin-right: 5px
+  margin-left: 6px
+}
+.icon-border {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%
+}
+.flex-read {
+  display: flex;
+  align-items: center;
+  margin-left: 120px
 }
 
 </style>
@@ -90,8 +99,10 @@
         </view>  
         <view class="flex-label">
           <text class="word-text" wx:if="{{item.type === tab[currentTargetId]}}">{{item.label}}</text>
-          <text class="word-text icon-space" wx:if="{{item.type === tab[currentTargetId]}}">{{item.icon}}</text>
-          <text class="word-text" wx:if="{{item.type === tab[currentTargetId]}}">{{item.read}}</text>
+          <view class="flex-read">
+            <image class="word-text icon-border" wx:if="{{item.type === tab[currentTargetId]}}" src="{{icon}}"></image>
+            <text class="word-text icon-space" wx:if="{{item.type === tab[currentTargetId]}}">{{item.read}}</text>
+          </view> 
         </view>  
       </view>  
     </view>
@@ -115,6 +126,7 @@ export default class Index extends wepy.page {
   data = {
     height: 0,
     width: 0,
+    icon: '../image/浏览-2.png',
     tab: ['javascript', 'css', 'html5', 'go', 'swift'],
     currentTargetId: 0, // 令当前任务ID为0， 目的是和index 判断
     type: 'javascript',

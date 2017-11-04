@@ -1,4 +1,4 @@
 
-<view>
+<view class="flex">
   <text>{{container}}</text>
 </view>

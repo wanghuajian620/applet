@@ -17,8 +17,10 @@
         </view>  
         <view class="flex-label">
           <text class="word-text" wx:if="{{item.type === tab[currentTargetId]}}">{{item.label}}</text>
-          <text class="word-text icon-space" wx:if="{{item.type === tab[currentTargetId]}}">{{item.icon}}</text>
-          <text class="word-text" wx:if="{{item.type === tab[currentTargetId]}}">{{item.read}}</text>
+          <view class="flex-read">
+            <image class="word-text icon-border" wx:if="{{item.type === tab[currentTargetId]}}" src="{{icon}}"/>
+            <text class="word-text icon-space" wx:if="{{item.type === tab[currentTargetId]}}">{{item.read}}</text>
+          </view> 
         </view>  
       </view>  
     </view>
