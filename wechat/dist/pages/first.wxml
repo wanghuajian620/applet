@@ -1,4 +1,6 @@
 
-<view class="flex">
-  <text>{{essay}}</text>
+<view>
+  <view class="flex">
+    <text>{{essay}}</text>
+  </view>
 </view>

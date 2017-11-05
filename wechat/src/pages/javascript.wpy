@@ -11,9 +11,11 @@
 
 
 <template>
-<view class="flex">
-  <text>{{container}}</text>
-</view>
+<view>
+  <view class="flex">
+    <text>{{container}}</text>
+  </view>
+</view>  
 </template>
 
 
@@ -26,7 +28,8 @@ export default class Index extends wepy.page {
     navigationBarTitleText: '我的博客'
   }
   data = {
-    container: ''
+    container: '',
+    input: ''
   }
   onLoad() {
     let self = this

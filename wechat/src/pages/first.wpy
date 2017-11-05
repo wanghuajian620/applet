@@ -21,9 +21,12 @@
 </style>
 
 <template>
-<view class="flex">
-  <text>{{essay}}</text>
-</view>
+<view>
+  <view class="flex">
+    <text>{{essay}}</text>
+  </view>
+</view>  
+
 </template>
 
 

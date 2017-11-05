@@ -33,7 +33,7 @@
   flex-direction: row;
   margin: 20px 20px;
   background-color: #F0F0F0;
-  // box-shadow: 5px 5px 10px #999999;
+  box-shadow: 5px 5px 10px #999999;
 }
 .flex-photo {
   display: flex;
@@ -158,8 +158,20 @@ export default class Index extends wepy.page {
       let self = this
       let id = e.currentTarget.dataset.index
       let essay = self.a[id].content
+      let read = self.a[id].read
+      read++
+      self.a[id].read = read
       console.log(id, 'oooooooooooooooo')
-      console.log(self.a[id], 'iiiiiiiiiiiiii')
+      // console.log(self.a[id], 'iiiiiiiiiiiiii')
+      wepy.request({
+        url: 'http://127.0.0.1:7001/classify/update',
+        method: 'POST',
+        data: {
+          type: self.type,
+          id: self.a[id].id,
+          read: read
+        }
+      })
       try {
         wepy.setStorageSync('article', essay)
       } catch (err) {
@@ -194,7 +206,7 @@ export default class Index extends wepy.page {
         self.setData({
           a: res.data
         })
-        console.log(res.data, 'ppppppppp')
+        // console.log(res.data, 'ppppppppp')
       }
     })
 
