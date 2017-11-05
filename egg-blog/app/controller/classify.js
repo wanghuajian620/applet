@@ -10,6 +10,10 @@ module.exports = app => {
       console.log(this.ctx.request.body);
       this.ctx.body = yield this.service.classify.get(this.ctx.request.body);
     }
+    * update() {
+      console.log(this.ctx.request.body);
+      this.ctx.body = yield this.service.classify.update(this.ctx.request.body);
+    }
   }
   return ClassifyController;
 };

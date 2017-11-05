@@ -25,6 +25,16 @@ module.exports = app => {
       }
       return res;
     }
+    * update(a) {
+      let res;
+      try {
+        res = yield app.mysql.update('classify', a);
+      } catch (e) {
+        this.ctx.logger.error(e);
+        return false;
+      }
+      return res;
+    }
   }
   return Classify;
 };
