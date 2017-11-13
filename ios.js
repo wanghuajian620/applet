@@ -95,3 +95,29 @@ function Comment(props) {
 }
 
 
+
+function Child(props) {
+  return <h1>Hello, {props.name}</h1>
+}
+
+function Parent() {
+  return (
+    <div>
+      <Child name="Mary" />
+    </div>
+  )
+}
+
+class Parent extends React.Component {
+  render() {
+    return <div>
+      <Child name="Mary" />
+    </div>
+  }
+}
+
+ReactDOM.render (
+  <h1>Hello, world!</h1>,
+  document.getElementById('root')
+);
+
