@@ -17,7 +17,7 @@ const links = [{
   href: '',
 }];
 
-const copyright = <div>Copyright <Icon type="copyright" /> 2017 蚂蚁金服体验技术部出品</div>;
+const copyright = <div>Copyright <Icon type="copyright" /> 2017 王华建的个人博客</div>;
 
 class UserLayout extends React.PureComponent {
   static childContextTypes = {
