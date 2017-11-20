@@ -12,8 +12,8 @@ export default {
   effects: {
     *fetchNotices(_, { call, put }) {
       yield put({
-        type: 'changeNoticeLoading',
-        payload: true,
+        type: 'changeNoticeLoading', // 函数
+        payload: true, // 参数
       });
       const data = yield call(queryNotices);
       yield put({
@@ -36,7 +36,7 @@ export default {
   },
 
   reducers: {
-    changeLayoutCollapsed(state, { payload }) {
+    changeLayoutCollapsed(state, { payload }) {  // {payload}是action同时又是函数的参数
       return {
         ...state,
         collapsed: payload,
