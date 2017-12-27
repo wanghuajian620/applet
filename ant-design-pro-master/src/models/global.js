@@ -36,7 +36,7 @@ export default {
   },
 
   reducers: {
-    changeLayoutCollapsed(state, { payload }) {  // {payload}是action同时又是函数的参数
+    changeLayoutCollapsed(state, { payload }) {
       return {
         ...state,
         collapsed: payload,
